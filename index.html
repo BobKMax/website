@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/tokens/layout.css">
+  <link rel="stylesheet" href="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/tokens/base.css">
+  <link rel="stylesheet" href="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/styles.css">
+  <script src="_ds/maxime-kreiter-architecte-design-system-afada3d2-3a5e-4a35-9f74-8eb0a87da6ce/_ds_bundle.js"></script>
+  <style>
+    a { color: var(--ink-900); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--sage-700); }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--paper-100); color: var(--ink-900); font-family: var(--font-sans);">
+
+  <sc-if value="{{ isGarde }}" hint-placeholder-val="{{ true }}">
+    <main style="flex: 1; display: grid; grid-template-rows: auto 1fr; padding: var(--s-6) var(--page-margin) var(--s-8);">
+
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-5); padding-bottom: var(--s-3);">
+        <span class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted);">Architecte HMONP — Lyon</span>
+        <div style="display: flex; gap: var(--s-5); align-items: baseline;">
+          <div style="display: flex; gap: var(--s-3); align-items: baseline;">
+            <a href="#" onClick="{{ setFr }}" class="mk-meta" style="font-size: var(--text-3xs); text-decoration: none; color: var(--ink-900); opacity: {{ frOpacity }};">FR</a>
+            <a href="#" onClick="{{ setEn }}" class="mk-meta" style="font-size: var(--text-3xs); text-decoration: none; color: var(--ink-900); opacity: {{ enOpacity }};">EN</a>
+          </div>
+          <a href="#" onClick="{{ goIndex }}" class="mk-meta" style="font-size: var(--text-3xs); text-decoration: none; border-bottom: 1px solid var(--ink-900); padding-bottom: 2px;">{{ lVoir }} →</a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: center; padding: var(--s-9) 0;">
+        <span style="display: inline-flex; gap: 0.4em; align-items: baseline; font-family: var(--font-sans); font-size: var(--text-3xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); text-transform: lowercase;">
+          <span style="font-weight: var(--weight-medium); color: var(--text-primary);">Maxime Kreiter.</span>
+          <span style="font-weight: var(--weight-regular); color: var(--text-secondary);">Architecte</span>
+        </span>
+        <p style="max-width: 46ch; font-size: var(--type-lede-size); line-height: var(--leading-snug); color: var(--text-meta); padding-top: var(--s-7); margin: 0; text-wrap: pretty;">{{ gardeLede }}</p>
+      </div>
+
+    </main>
+  </sc-if>
+
+  <sc-if value="{{ isIndex }}" hint-placeholder-val="{{ false }}">
+      <div style="position: sticky; top: 0; z-index: 30;">
+        <x-import component-from-global-scope="MaximeKreiterArchitecteDesignSystem_afada3.SiteHeader" items="{{ navItems }}" active="{{ activeNav }}" on-navigate="{{ onNavigate }}" lang="{{ lang }}" on-lang="{{ toggleLang }}" dc-props="{{ headerProps }}" hint-size="100%,52px"></x-import>
+      </div>
+  </sc-if>
+
+  <sc-if value="{{ isIndex }}" hint-placeholder-val="{{ false }}">
+      <main style="flex: 1;">
+        <section style="padding: var(--s-8) var(--page-margin) var(--s-6);">
+          <div style="display: flex; align-items: baseline; gap: var(--s-4);">
+            <span class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted);">01</span>
+            <h2 style="font-family: var(--font-sans); font-weight: 500; text-transform: uppercase; letter-spacing: -0.015em; font-size: var(--text-3xl); margin: 0;">{{ lProjets }}</h2>
+          </div>
+          <p style="max-width: var(--measure); font-size: var(--text-base); line-height: 1.55; color: var(--text-meta); padding-top: var(--s-4); margin: 0; text-wrap: pretty;">{{ indexLede }}</p>
+        </section>
+
+        <section style="padding: var(--s-5) var(--page-margin) var(--s-9);">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: var(--s-5); flex-wrap: wrap; padding-bottom: var(--s-6);">
+            <div style="display: flex; gap: var(--s-2); flex-wrap: wrap;">
+              <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+                <x-import component-from-global-scope="MaximeKreiterArchitecteDesignSystem_afada3.Tag" active="{{ f.active }}" on-click="{{ f.onClick }}" hint-size="auto,26px">{{ f.label }}</x-import>
+              </sc-for>
+            </div>
+            <x-import component-from-global-scope="MaximeKreiterArchitecteDesignSystem_afada3.Switch" label="{{ lListe }}" checked="{{ listView }}" on-change="{{ toggleView }}" hint-size="auto,24px"></x-import>
+          </div>
+
+          <sc-if value="{{ listView }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <div style="display: grid; grid-template-columns: 48px minmax(0,1fr) minmax(0,.8fr) 64px; gap: var(--s-4); padding-bottom: var(--s-2);">
+                <span class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted);">Réf.</span>
+                <span class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted);">{{ lProjet }}</span>
+                <span class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted);">{{ lLieu }}</span>
+                <span class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted); text-align: right;">{{ lAnnee }}</span>
+              </div>
+              <div style="border-top: 1px solid var(--ink-900);">
+                <sc-for list="{{ shown }}" as="p" hint-placeholder-count="4">
+                  <x-import component-from-global-scope="MaximeKreiterArchitecteDesignSystem_afada3.IndexRow" number="{{ p.number }}" title="{{ p.title }}" meta="{{ p.place }}" year="{{ p.year }}" hint-size="100%,56px"></x-import>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ gridView }}" hint-placeholder-val="{{ true }}">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--s-6) var(--grid-gap);">
+              <sc-for list="{{ shown }}" as="p" hint-placeholder-count="4">
+                <div>
+                  <x-import component-from-global-scope="MaximeKreiterArchitecteDesignSystem_afada3.ImageFrame" ratio="4 / 5" label="{{ p.image }}" hint-size="100%,340px"></x-import>
+                  <div style="display: flex; justify-content: space-between; gap: var(--s-4); align-items: baseline; padding-top: var(--s-3); border-top: var(--hairline) solid var(--border-hairline); margin-top: var(--s-3);">
+                    <span style="font-size: var(--text-base);">{{ p.title }}</span>
+                    <span class="mk-meta" style="font-size: var(--text-3xs);">{{ p.year }}</span>
+                  </div>
+                  <div class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted); padding-top: 2px;">{{ p.sub }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <p class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted); padding-top: var(--s-8); margin: 0;">
+            <span style="display: inline-block; padding-top: var(--s-4);">{{ noticeText }}</span>
+          </p>
+        </section>
+      </main>
+  </sc-if>
+
+  <x-import component-from-global-scope="MaximeKreiterArchitecteDesignSystem_afada3.SiteFooter" columns="{{ footerColumns }}" note="© 2026 Maxime Kreiter Architecte" dc-props="{{ footerProps }}" hint-size="100%,96px"></x-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const PROJECTS = [
+  { id: 'p1', number: '01', title: 'Halle Deguerry', place: 'Lyon VII', year: '2025', programme: 'Équipement', surface: '412 m² SDP' },
+  { id: 'p2', number: '02', title: 'Maison en terre crue', place: 'Charly', year: '2024', programme: 'Logement', surface: '148 m² SDP' },
+  { id: 'p3', number: '03', title: 'Ateliers Montesquieu', place: 'Lyon VII', year: '2024', programme: 'Rénovation', surface: '260 m² SDP' },
+  { id: 'p4', number: '04', title: 'École de la Guillotière', place: 'Lyon VII', year: '2023', programme: 'Équipement', surface: '1 040 m² SDP' }
+];
+
+const COPY = {
+  FR: {
+    gardeLede: 'Atelier d’architecture établi à Lyon. Réhabilitation, équipement public, construction en terre crue et en bois. Le travail porte sur ce qui existe déjà : structures conservées, matières locales, interventions mesurées.',
+    indexLede: 'Quatre opérations récentes, du diagnostic à la livraison. Chaque projet est documenté par ses matières, ses surfaces et son coût.',
+    atelier: 'Atelier', suivre: 'Suivre', voir: 'Voir les projets',
+    projets: 'Projets', projet: 'Projet', lieu: 'Lieu', annee: 'Année', liste: 'Vue liste',
+    filters: ['Tous', 'Logement', 'Équipement', 'Rénovation'],
+    notice: 'Contenu de démonstration — projets, surfaces et dates à remplacer.'
+  },
+  EN: {
+    gardeLede: 'Architecture practice based in Lyon. Rehabilitation, public buildings, rammed earth and timber construction. The work starts from what is already there: retained structures, local materials, measured interventions.',
+    indexLede: 'Four recent operations, from survey to completion. Each project is documented through its materials, areas and cost.',
+    atelier: 'Studio', suivre: 'Follow', voir: 'View projects',
+    projets: 'Projects', projet: 'Project', lieu: 'Place', annee: 'Year', liste: 'List view',
+    filters: ['Tous', 'Logement', 'Équipement', 'Rénovation'],
+    notice: 'Placeholder content — replace projects, areas and dates.'
+  }
+};
+
+class Component extends DCLogic {
+  state = { route: 'garde', lang: 'FR', filter: 'Tous', listView: false };
+
+  renderVals() {
+    const { route, lang, filter, listView } = this.state;
+    const t = COPY[lang] || COPY.FR;
+    const shown = (filter === 'Tous' ? PROJECTS : PROJECTS.filter((p) => p.programme === filter)).map((p) => ({
+      ...p,
+      sub: p.place + ' · ' + p.programme,
+      image: 'Photo — ' + p.title
+    }));
+    const stop = (e) => e && e.preventDefault();
+    return {
+      isGarde: route === 'garde',
+      isIndex: route === 'index',
+      lang,
+      listView,
+      gridView: !listView,
+      shown,
+      filters: t.filters.map((label) => ({
+        label,
+        active: filter === label,
+        onClick: () => this.setState({ filter: label })
+      })),
+      gardeLede: t.gardeLede,
+      indexLede: t.indexLede,
+      noticeText: t.notice,
+      lAtelier: t.atelier, lSuivre: t.suivre, lVoir: t.voir,
+      lProjets: t.projets, lProjet: t.projet, lLieu: t.lieu, lAnnee: t.annee, lListe: t.liste,
+      frOpacity: lang === 'FR' ? 1 : 0.32,
+      enOpacity: lang === 'EN' ? 1 : 0.32,
+      setFr: (e) => { stop(e); this.setState({ lang: 'FR' }); },
+      setEn: (e) => { stop(e); this.setState({ lang: 'EN' }); },
+      goIndex: (e) => { stop(e); this.setState({ route: 'index' }); },
+      toggleLang: () => this.setState((s) => ({ lang: s.lang === 'FR' ? 'EN' : 'FR' })),
+      toggleView: (e) => this.setState({ listView: e && e.target ? e.target.checked : !listView }),
+      activeNav: route === 'garde' ? 'garde' : 'projets',
+      onNavigate: (v) => this.setState({ route: v === 'projets' ? 'index' : 'garde' }),
+      navItems: [
+        { value: 'garde', label: lang === 'FR' ? 'Garde' : 'Cover' },
+        { value: 'projets', label: t.projets }
+      ],
+      headerProps: { style: { borderBottom: 'none' } },
+      footerProps: {
+        style: { padding: 'var(--s-4) var(--page-margin) var(--s-3)', gap: 'var(--s-3)', borderTop: 'none' }
+      },
+      footerColumns: [
+        { title: t.atelier, lines: ['59 rue Montesquieu, 69007 Lyon'] },
+        { title: 'Contact', lines: ['contact@maximekreiter.fr · 06 31 07 09 05'] },
+        { title: t.suivre, lines: ['Instagram'] }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
