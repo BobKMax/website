@@ -28,9 +28,9 @@
   <sc-if value="{{ isGarde }}" hint-placeholder-val="{{ true }}">
     <main style="flex: 1; display: grid; grid-template-rows: auto 1fr; padding: var(--s-6) var(--page-margin) var(--s-8);">
 
-      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-5); padding-bottom: var(--s-3);">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-3) var(--s-5); flex-wrap: wrap; padding-bottom: var(--s-3);">
         <span class="mk-meta" style="font-size: var(--text-3xs); color: var(--text-muted);">Architecte HMONP — Lyon</span>
-        <div style="display: flex; gap: var(--s-5); align-items: baseline;">
+        <div style="display: flex; gap: var(--s-4) var(--s-5); align-items: baseline; flex-wrap: wrap;">
           <div style="display: flex; gap: var(--s-3); align-items: baseline;">
             <a href="#" onClick="{{ setFr }}" class="mk-meta" style="font-size: var(--text-3xs); text-decoration: none; color: var(--ink-900); opacity: {{ frOpacity }};">FR</a>
             <a href="#" onClick="{{ setEn }}" class="mk-meta" style="font-size: var(--text-3xs); text-decoration: none; color: var(--ink-900); opacity: {{ enOpacity }};">EN</a>
@@ -39,12 +39,12 @@
         </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; justify-content: center; padding: var(--s-9) 0;">
-        <span style="display: inline-flex; gap: 0.4em; align-items: baseline; font-family: var(--font-sans); font-size: var(--text-3xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); text-transform: lowercase;">
+      <div style="display: flex; flex-direction: column; justify-content: center; padding: clamp(32px, 9vw, 96px) 0;">
+        <span style="display: flex; flex-wrap: wrap; column-gap: 0.32em; row-gap: 0; align-items: baseline; font-family: var(--font-sans); font-size: clamp(26px, 7.4vw, var(--text-3xl)); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); text-transform: lowercase;">
           <span style="font-weight: var(--weight-medium); color: var(--text-primary);">Maxime Kreiter.</span>
           <span style="font-weight: var(--weight-regular); color: var(--text-secondary);">Architecte</span>
         </span>
-        <p style="max-width: 46ch; font-size: var(--type-lede-size); line-height: var(--leading-snug); color: var(--text-meta); padding-top: var(--s-7); margin: 0; text-wrap: pretty;">{{ gardeLede }}</p>
+        <p style="max-width: 46ch; font-size: clamp(15px, 3.6vw, var(--type-lede-size)); line-height: var(--leading-snug); color: var(--text-meta); padding-top: clamp(20px, 6vw, var(--s-7)); margin: 0; text-wrap: pretty; white-space: pre-line;">{{ gardeLede }}</p>
       </div>
 
     </main>
@@ -121,7 +121,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 const PROJECTS = [
-  { id: 'p1', number: '01', title: 'Halle Darley', place: 'Lyon VII', year: '2025', programme: 'Équipement', surface: '412 m² SDP' },
+  { id: 'p1', number: '01', title: 'Halle Deguerry', place: 'Lyon VII', year: '2025', programme: 'Équipement', surface: '412 m² SDP' },
   { id: 'p2', number: '02', title: 'Maison en terre crue', place: 'Charly', year: '2024', programme: 'Logement', surface: '148 m² SDP' },
   { id: 'p3', number: '03', title: 'Ateliers Montesquieu', place: 'Lyon VII', year: '2024', programme: 'Rénovation', surface: '260 m² SDP' },
   { id: 'p4', number: '04', title: 'École de la Guillotière', place: 'Lyon VII', year: '2023', programme: 'Équipement', surface: '1 040 m² SDP' }
@@ -129,7 +129,7 @@ const PROJECTS = [
 
 const COPY = {
   FR: {
-    gardeLede: 'Atelier d’architecture établi à Lyon. Réhabilitation, équipements publics et privés. Le travail porte sur ce qui existe déjà : structures conservées, matières locales, interventions mesurées.',
+    gardeLede: 'Atelier d’architecture basé à Lyon.\nRéhabilitation, équipement public. Le travail porte sur ce qui existe déjà : structures conservées, matières locales, interventions mesurées.',
     indexLede: 'Quatre opérations récentes, du diagnostic à la livraison. Chaque projet est documenté par ses matières, ses surfaces et son coût.',
     atelier: 'Atelier', suivre: 'Suivre', voir: 'Voir les projets',
     projets: 'Projets', projet: 'Projet', lieu: 'Lieu', annee: 'Année', liste: 'Vue liste',
@@ -137,7 +137,7 @@ const COPY = {
     notice: 'Contenu de démonstration — projets, surfaces et dates à remplacer.'
   },
   EN: {
-    gardeLede: 'Architecture practice based in Lyon. Rehabilitation, public and private buildings. The work starts from what is already there: retained structures, local materials, measured interventions.',
+    gardeLede: 'Architecture practice based in Lyon.\nRehabilitation, public buildings. The work starts from what is already there: retained structures, local materials, measured interventions.',
     indexLede: 'Four recent operations, from survey to completion. Each project is documented through its materials, areas and cost.',
     atelier: 'Studio', suivre: 'Follow', voir: 'View projects',
     projets: 'Projects', projet: 'Project', lieu: 'Place', annee: 'Year', liste: 'List view',
