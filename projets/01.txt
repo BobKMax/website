@@ -1,7 +1,7 @@
-titre: Halle Deguerry
-lieu: Lyon VII
+titre: Cabinet Dentaire
+lieu: Ecully
 annee: 2025
 programme: Équipement
-surface: 412 m² SDP
+surface: 100 m² SDP
 photo: 01.jpg
-texte: La halle est vidée de ses adjonctions successives. Une boîte technique autonome est posée à l’intérieur, laissant lire la charpente sur toute sa longueur.
+texte: 
