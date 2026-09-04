@@ -1,7 +1,0 @@
-titre: Ateliers Montesquieu
-lieu: Lyon VII
-annee: 2024
-programme: Rénovation
-surface: 260 m² SDP
-photo:
-texte: Trois ateliers d’artisans réunis en un plateau unique. Les percements existants sont conservés, les cloisons nouvelles s’arrêtent sous la charpente.

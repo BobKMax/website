@@ -1,7 +1,0 @@
-titre: Cabinet Dentaire
-lieu: Ecully
-annee: 2025
-programme: Équipement
-surface: 100 m² SDP
-photo:01.jpg
-texte: 
