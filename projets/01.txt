@@ -1,4 +1,4 @@
-titre: Halle Deguerry
+titre: Halle Darley
 lieu: Lyon VII
 annee: 2025
 programme: Équipement
