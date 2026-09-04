@@ -1,0 +1,7 @@
+titre: Maison en terre crue
+lieu: Charly
+annee: 2024
+programme: Logement
+surface: 148 m² SDP
+photo:
+texte: Murs porteurs en pisé, planchers bois, toiture en tuiles de récupération. Le chantier a été mené en partie en auto-construction encadrée.

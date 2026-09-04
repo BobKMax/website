@@ -1,0 +1,67 @@
+SITE MAXIME KREITER ARCHITECTE
+==============================
+
+Ce dossier est le site complet. Il n'y a rien à compiler ni à installer :
+ce sont des fichiers HTML, CSS et JavaScript lus tels quels par le
+navigateur.
+
+
+CE QU'IL CONTIENT
+-----------------
+
+index.html        la page de garde
+projets.html      l'index des projets
+projets/          un fichier texte par projet — c'est ici que vous
+                  ajoutez vos projets, voir projets/LISEZ-MOI.txt
+projets/photos/   les photographies
+assets/ds/        le design system (couleurs, typographie, espacements)
+assets/css/       les styles du site
+assets/js/        la logique : bascule FR/EN et lecture du dossier projets/
+
+
+METTRE EN LIGNE
+---------------
+
+Téléversez le contenu de ce dossier à la racine de votre hébergement.
+index.html doit se retrouver à la racine.
+
+IMPORTANT — le site doit être servi par une adresse http:// ou https://.
+Si vous ouvrez index.html en double-cliquant dessus, la page de garde
+s'affichera correctement mais la liste des projets restera vide : le
+navigateur interdit à un fichier local de lire d'autres fichiers.
+
+Pour vérifier le site sur votre machine avant mise en ligne, ouvrez un
+terminal dans ce dossier et lancez :
+
+    python3 -m http.server 8000
+
+puis rendez-vous sur http://localhost:8000
+
+
+AJOUTER UN PROJET
+-----------------
+
+Tout se passe dans projets/ : un fichier texte par projet, numéroté
+01.txt, 02.txt, 03.txt… et les photos dans projets/photos/.
+Le mode d'emploi complet est dans projets/LISEZ-MOI.txt.
+
+Les filtres de l'index se construisent automatiquement à partir du champ
+« programme: ». Réutilisez les mêmes mots d'un projet à l'autre.
+
+Rien d'autre n'est à modifier : le site relit le dossier à chaque visite.
+
+
+CE QUI RESTE À FAIRE
+--------------------
+
+- Les quatre projets livrés sont du contenu inventé, repris du prototype.
+  Ils sont à remplacer par les vrais projets.
+- Aucune photographie n'a été fournie : les vignettes affichent un aplat
+  bleu portant le nom du projet, comme prévu par le design system.
+- « Instagram », dans le pied de page, est un mot sans lien : donnez
+  l'adresse du compte pour en faire un lien.
+- Aucune icône d'onglet (favicon) n'est définie.
+- Les polices Fustat et Space Mono viennent de Google Fonts, ce sont des
+  substitutions choisies par le design system. Si l'atelier acquiert des
+  fontes sous licence, elles se remplacent dans
+  assets/ds/tokens/fonts.css.

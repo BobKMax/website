@@ -1,0 +1,523 @@
+/* Maxime Kreiter Architecte — styles du site.
+   Les composants du design system (SiteHeader, SiteFooter, Wordmark, Tag,
+   Switch, IndexRow, ImageFrame) sont ici transcrits en CSS depuis le bundle
+   React fourni dans _ds/. Les valeurs sont reprises à l'identique. */
+
+/* ------------------------------------------------------------------ shell */
+
+.mk-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper-100);
+  color: var(--ink-900);
+  font-family: var(--font-sans);
+}
+
+.mk-main { flex: 1; }
+
+/* Le helmet du prototype : liens à l'encre, soulignement du base.css. */
+a { color: var(--ink-900); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--sage-700); }
+
+/* --------------------------------------------------------------- wordmark */
+
+.mk-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  text-transform: lowercase;
+  color: var(--text-primary);
+  border: 0;
+  text-decoration: none;
+}
+
+.mk-wordmark--sm { font-size: var(--text-sm); }
+
+.mk-wordmark__sub {
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-secondary);
+}
+
+.mk-wordmark--sm .mk-wordmark__sub { font-size: var(--text-xs); }
+
+a.mk-wordmark:hover { color: var(--text-primary); }
+
+/* ----------------------------------------------------------- site header */
+/* headerProps du prototype : borderBottom none. */
+
+.mk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+  height: var(--header-height);
+  padding: 0 var(--page-margin);
+  border-bottom: none;
+  background: var(--surface-page);
+}
+
+.mk-header__sticky { position: sticky; top: 0; z-index: 30; }
+
+.mk-header__nav {
+  display: flex;
+  gap: var(--s-6);
+  align-items: center;
+}
+
+.mk-navlink {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: var(--hairline) solid transparent;
+  transition: var(--transition-color);
+  text-decoration: none;
+}
+
+.mk-navlink:hover { color: var(--text-primary); }
+
+.mk-navlink[aria-current="page"] {
+  color: var(--text-primary);
+  border-bottom-color: var(--ink-900);
+}
+
+.mk-langbtn {
+  background: none;
+  border: var(--hairline) solid var(--border-mid);
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-secondary);
+  transition: var(--transition-color);
+}
+
+.mk-langbtn:hover { color: var(--text-primary); border-color: var(--border-strong); }
+
+/* ----------------------------------------------------------- site footer */
+/* footerProps du prototype : pied aplati, sans filet supérieur. */
+
+.mk-footer {
+  border-top: none;
+  padding: var(--s-4) var(--page-margin) var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.mk-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--s-6);
+}
+
+.mk-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.mk-footer__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.mk-footer__line {
+  font-size: var(--text-sm);
+  color: var(--text-meta);
+}
+
+/* Coordonnées cliquables, rendues comme le texte du prototype. */
+.mk-footer__line a {
+  color: inherit;
+  border-bottom: 0;
+  text-decoration: none;
+  transition: var(--transition-color);
+}
+
+.mk-footer__line a:hover { color: var(--sage-700); }
+
+.mk-footer__note {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------- page de garde */
+
+.mk-garde {
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: var(--s-6) var(--page-margin) var(--s-8);
+}
+
+.mk-garde__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s-3) var(--s-5);
+  flex-wrap: wrap;
+  padding-bottom: var(--s-3);
+}
+
+.mk-garde__label { font-size: var(--text-3xs); color: var(--text-muted); }
+
+.mk-garde__actions {
+  display: flex;
+  gap: var(--s-4) var(--s-5);
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.mk-langswitch {
+  display: flex;
+  gap: var(--s-3);
+  align-items: baseline;
+}
+
+.mk-langswitch a {
+  font-size: var(--text-3xs);
+  text-decoration: none;
+  color: var(--ink-900);
+  opacity: 0.32;
+  transition: var(--transition-color), var(--transition-opacity);
+}
+
+.mk-langswitch a[aria-current="true"] { opacity: 1; }
+
+.mk-garde__link {
+  font-size: var(--text-3xs);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-900);
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+
+.mk-garde__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 9vw, 96px) 0;
+}
+
+.mk-garde__name {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.32em;
+  row-gap: 0;
+  align-items: baseline;
+  font-family: var(--font-sans);
+  font-size: clamp(26px, 7.4vw, var(--text-3xl));
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  text-transform: lowercase;
+  margin: 0;
+  font-weight: var(--weight-regular);
+}
+
+.mk-garde__name-a { font-weight: var(--weight-medium); color: var(--text-primary); }
+.mk-garde__name-b { font-weight: var(--weight-regular); color: var(--text-secondary); }
+
+.mk-garde__lede {
+  max-width: 46ch;
+  font-size: clamp(15px, 3.6vw, var(--type-lede-size));
+  line-height: var(--leading-snug);
+  color: var(--text-meta);
+  padding-top: clamp(20px, 6vw, var(--s-7));
+  margin: 0;
+  text-wrap: pretty;
+  white-space: pre-line;
+}
+
+/* ------------------------------------------------------- index des projets */
+
+.mk-index__head { padding: var(--s-8) var(--page-margin) var(--s-6); }
+
+.mk-index__headline {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+}
+
+.mk-index__ref { font-size: var(--text-3xs); color: var(--text-muted); }
+
+.mk-index__title {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+  margin: 0;
+}
+
+.mk-index__lede {
+  max-width: var(--measure);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  color: var(--text-meta);
+  padding-top: var(--s-4);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.mk-index__body { padding: var(--s-5) var(--page-margin) var(--s-9); }
+
+.mk-index__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-5);
+  flex-wrap: wrap;
+  padding-bottom: var(--s-6);
+}
+
+.mk-filters {
+  display: flex;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------------- tag */
+
+.mk-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: var(--radius-none);
+  border: var(--hairline) solid var(--border-mid);
+  background: transparent;
+  color: var(--text-meta);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+
+.mk-tag:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.mk-tag[aria-pressed="true"],
+.mk-tag[aria-pressed="true"]:hover {
+  background: var(--ink-900);
+  color: var(--text-inverse);
+  border-color: var(--ink-900);
+}
+
+/* ---------------------------------------------------------------- switch */
+
+.mk-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  cursor: pointer;
+  font-size: var(--text-base);
+  color: var(--text-primary);
+}
+
+.mk-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.mk-switch__track {
+  width: 34px;
+  height: 16px;
+  flex: 0 0 auto;
+  position: relative;
+  border: var(--hairline) solid var(--border-mid);
+  background: transparent;
+  border-radius: var(--radius-none);
+  transition: var(--transition-color);
+}
+
+.mk-switch__knob {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  width: 14px;
+  left: 1px;
+  background: var(--border-mid);
+  transition: left var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease-out);
+}
+
+.mk-switch__input:checked + .mk-switch__track { border-color: var(--ink-900); }
+
+.mk-switch__input:checked + .mk-switch__track .mk-switch__knob {
+  left: calc(100% - 15px);
+  background: var(--ink-900);
+}
+
+.mk-switch__input:focus-visible + .mk-switch__track {
+  outline: var(--rule-weight) solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------- vue liste */
+
+.mk-list__head {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) minmax(0, .8fr) 64px;
+  gap: var(--s-4);
+  padding-bottom: var(--s-2);
+}
+
+.mk-list__head span { font-size: var(--text-3xs); color: var(--text-muted); }
+.mk-list__head span:last-child { text-align: right; }
+
+.mk-list__rows { border-top: 1px solid var(--ink-900); }
+
+.mk-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) minmax(0, .8fr) 64px;
+  gap: var(--s-4);
+  align-items: baseline;
+  padding: var(--s-3) 0;
+  border-bottom: var(--hairline) solid var(--border-hairline);
+  color: var(--text-primary);
+}
+
+.mk-row__number {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--text-muted);
+}
+
+.mk-row__title {
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-tight);
+}
+
+.mk-row__meta {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.mk-row__year {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+/* ------------------------------------------------------------- vue grille */
+
+.mk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--s-6) var(--grid-gap);
+}
+
+.mk-card__photo {
+  aspect-ratio: 4 / 5;
+  background: var(--paper-200);
+  overflow: hidden;
+}
+
+.mk-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ImageFrame, repli sans photographie */
+.mk-frame { margin: 0; }
+
+.mk-frame__block {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+  background: var(--surface-tint);
+  border-radius: var(--radius-none);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mk-frame__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  letter-spacing: var(--tracking-caps-wide);
+  text-transform: uppercase;
+  color: var(--tint-200);
+  padding: 0 var(--s-4);
+  text-align: center;
+}
+
+.mk-card__line {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+  align-items: baseline;
+  padding-top: var(--s-3);
+  border-top: var(--hairline) solid var(--border-hairline);
+  margin-top: var(--s-3);
+}
+
+.mk-card__title { font-size: var(--text-base); }
+.mk-card__year { font-size: var(--text-3xs); }
+
+.mk-card__sub {
+  font-size: var(--text-3xs);
+  color: var(--text-muted);
+  padding-top: 2px;
+}
+
+/* ------------------------------------------------------------------ vide */
+
+.mk-empty {
+  font-size: var(--text-2xs);
+  color: var(--text-muted);
+  padding: var(--s-8) 0;
+  margin: 0;
+  max-width: var(--measure);
+  line-height: var(--leading-snug);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+[hidden] { display: none !important; }
+
+/* ---------------------------------------------------------------- mobile */
+/* L'en-tête tient sur 375 px (iPhone 12 mini) en resserrant les gouttières. */
+
+@media (max-width: 520px) {
+  .mk-header { gap: var(--s-4); }
+  .mk-header__nav { gap: var(--s-4); }
+  .mk-index__head { padding-top: var(--s-7); }
+  .mk-index__title { font-size: var(--text-2xl); }
+}
+
+@media (max-width: 380px) {
+  .mk-header__nav { gap: var(--s-3); }
+}

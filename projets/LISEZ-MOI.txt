@@ -1,0 +1,52 @@
+AJOUTER OU MODIFIER UN PROJET
+=============================
+
+Un projet = un fichier texte dans ce dossier, nommé par son numéro :
+01.txt, 02.txt, 03.txt…
+
+Pour ajouter un projet : créez le fichier avec le numéro suivant
+(par exemple 05.txt) en copiant le modèle ci-dessous. Les numéros
+doivent se suivre sans trou — le site s'arrête au premier manquant.
+
+Pour retirer un projet : supprimez son fichier et renumérotez les
+suivants.
+
+L'ordre d'affichage suit les numéros. Le numéro sert aussi de
+référence dans l'index (01, 02…).
+
+MODÈLE À COPIER
+---------------
+
+titre: Halle Deguerry
+lieu: Lyon VII
+annee: 2025
+programme: Équipement
+surface: 412 m² SDP
+photo: halle-deguerry.jpg
+texte: Une ou deux phrases sur le projet. Tout sur une seule ligne.
+
+LES CHAMPS
+----------
+
+titre       obligatoire
+lieu        Lyon VII, Charly, Villeurbanne…
+annee       2025
+programme   sert de filtre sur le site. Réutilisez les mêmes mots
+            d'un projet à l'autre : Logement, Équipement, Rénovation.
+            Un nouveau mot crée automatiquement un nouveau filtre.
+surface     412 m² SDP
+photo       nom du fichier déposé dans projets/photos/
+            (laissez vide : un aplat bleu marqué s'affiche à la place)
+texte       facultatif, non affiché pour l'instant dans l'index
+
+Un champ vide ou absent s'affiche en tiret cadratin (—).
+N'ajoutez pas de guillemets autour des valeurs.
+
+LES PHOTOS
+----------
+
+Déposez-les dans projets/photos/ et indiquez le nom exact du fichier
+dans le champ photo, extension comprise (.jpg, .png, .webp).
+
+Cadrage : les vignettes de l'index sont au format portrait 4/5.
+Une image trop petite sera étirée — visez 1200 px de large minimum.
