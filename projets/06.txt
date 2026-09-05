@@ -1,0 +1,7 @@
+titre: École de la Guillotière
+lieu: Lyon VII
+annee: 2023
+programme: Équipement
+surface: 1 040 m² SDP
+photo:
+texte: Extension d’un groupe scolaire des années 1950. La cour est désimperméabilisée et plantée.
