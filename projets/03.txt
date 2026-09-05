@@ -1,7 +1,7 @@
-titre: Ateliers Montesquieu
-lieu: Lyon VII
+titre: Maison Z
+lieu: St-Didier-au-Mont-d'Or
 annee: 2024
 programme: Rénovation
-surface: 260 m² SDP
-photo:
-texte: Trois ateliers d’artisans réunis en un plateau unique. Les percements existants sont conservés, les cloisons nouvelles s’arrêtent sous la charpente.
+surface: 210 m² SDP
+photo: ZUB-2.2_GEM-3.jpg 
+texte: 
