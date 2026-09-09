@@ -95,10 +95,20 @@ texte:
 
 ---
 
-titre: xx
+titre: SPIRALE
 lieu: xx
 annee: 2023
 programme: Équipement
 surface: 1 040 m² SDP
 photo:IGESA_Interior_GEM-2b.jpeg
+texte:
+
+---
+
+titre: BLEUE
+lieu: xx
+annee: 2023
+programme: Logement
+surface: 
+photo:BLEUE.jpg
 texte: 
