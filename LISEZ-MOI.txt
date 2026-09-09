@@ -11,12 +11,12 @@ CE QU'IL CONTIENT
 
 index.html        la page de garde
 projets.html      l'index des projets
-projets/          un fichier texte par projet — c'est ici que vous
-                  ajoutez vos projets, voir projets/LISEZ-MOI.txt
-projets/photos/   les photographies
+projets.txt       vos projets — c'est le seul fichier que vous éditez,
+                  son mode d'emploi est écrit en haut du fichier
+photos/           les photographies
 assets/ds/        le design system (couleurs, typographie, espacements)
 assets/css/       les styles du site
-assets/js/        la logique : bascule FR/EN et lecture du dossier projets/
+assets/js/        la logique : bascule FR/EN et lecture de projets.txt
 
 
 METTRE EN LIGNE
@@ -41,21 +41,28 @@ puis rendez-vous sur http://localhost:8000
 AJOUTER UN PROJET
 -----------------
 
-Tout se passe dans projets/ : un fichier texte par projet, numéroté
-01.txt, 02.txt, 03.txt… et les photos dans projets/photos/.
-Le mode d'emploi complet est dans projets/LISEZ-MOI.txt.
+Tout se passe dans projets.txt : un bloc de lignes « champ: valeur » par
+projet, les blocs séparés par une ligne de trois tirets ---
+Les photos vont dans le dossier photos/.
+
+Le mode d'emploi complet, avec le modèle à copier, est écrit en haut de
+projets.txt : ouvrez-le, tout y est.
+
+L'ordre des blocs est l'ordre du site. Pour déplacer un projet, déplacez
+son bloc ; pour en retirer un, supprimez son bloc. Les références
+01, 02… se recalculent toutes seules.
 
 Les filtres de l'index se construisent automatiquement à partir du champ
 « programme: ». Réutilisez les mêmes mots d'un projet à l'autre.
 
-Rien d'autre n'est à modifier : le site relit le dossier à chaque visite.
+Rien d'autre n'est à modifier : le site relit le fichier à chaque visite.
 
 
 CE QUI RESTE À FAIRE
 --------------------
 
-- Les quatre projets livrés sont du contenu inventé, repris du prototype.
-  Ils sont à remplacer par les vrais projets.
+- Les quatre projets livrés dans projets.txt sont du contenu inventé,
+  repris de la maquette. Ils sont à remplacer par les vrais projets.
 - Aucune photographie n'a été fournie : les vignettes affichent un aplat
   bleu portant le nom du projet, comme prévu par le design system.
 - « Instagram », dans le pied de page, est un mot sans lien : donnez

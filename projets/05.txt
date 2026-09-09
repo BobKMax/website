@@ -1,7 +1,0 @@
-titre: Cave à vin
-lieu: Meribel
-annee: 2025
-programme: Commerce
-surface: 40 m² SDP
-photo: MERIBEL_Interior.png
-texte: 

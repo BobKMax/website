@@ -1,7 +1,0 @@
-titre: Maison Z
-lieu: St-Didier-au-Mont-d'Or
-annee: 2024
-programme: Rénovation
-surface: 210 m² SDP
-photo: ZUB-2.2_GEM-3.jpg 
-texte: 

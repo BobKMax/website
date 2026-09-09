@@ -1,8 +1,11 @@
 Déposez ici les photos des projets.
 
 Indiquez ensuite le nom exact du fichier dans le champ « photo: » du
-fichier texte du projet, par exemple :
+bloc correspondant, dans projets.txt, par exemple :
 
   photo: halle-deguerry.jpg
 
 Format des vignettes de l'index : portrait 4/5, 1200 px de large minimum.
+
+Un champ « photo: » laissé vide affiche un aplat bleu portant le nom du
+projet, comme prévu par le design system.

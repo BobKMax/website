@@ -1,6 +1,6 @@
 /* Maxime Kreiter Architecte — logique du site.
-   Deux responsabilités : la bascule FR/EN, et la lecture du dossier projets/
-   (un fichier texte par projet) pour construire l'index.
+   Deux responsabilités : la bascule FR/EN, et la lecture de projets.txt
+   (un bloc par projet, séparés par ---) pour construire l'index.
    Aucune dépendance, aucune étape de build. */
 
 (function () {
@@ -8,7 +8,7 @@
 
   var DASH = '—';
   var LANG_KEY = 'mk-lang';
-  var MAX_PROJETS = 60;
+  var SOURCE = 'projets.txt';
 
   /* ------------------------------------------------------------- textes */
 
@@ -27,9 +27,9 @@
       liste: 'Vue liste',
       tous: 'Tous',
       photo: 'Photo',
-      vide: 'Aucun projet dans le dossier projets/. Voir LISEZ-MOI.txt.',
+      vide: 'Aucun projet dans le fichier projets.txt. Le mode d’emploi est en haut de ce fichier.',
       videFiltre: 'Aucun projet pour ce filtre.',
-      videFichier: 'Les projets se lisent dans le dossier projets/, ce qui demande une adresse http://. Ouvrez le site depuis son hébergeur ou un serveur local plutôt qu’en double-cliquant le fichier.'
+      videFichier: 'Les projets se lisent dans le fichier projets.txt, ce qui demande une adresse http://. Ouvrez le site depuis son hébergeur ou un serveur local plutôt qu’en double-cliquant le fichier.'
     },
     EN: {
       gardeLede: 'Architecture practice based in Lyon.\nRehabilitation, public buildings. The work starts from what is already there: retained structures, local materials, measured interventions.',
@@ -45,9 +45,9 @@
       liste: 'List view',
       tous: 'All',
       photo: 'Photo',
-      vide: 'No project found in the projets/ folder.',
+      vide: 'No project found in projets.txt.',
       videFiltre: 'No project under this filter.',
-      videFichier: 'Projects are read from the projets/ folder, which requires an http:// address. Open the site from its host or a local server rather than by double-clicking the file.'
+      videFichier: 'Projects are read from projets.txt, which requires an http:// address. Open the site from its host or a local server rather than by double-clicking the file.'
     }
   };
 
@@ -66,11 +66,14 @@
 
   /* ------------------------------------------------------------ lecture */
 
-  /* Une fiche = des lignes « clé: valeur ». Les clés sont normalisées
-     (accents et casse ignorés) pour rester tolérantes à la saisie. */
-  function parseFiche(text, number) {
+  /* Un bloc = des lignes « clé: valeur ». Les clés sont normalisées
+     (accents et casse ignorés) pour rester tolérantes à la saisie ; les
+     lignes commençant par # sont des commentaires. Un bloc sans titre —
+     l'en-tête du fichier, le modèle à copier — est écarté. */
+  function parseBloc(text, position) {
     var f = {};
     text.split(/\r?\n/).forEach(function (line) {
+      if (/^\s*#/.test(line)) return;
       var i = line.indexOf(':');
       if (i < 1) return;
       var key = line.slice(0, i).trim().toLowerCase()
@@ -79,41 +82,33 @@
     });
     if (!f.titre) return null;
     return {
-      number: number,
+      number: String(position).padStart(2, '0'),
       title: f.titre,
       place: f.lieu || DASH,
       year: f.annee || DASH,
       programme: f.programme || '',
       surface: f.surface || DASH,
-      photo: f.photo ? 'projets/photos/' + f.photo : '',
+      photo: f.photo ? 'photos/' + f.photo : '',
       text: f.texte || ''
     };
   }
 
-  /* Les fichiers sont numérotés 01, 02… sans trou : on s'arrête au premier
-     manquant. Un hébergeur qui répond 200 avec une page d'erreur HTML est
-     rattrapé par le test sur « < ». */
+  /* Un seul fichier, donc une seule requête. L'ordre des blocs est l'ordre
+     du site et donne les références 01, 02… Un hébergeur qui répond 200
+     avec une page d'erreur HTML est rattrapé par le test sur « < ». */
   function loadProjects() {
-    var out = [];
-
-    function step(n) {
-      if (n > MAX_PROJETS) return Promise.resolve(out);
-      var number = String(n).padStart(2, '0');
-      return fetch('projets/' + number + '.txt', { cache: 'no-store' })
-        .then(function (res) {
-          if (!res.ok) return out;
-          return res.text().then(function (body) {
-            if (/^\s*</.test(body)) return out;
-            var fiche = parseFiche(body, number);
-            if (!fiche) return out;
-            out.push(fiche);
-            return step(n + 1);
-          });
-        })
-        .catch(function () { return out; });
-    }
-
-    return step(1);
+    return fetch(SOURCE, { cache: 'no-store' })
+      .then(function (res) { return res.ok ? res.text() : ''; })
+      .then(function (body) {
+        if (!body || /^\s*</.test(body)) return [];
+        var out = [];
+        body.split(/^[ \t]*-{3,}[ \t]*$/m).forEach(function (bloc) {
+          var fiche = parseBloc(bloc, out.length + 1);
+          if (fiche) out.push(fiche);
+        });
+        return out;
+      })
+      .catch(function () { return []; });
   }
 
   /* -------------------------------------------------------------- rendu */

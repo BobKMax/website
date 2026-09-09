@@ -1,0 +1,103 @@
+# =====================================================================
+# MES PROJETS
+# =====================================================================
+#
+# Un projet = un bloc de lignes « champ: valeur ».
+# Les blocs sont séparés par une ligne de trois tirets : ---
+#
+#   AJOUTER un projet   copiez le modèle, tout en bas de ce fichier,
+#                       et remplissez-le.
+#   CHANGER L'ORDRE     déplacez le bloc. L'ordre du fichier est
+#                       l'ordre du site.
+#   RETIRER un projet   supprimez son bloc.
+#
+# Les références (01, 02…) se calculent toutes seules à partir de la
+# position dans le fichier : il n'y a jamais rien à renuméroter.
+#
+# LES CHAMPS
+#   titre       obligatoire — sans titre, le bloc est ignoré
+#   lieu        Lyon VII, Charly, Villeurbanne…
+#   annee       2025
+#   programme   sert de filtre sur le site. Réutilisez les mêmes mots
+#               d'un projet à l'autre : Logement, Équipement,
+#               Rénovation. Un mot nouveau crée un filtre nouveau.
+#   surface     412 m² SDP
+#   photo       nom du fichier déposé dans le dossier photos/
+#               (laissez vide : un aplat bleu s'affiche à la place)
+#   texte       facultatif, pas encore affiché sur le site
+#
+# Un champ vide ou absent s'affiche en tiret cadratin (—).
+# Ne mettez pas de guillemets autour des valeurs.
+# Les lignes commençant par # sont ignorées.
+#
+# LES PHOTOS
+#   Déposez-les dans le dossier photos/, puis écrivez le nom exact du
+#   fichier, extension comprise, dans le champ « photo: ».
+#   Cadrage portrait 4/5, 1200 px de large au minimum.
+#
+# ATTENTION — les quatre projets ci-dessous sont du contenu inventé,
+# hérité de la maquette. Remplacez-les par les vrais projets avant
+# toute mise en ligne.
+#
+# =====================================================================
+
+---
+
+titre: xx
+lieu: xx
+annee: 2023
+programme: Équipement
+surface: 1 040 m² SDP
+photo:IGESA_Exterior_GEM-2.png
+texte: 
+
+
+---
+
+titre: xx
+lieu: xx
+annee: 2023
+programme: Équipement
+surface: 1 040 m² SDP
+photo:IGESA_Interior_GEM-2b.jpeg
+texte: 
+
+---
+
+titre: Cabinet Dentaire
+lieu: Ecully
+annee: 2025
+programme: Équipement
+surface: 100 m² SDP
+photo: 01.jpg
+texte: 
+
+---
+
+titre: Maison Z
+lieu: St-Didier-au-Mont-d'Or
+annee: 2024
+programme: Rénovation
+surface: 210 m² SDP
+photo: ZUB-2.2_GEM-3.jpg 
+texte: 
+
+---
+
+titre: Cave à vin
+lieu: Meribel
+annee: 2025
+programme: Commerce
+surface: 40 m² SDP
+photo: MERIBEL_Interior.png
+texte: 
+
+---
+
+titre: Appartement D
+lieu: Lyon
+annee: 2025
+programme: Logement
+surface: 50 m² SDP
+photo: DOYENNE_RENDER_GEM-3.jpg
+texte: 

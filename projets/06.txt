@@ -1,7 +1,0 @@
-titre: Appartement D
-lieu: Lyon
-annee: 2025
-programme: Logement
-surface: 50 m² SDP
-photo: DOYENNE_RENDER_GEM-3.jpg
-texte: 
