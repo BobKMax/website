@@ -35,9 +35,6 @@
 #   fichier, extension comprise, dans le champ « photo: ».
 #   Cadrage portrait 4/5, 1200 px de large au minimum.
 #
-# ATTENTION — les quatre projets ci-dessous sont du contenu inventé,
-# hérité de la maquette. Remplacez-les par les vrais projets avant
-# toute mise en ligne.
 #
 # =====================================================================
 
@@ -63,6 +60,16 @@ texte:
 
 ---
 
+titre: Cave à vin
+lieu: Meribel
+annee: 2025
+programme: Commerce
+surface: 40 m² SDP
+photo: MERIBEL_Interior.png
+texte: 
+
+---
+
 titre: Cabinet Dentaire
 lieu: Ecully
 annee: 2025
@@ -79,16 +86,6 @@ annee: 2024
 programme: Rénovation
 surface: 210 m² SDP
 photo: ZUB_Interior_GEM.jpg 
-texte: 
-
----
-
-titre: Cave à vin
-lieu: Meribel
-annee: 2025
-programme: Commerce
-surface: 40 m² SDP
-photo: MERIBEL_Interior.png
 texte: 
 
 ---
