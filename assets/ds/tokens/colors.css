@@ -2,7 +2,7 @@
 /* ink */
 --ink-900:#111110;--ink-700:#3A3A37;--ink-500:#6E6E68;--ink-400:#8C8C85;--ink-300:#A9A9A2;--ink-200:#C9C9C2;
 /* paper */
---paper-000:#FFFFFF;--paper-050:#F6F5F2;--paper-100:#EDEDE9;--paper-200:#E3E2DC;
+--paper-000:#FFFFFF;--paper-050:#F6F5F2;--paper-100:#FFFFFF;--paper-200:#E3E2DC;
 /* rules */
 --rule-100:#D5D4CE;--rule-200:#BFBEB7;
 /* blueprint tint (project covers, technical sheets) */
