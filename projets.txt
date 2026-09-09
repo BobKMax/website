@@ -43,8 +43,8 @@
 
 ---
 
-titre: xx
-lieu: xx
+titre: Centre d'innovation
+lieu: Digital image
 annee: 2023
 programme: Équipement
 surface: 1 040 m² SDP
@@ -54,7 +54,7 @@ texte:
 ---
 
 titre: Maison Bleue
-lieu: xx
+lieu: Digital image
 annee: 2023
 programme: Logement
 surface: 
@@ -78,7 +78,7 @@ lieu: St-Didier-au-Mont-d'Or
 annee: 2024
 programme: Rénovation
 surface: 210 m² SDP
-photo: ZUB-2.2_GEM-3.jpg 
+photo: ZUB_Interior_GEM.jpg 
 texte: 
 
 ---
@@ -104,8 +104,8 @@ texte:
 
 ---
 
-titre: Spirale
-lieu: xx
+titre: Centre d'innovation
+lieu: Digital image
 annee: 2023
 programme: Équipement
 surface: 1 040 m² SDP
