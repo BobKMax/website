@@ -54,16 +54,6 @@ texte:
 
 ---
 
-titre: xx
-lieu: xx
-annee: 2023
-programme: Équipement
-surface: 1 040 m² SDP
-photo:IGESA_Interior_GEM-2b.jpeg
-texte: 
-
----
-
 titre: Cabinet Dentaire
 lieu: Ecully
 annee: 2025
@@ -100,4 +90,15 @@ annee: 2025
 programme: Logement
 surface: 50 m² SDP
 photo: DOYENNE_RENDER_GEM-3.jpg
+texte: 
+
+
+---
+
+titre: xx
+lieu: xx
+annee: 2023
+programme: Équipement
+surface: 1 040 m² SDP
+photo:IGESA_Interior_GEM-2b.jpeg
 texte: 
