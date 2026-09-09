@@ -51,6 +51,15 @@ surface: 1 040 m² SDP
 photo:IGESA_Exterior_GEM-2.png
 texte: 
 
+---
+
+titre: Maison Bleue
+lieu: xx
+annee: 2023
+programme: Logement
+surface: 
+photo:BLEUE.jpg
+texte: 
 
 ---
 
@@ -103,12 +112,3 @@ surface: 1 040 m² SDP
 photo:IGESA_Interior_GEM-2b.jpeg
 texte:
 
----
-
-titre: Bleue
-lieu: xx
-annee: 2023
-programme: Logement
-surface: 
-photo:BLEUE.jpg
-texte: 
