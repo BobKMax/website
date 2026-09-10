@@ -115,6 +115,6 @@ lieu: Digital image
 annee: 2023
 programme: Logement
 surface: 70 m² SDP
-photo:BOEUF.jpeg
+photo:BOEUF_drawing.jpeg
 texte:
 
