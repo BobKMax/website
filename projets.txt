@@ -111,10 +111,10 @@ texte:
 ---
 
 titre: Appartement B
-lieu: Digital image
+lieu: Lyon 5
 annee: 2023
 programme: Logement
 surface: 70 m² SDP
-photo:BOEUF_drawing.jpg
+photo:BOEUF_GEM.jpeg
 texte:
 
