@@ -106,7 +106,7 @@ lieu: Digital image
 annee: 2023
 programme: Équipement
 surface: 1 040 m² SDP
-photo:IGESA_Interior_GEM-4.jpg
+photo:IGESA_Interior_GEM-5.jpg
 texte:
 ---
 
