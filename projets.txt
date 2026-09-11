@@ -95,7 +95,7 @@ lieu: Lyon
 annee: 2025
 programme: Logement
 surface: 50 m² SDP
-photo: DOYENNE_RENDER_GEM-5.jpg
+photo: DOYENNE_RENDER_GEM-5b.jpg
 texte: 
 
 
@@ -106,7 +106,7 @@ lieu: Digital image
 annee: 2023
 programme: Équipement
 surface: 1 040 m² SDP
-photo:IGESA_Interior_GEM-5b.jpg
+photo:IGESA_Interior_GEM-5.jpg
 texte:
 ---
 
