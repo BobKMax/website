@@ -12,6 +12,10 @@
 :root {
   --accent-contact: #8C3A24;
   --accent-contact-hover: #6E2C1B;
+
+  /* Cadrage des vignettes de l'index. Une seule valeur pour l'image et pour
+     l'aplat de repli : 1 / 1 carré, 4 / 5 portrait (le format d'origine). */
+  --vignette-ratio: 1 / 1;
 }
 
 /* ------------------------------------------------------------------ shell */
@@ -179,16 +183,21 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   flex: 1;
   display: grid;
   grid-template-rows: auto 1fr;
-  padding: var(--s-6) var(--page-margin) var(--s-8);
+  padding: 0 var(--page-margin) var(--s-8);
 }
 
+/* Même bande que le SiteHeader de la page projets — même hauteur, contenu
+   centré : les textes de coin restent à la même place d'une page à l'autre.
+   min-height et non height, pour que la bande grandisse quand elle se replie
+   sur deux lignes en petite largeur. */
 .mk-garde__meta {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  min-height: var(--header-height);
   gap: var(--s-3) var(--s-5);
   flex-wrap: wrap;
-  padding-bottom: var(--s-3);
+  padding: var(--s-2) 0;
 }
 
 .mk-garde__label { font-size: var(--text-3xs); color: var(--text-muted); }
@@ -449,7 +458,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 }
 
 .mk-card__photo {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: var(--vignette-ratio);
   background: var(--paper-200);
   overflow: hidden;
 }
@@ -465,7 +474,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 .mk-frame { margin: 0; }
 
 .mk-frame__block {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: var(--vignette-ratio);
   width: 100%;
   overflow: hidden;
   background: var(--surface-tint);
