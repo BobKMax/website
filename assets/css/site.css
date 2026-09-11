@@ -3,6 +3,17 @@
    Switch, IndexRow, ImageFrame) sont ici transcrits en CSS depuis le bundle
    React fourni dans _ds/. Les valeurs sont reprises à l'identique. */
 
+/* --------------------------------------------------------- couleurs site */
+/* Écart assumé au design system, qui ne prévoit que le sauge comme accent :
+   les coordonnées du pied de page sont en terracotta. Déclaré ici plutôt que
+   dans _ds/ pour garder le design system intact. La teinte est celle de
+   --critical-600, mais sous un nom propre : le rôle n'est pas le même. */
+
+:root {
+  --accent-contact: #8C3A24;
+  --accent-contact-hover: #6E2C1B;
+}
+
 /* ------------------------------------------------------------------ shell */
 
 .mk-page {
@@ -141,7 +152,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 
 .mk-footer__line {
   font-size: var(--text-sm);
-  color: var(--text-meta);
+  color: var(--accent-contact);
 }
 
 /* Coordonnées cliquables, rendues comme le texte du prototype. */
@@ -152,7 +163,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   transition: var(--transition-color);
 }
 
-.mk-footer__line a:hover { color: var(--sage-700); }
+.mk-footer__line a:hover { color: var(--accent-contact-hover); }
 
 .mk-footer__note {
   font-family: var(--font-mono);
