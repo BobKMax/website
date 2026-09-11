@@ -5,13 +5,15 @@
 
 /* --------------------------------------------------------- couleurs site */
 /* Écart assumé au design system, qui ne prévoit que le sauge comme accent :
-   les coordonnées du pied de page sont en terracotta. Déclaré ici plutôt que
-   dans _ds/ pour garder le design system intact. La teinte est celle de
-   --critical-600, mais sous un nom propre : le rôle n'est pas le même. */
+   les coordonnées du pied de page sont en orange. Déclaré ici plutôt que dans
+   _ds/ pour garder le design system intact.
+   Contraste mesuré sur le papier : 3,03:1, sous le seuil AA de 4,5:1 pour du
+   texte de 13 px — écart choisi en connaissance de cause. Le survol passe à
+   une teinte plus soutenue, à 4,41:1. */
 
 :root {
-  --accent-contact: #8C3A24;
-  --accent-contact-hover: #6E2C1B;
+  --accent-contact: #EA580C;
+  --accent-contact-hover: #C2410C;
 
   /* Cadrage des vignettes de l'index. Une seule valeur pour l'image et pour
      l'aplat de repli : 1 / 1 carré, 4 / 5 portrait (le format d'origine). */
