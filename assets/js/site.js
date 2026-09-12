@@ -15,7 +15,7 @@
   var COPY = {
     FR: {
       gardeLede: 'Atelier d’architecture basé à Lyon.\nRéhabilitation, équipement public. Le travail porte sur ce qui existe déjà : structures conservées, matières locales, interventions mesurées.',
-      indexLede: 'Opérations récentes, du diagnostic à la livraison. Chaque projet est documenté par ses matières, ses surfaces et son coût.',
+      indexLede: 'Opérations récentes, du diagnostic à la livraison.',
       atelier: 'Atelier',
       suivre: 'Suivre',
       voir: 'Voir les projets',
@@ -33,7 +33,7 @@
     },
     EN: {
       gardeLede: 'Architecture practice based in Lyon.\nRehabilitation, public buildings. The work starts from what is already there: retained structures, local materials, measured interventions.',
-      indexLede: 'Recent operations, from survey to completion. Each project is documented through its materials, areas and cost.',
+      indexLede: 'Recent operations, from survey to completion.',
       atelier: 'Studio',
       suivre: 'Follow',
       voir: 'View projects',
@@ -263,13 +263,15 @@
       if (copy[key] !== undefined) node.textContent = copy[key];
     });
 
-    document.querySelectorAll('[data-lang-set]').forEach(function (node) {
-      var on = node.getAttribute('data-lang-set') === state.lang;
-      node.setAttribute('aria-current', on ? 'true' : 'false');
-    });
-
+    /* Le bouton annonce la langue vers laquelle il bascule, pas la langue
+       courante : en français il affiche « EN ». */
     var toggle = document.querySelector('[data-lang-toggle]');
-    if (toggle) toggle.textContent = state.lang;
+    if (toggle) {
+      var cible = state.lang === 'FR' ? 'EN' : 'FR';
+      toggle.textContent = cible;
+      toggle.setAttribute('aria-label',
+        cible === 'EN' ? 'Switch to English' : 'Passer en français');
+    }
 
     render();
   }
@@ -284,13 +286,6 @@
 
   function init() {
     state.lang = readStoredLang();
-
-    document.querySelectorAll('[data-lang-set]').forEach(function (node) {
-      node.addEventListener('click', function (e) {
-        e.preventDefault();
-        setLang(node.getAttribute('data-lang-set'));
-      });
-    });
 
     var toggle = document.querySelector('[data-lang-toggle]');
     if (toggle) {

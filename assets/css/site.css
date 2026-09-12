@@ -16,8 +16,9 @@
   --accent-contact-hover: #C2410C;
 
   /* Cadrage des vignettes de l'index. Une seule valeur pour l'image et pour
-     l'aplat de repli : 1 / 1 carré, 4 / 5 portrait (le format d'origine). */
-  --vignette-ratio: 1 / 1;
+     l'aplat de repli : 9 / 10 est un portrait léger, à mi-chemin entre le
+     4 / 5 d'origine et le carré 1 / 1. */
+  --vignette-ratio: 9 / 10;
 }
 
 /* ------------------------------------------------------------------ shell */
@@ -136,10 +137,12 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   gap: var(--s-3);
 }
 
+/* Gouttière verticale resserrée : c'est elle qui s'applique en petite largeur,
+   quand les trois blocs s'empilent au lieu de tenir sur une rangée. */
 .mk-footer__cols {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: var(--s-6);
+  gap: var(--s-3) var(--s-6);
 }
 
 .mk-footer__col {
@@ -194,38 +197,22 @@ a.mk-wordmark:hover { color: var(--text-primary); }
    sur deux lignes en petite largeur. */
 .mk-garde__meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   min-height: var(--header-height);
-  gap: var(--s-3) var(--s-5);
   flex-wrap: wrap;
   padding: var(--s-2) 0;
 }
 
-.mk-garde__label { font-size: var(--text-3xs); color: var(--text-muted); }
-
+/* Mêmes gouttières que la nav de la page projets : le bouton de langue tombe
+   au même endroit, à la même distance du bord, sur les deux pages. */
 .mk-garde__actions {
   display: flex;
-  gap: var(--s-4) var(--s-5);
-  align-items: baseline;
+  gap: var(--s-6);
+  align-items: center;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
-
-.mk-langswitch {
-  display: flex;
-  gap: var(--s-3);
-  align-items: baseline;
-}
-
-.mk-langswitch a {
-  font-size: var(--text-3xs);
-  text-decoration: none;
-  color: var(--ink-900);
-  opacity: 0.32;
-  transition: var(--transition-color), var(--transition-opacity);
-}
-
-.mk-langswitch a[aria-current="true"] { opacity: 1; }
 
 .mk-garde__link {
   font-size: var(--text-3xs);
