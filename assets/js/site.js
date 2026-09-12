@@ -162,6 +162,36 @@
     });
   }
 
+  /* Aperçu au survol : une seule image, réutilisée d'une ligne à l'autre.
+     Elle n'apparaît qu'une fois chargée, pour éviter un cadre vide au premier
+     survol. Un projet sans photo n'affiche rien. */
+
+  var survolFin = !window.matchMedia ||
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  function montrerApercu(src) {
+    var box = document.getElementById('mk-preview');
+    if (!box) return;
+    var img = box.querySelector('img');
+
+    if (img.getAttribute('src') !== src) {
+      box.classList.remove('is-visible');
+      img.onload = function () {
+        if (img.getAttribute('src') === src) box.classList.add('is-visible');
+      };
+      img.onerror = function () { box.classList.remove('is-visible'); };
+      img.setAttribute('src', src);
+      if (img.complete && img.naturalWidth > 0) box.classList.add('is-visible');
+    } else {
+      box.classList.add('is-visible');
+    }
+  }
+
+  function masquerApercu() {
+    var box = document.getElementById('mk-preview');
+    if (box) box.classList.remove('is-visible');
+  }
+
   function renderRows(shown) {
     var host = document.getElementById('mk-rows');
     if (!host) return;
@@ -172,6 +202,12 @@
       row.appendChild(el('span', 'mk-row__title', p.title));
       row.appendChild(el('span', 'mk-row__meta', p.place));
       row.appendChild(el('span', 'mk-row__year', p.year));
+
+      if (survolFin && p.photo) {
+        row.addEventListener('mouseenter', function () { montrerApercu(p.photo); });
+        row.addEventListener('mouseleave', masquerApercu);
+      }
+
       host.appendChild(row);
     });
   }
@@ -225,6 +261,8 @@
     var empty = document.getElementById('mk-empty');
     var shown = shownProjects();
     var nothing = state.loaded && shown.length === 0;
+
+    masquerApercu(); /* la liste est reconstruite : plus de ligne survolée */
 
     renderFilters();
     renderRows(shown);

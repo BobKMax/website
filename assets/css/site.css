@@ -428,9 +428,10 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   color: var(--text-muted);
 }
 
+/* Même corps que la colonne Lieu ; c'est la couleur, encre contre gris, qui
+   porte désormais seule la hiérarchie entre le titre et le lieu. */
 .mk-row__title {
-  font-size: var(--text-md);
-  letter-spacing: var(--tracking-tight);
+  font-size: var(--text-sm);
 }
 
 .mk-row__meta {
@@ -443,6 +444,38 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   font-size: var(--text-2xs);
   color: var(--text-secondary);
   text-align: right;
+}
+
+/* ------------------------------------------------ aperçu au survol (liste) */
+/* Fixé au centre de la fenêtre, sous l'en-tête collant (z-index 30) pour ne
+   jamais masquer la navigation. pointer-events: none est indispensable :
+   sans lui, l'image intercepterait le survol de la ligne et clignoterait.
+   Conforme au design system : opacité seule, aucun mouvement. */
+
+.mk-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.mk-preview.is-visible { opacity: 1; }
+
+.mk-preview img {
+  width: clamp(240px, 30vw, 400px);
+  aspect-ratio: var(--vignette-ratio);
+  object-fit: cover;
+  background: var(--paper-200);
+}
+
+/* Un écran tactile n'a pas de survol : rien à afficher. */
+@media (hover: none), (pointer: coarse) {
+  .mk-preview { display: none; }
 }
 
 /* ------------------------------------------------------------- vue grille */
