@@ -19,7 +19,6 @@
         <span class="mk-wordmark__sub">Architecte</span>
       </a>
       <nav class="mk-header__nav">
-        <a href="index.html" class="mk-navlink" data-i18n="garde">Garde</a>
         <a href="projets.html" class="mk-navlink" aria-current="page" data-i18n="projets">Projets</a>
         <button type="button" class="mk-langbtn" data-lang-toggle aria-label="Switch to English">EN</button>
       </nav>
@@ -28,12 +27,9 @@
 
   <main class="mk-main">
 
-    <section class="mk-index__head">
-      <div class="mk-index__headline">
-        <h1 class="mk-index__title" data-i18n="projets">Projets</h1>
-      </div>
-      <p class="mk-index__lede" data-i18n="indexLede">Opérations récentes, du diagnostic à la livraison.</p>
-    </section>
+    <!-- Le titre n'est plus affiché, mais la page doit garder un titre de
+         niveau 1 pour les moteurs de recherche et les lecteurs d'écran. -->
+    <h1 class="mk-sr-only" data-i18n="projets">Projets</h1>
 
     <section class="mk-index__body">
 
