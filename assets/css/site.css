@@ -23,8 +23,15 @@
 
 /* ------------------------------------------------------------------ shell */
 
+/* Hauteur de page : sur iOS, 100vh compte la hauteur barres masquées, si bien
+   que le pied de page tombe sous la barre d'outils à l'ouverture. 100svh est
+   la hauteur barres déployées — le cas le plus contraint — donc tout tient à
+   l'écran dès l'arrivée, sans saut de mise en page au défilement (ce que
+   provoquerait dvh). La première ligne reste le repli des navigateurs
+   antérieurs à svh (Safari < 15.4, Chrome < 108). */
 .mk-page {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   background: var(--paper-100);
