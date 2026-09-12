@@ -25,6 +25,7 @@
       lieu: 'Lieu',
       annee: 'Année',
       liste: 'Vue liste',
+      grille: 'Vue grille',
       tous: 'Tous',
       photo: 'Photo',
       vide: 'Aucun projet dans le fichier projets.txt. Le mode d’emploi est en haut de ce fichier.',
@@ -43,6 +44,7 @@
       lieu: 'Place',
       annee: 'Year',
       liste: 'List view',
+      grille: 'Grid view',
       tous: 'All',
       photo: 'Photo',
       vide: 'No project found in projets.txt.',
@@ -169,15 +171,20 @@
   var survolFin = !window.matchMedia ||
     window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+  var apercuAffiche = null; /* src en cours, pour qu'un second toucher referme */
+
   function montrerApercu(src) {
     var box = document.getElementById('mk-preview');
     if (!box) return;
     var img = box.querySelector('img');
+    apercuAffiche = src;
 
     if (img.getAttribute('src') !== src) {
       box.classList.remove('is-visible');
       img.onload = function () {
-        if (img.getAttribute('src') === src) box.classList.add('is-visible');
+        if (img.getAttribute('src') === src && apercuAffiche === src) {
+          box.classList.add('is-visible');
+        }
       };
       img.onerror = function () { box.classList.remove('is-visible'); };
       img.setAttribute('src', src);
@@ -189,6 +196,7 @@
 
   function masquerApercu() {
     var box = document.getElementById('mk-preview');
+    apercuAffiche = null;
     if (box) box.classList.remove('is-visible');
   }
 
@@ -203,9 +211,18 @@
       row.appendChild(el('span', 'mk-row__meta', p.place));
       row.appendChild(el('span', 'mk-row__year', p.year));
 
-      if (survolFin && p.photo) {
-        row.addEventListener('mouseenter', function () { montrerApercu(p.photo); });
-        row.addEventListener('mouseleave', masquerApercu);
+      if (p.photo) {
+        if (survolFin) {
+          row.addEventListener('mouseenter', function () { montrerApercu(p.photo); });
+          row.addEventListener('mouseleave', masquerApercu);
+        } else {
+          /* Tactile : un toucher ouvre l'aperçu, un second le referme. */
+          row.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (apercuAffiche === p.photo) masquerApercu();
+            else montrerApercu(p.photo);
+          });
+        }
       }
 
       host.appendChild(row);
@@ -267,6 +284,10 @@
     renderFilters();
     renderRows(shown);
     renderGrid(shown);
+
+    /* L'interrupteur annonce la vue vers laquelle il bascule. */
+    var etiquette = document.getElementById('mk-view-label');
+    if (etiquette) etiquette.textContent = state.listView ? t().grille : t().liste;
 
     list.hidden = nothing || !state.listView;
     grid.hidden = nothing || state.listView;
@@ -338,6 +359,12 @@
         state.listView = view.checked;
         render();
       });
+    }
+
+    /* Tactile : refermer l'aperçu en touchant ailleurs ou en faisant défiler. */
+    if (!survolFin) {
+      document.addEventListener('click', masquerApercu);
+      window.addEventListener('scroll', masquerApercu, { passive: true });
     }
 
     applyLang();

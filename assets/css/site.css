@@ -473,9 +473,11 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   background: var(--paper-200);
 }
 
-/* Un écran tactile n'a pas de survol : rien à afficher. */
-@media (hover: none), (pointer: coarse) {
-  .mk-preview { display: none; }
+/* Sur écran tactile, l'aperçu s'ouvre au toucher d'une ligne : il doit donc
+   rester affichable, et prendre plus de largeur qu'il n'en prendrait avec la
+   valeur calculée pour un écran d'ordinateur. */
+@media (max-width: 600px) {
+  .mk-preview img { width: min(78vw, 340px); }
 }
 
 /* ------------------------------------------------------------- vue grille */

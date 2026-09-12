@@ -42,7 +42,10 @@
         <label class="mk-switch">
           <input type="checkbox" class="mk-switch__input" id="mk-view">
           <span class="mk-switch__track" aria-hidden="true"><span class="mk-switch__knob"></span></span>
-          <span data-i18n="liste">Vue liste</span>
+          <!-- Libellé piloté par le JavaScript : il annonce la vue vers
+               laquelle on bascule. Sans JS, on est en grille et le texte
+               statique ci-dessous est le bon. -->
+          <span id="mk-view-label">Vue liste</span>
         </label>
       </div>
 
