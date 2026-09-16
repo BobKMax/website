@@ -106,6 +106,16 @@ texte:
 
 ---
 
+titre: Bureaux
+lieu:
+annee: 2026
+programme: Bureaux
+surface: 2000 m² SDP
+photo: INVENT_Exterior.jpg
+texte: 
+
+---
+
 titre: Centre d'innovation
 lieu: Digital image
 annee: 2023
@@ -143,4 +153,5 @@ programme: Équipement
 surface: 
 photo:GARAGES_Exterior.jpg
 texte:
+
 
