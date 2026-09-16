@@ -137,7 +137,7 @@ texte:
 ---
 
 titre: Garages
-lieu: Lyon
+lieu: Troyes
 annee: 2022
 programme: Équipement
 surface: 
