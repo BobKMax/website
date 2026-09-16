@@ -113,6 +113,7 @@ programme: Équipement
 surface: 1 040 m² SDP
 photo:IGESA_Interior_GEM-5.jpg
 texte:
+
 ---
 
 titre: Appartement B
@@ -123,3 +124,12 @@ surface: 70 m² SDP
 photo:BOEUF_GEM.jpeg
 texte:
 
+---
+
+titre: Etude de Salle
+lieu: Lyon
+annee: 2022
+programme: Equipement
+surface: 
+photo:RAMEAU_Interior-GEM.jpg
+texte:
