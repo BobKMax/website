@@ -131,5 +131,5 @@ lieu: Lyon
 annee: 2022
 programme: Équipement
 surface: 
-photo:RAMEAU_Interior-GEM.jpg
+photo:RAMEAU_Interior-GEM-2.jpg
 texte:
