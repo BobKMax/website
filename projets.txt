@@ -129,7 +129,7 @@ texte:
 titre: Etude de Salle
 lieu: Lyon
 annee: 2022
-programme: Equipement
+programme: Équipement
 surface: 
 photo:RAMEAU_Interior-GEM.jpg
 texte:
