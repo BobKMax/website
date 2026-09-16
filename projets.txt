@@ -133,3 +133,14 @@ programme: Équipement
 surface: 
 photo:RAMEAU_Interior-GEM-2.jpg
 texte:
+
+---
+
+titre: Garages
+lieu: Lyon
+annee: 2022
+programme: Équipement
+surface: 
+photo:GARAGES_Exterior.jpg
+texte:
+
