@@ -65,6 +65,15 @@ texte:
 
 ---
 
+titre: Chalet du Parc
+lieu: Lyon 6
+annee: 2024
+programme: Equipement
+surface: 
+photo:
+texte: 
+---
+
 titre: Cave à vin
 lieu: Meribel
 annee: 2025
