@@ -509,6 +509,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   inset: 0;
   z-index: 20;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   pointer-events: none;
@@ -520,6 +521,16 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 
 /* max-height : en format naturel, un portrait très haut dépasserait
    l'écran. La hauteur prime alors sur la largeur. */
+.mk-preview__compteur {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-muted);
+  padding-top: var(--s-2);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
 .mk-preview img {
   width: clamp(240px, 30vw, 400px);
   max-height: 70vh;
@@ -546,21 +557,35 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   align-items: start;
 }
 
-.mk-card__photo {
+/* Bande de photos d'une carte. Le défilement horizontal est celui du
+   navigateur : au doigt, le balayage est natif, avec l'inertie du système ;
+   scroll-snap arrête la bande pile sur une photo. La barre de défilement est
+   masquée, elle n'a pas sa place dans une vignette. */
+.mk-card__shots {
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   aspect-ratio: var(--vignette-ratio);
   background: var(--paper-200);
-  overflow: hidden;
 }
 
-/* height: auto laisse la photo imposer sa hauteur quand aucun format n'est
-   forcé ; si --vignette-ratio reprend une valeur, le cadre la contraint et
-   object-fit recadre au centre. */
-.mk-card__photo img {
+.mk-card__shots::-webkit-scrollbar { display: none; }
+
+.mk-card__shots img {
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  scroll-snap-align: center;
   display: block;
+  user-select: none;
 }
+
+/* Une seule photo : rien à balayer, le curseur ne promet rien. */
+.mk-card__shots:has(img + img) { cursor: pointer; }
 
 /* ImageFrame, repli sans photographie */
 .mk-frame { margin: 0; }
@@ -603,6 +628,14 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   font-size: var(--text-3xs);
   color: var(--text-muted);
   padding-top: 2px;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+.mk-card__compteur {
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ------------------------------------------------------------------ vide */

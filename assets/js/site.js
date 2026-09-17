@@ -93,7 +93,13 @@
       programme: f.programme || '',
       surface: f.surface || DASH,
       statut: f.statut || DASH,
-      photo: f.photo ? 'photos/' + f.photo : '',
+      /* Une ou plusieurs photos, séparées par une virgule ou un point-virgule.
+         Une seule valeur donne un tableau d'un élément : rien ne change pour
+         les projets déjà saisis. */
+      photos: (f.photo || '').split(/[,;]/)
+        .map(function (n) { return n.trim(); })
+        .filter(Boolean)
+        .map(function (n) { return 'photos/' + n; }),
       text: f.texte || ''
     };
   }
@@ -174,18 +180,33 @@
   var survolFin = !window.matchMedia ||
     window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  var apercuAffiche = null; /* src en cours, pour qu'un second toucher referme */
+  /* Projet dont l'aperçu est ouvert, et rang de la photo affichée : c'est ce
+     couple qui permet à un second clic de passer à la photo suivante plutôt
+     que de rouvrir la première. */
+  var apercuProjet = null;
+  var apercuIndex = 0;
 
-  function montrerApercu(src) {
+  function montrerApercu(p, index) {
     var box = document.getElementById('mk-preview');
-    if (!box) return;
+    if (!box || !p.photos.length) return;
     var img = box.querySelector('img');
-    apercuAffiche = src;
+    var compteur = box.querySelector('.mk-preview__compteur');
+    var src = p.photos[index];
+
+    apercuProjet = p.number;
+    apercuIndex = index;
+
+    if (compteur) {
+      compteur.textContent = p.photos.length > 1
+        ? (index + 1) + ' / ' + p.photos.length
+        : '';
+    }
 
     if (img.getAttribute('src') !== src) {
       box.classList.remove('is-visible');
       img.onload = function () {
-        if (img.getAttribute('src') === src && apercuAffiche === src) {
+        /* on n'affiche que si cette photo est toujours celle demandée */
+        if (img.getAttribute('src') === src && apercuProjet === p.number) {
           box.classList.add('is-visible');
         }
       };
@@ -197,9 +218,26 @@
     }
   }
 
+  /* Un clic ou un toucher sur une ligne déjà ouverte avance d'une photo.
+     Arrivé au bout : on boucle à la souris, où l'aperçu se referme de toute
+     façon en quittant la ligne ; on referme au doigt, où c'est la seule
+     manière de s'en sortir sans viser ailleurs. */
+  function avancerApercu(p) {
+    if (!p.photos.length) return;
+    if (apercuProjet !== p.number) return montrerApercu(p, 0);
+
+    var suivant = apercuIndex + 1;
+    if (suivant >= p.photos.length) {
+      if (!survolFin) return masquerApercu();
+      suivant = 0;
+    }
+    montrerApercu(p, suivant);
+  }
+
   function masquerApercu() {
     var box = document.getElementById('mk-preview');
-    apercuAffiche = null;
+    apercuProjet = null;
+    apercuIndex = 0;
     if (box) box.classList.remove('is-visible');
   }
 
@@ -216,22 +254,69 @@
       row.appendChild(el('span', 'mk-row__data mk-row__statut mk-col-large', p.statut));
       row.appendChild(el('span', 'mk-row__year', p.year));
 
-      if (p.photo) {
+      if (p.photos.length) {
+        row.style.cursor = 'pointer';
         if (survolFin) {
-          row.addEventListener('mouseenter', function () { montrerApercu(p.photo); });
+          row.addEventListener('mouseenter', function () { montrerApercu(p, 0); });
           row.addEventListener('mouseleave', masquerApercu);
-        } else {
-          /* Tactile : un toucher ouvre l'aperçu, un second le referme. */
-          row.addEventListener('click', function (e) {
-            e.stopPropagation();
-            if (apercuAffiche === p.photo) masquerApercu();
-            else montrerApercu(p.photo);
-          });
         }
+        /* Le clic sert dans les deux cas : à la souris il fait défiler les
+           photos, au doigt il ouvre puis fait défiler. */
+        row.addEventListener('click', function (e) {
+          e.stopPropagation();
+          avancerApercu(p);
+        });
       }
 
       host.appendChild(row);
     });
+  }
+
+  /* Carrousel d'une carte de la grille.
+     Le balayage au doigt est celui du navigateur : un conteneur qui défile
+     horizontalement, avec scroll-snap pour qu'il s'arrête pile sur une photo.
+     Rien à programmer pour le geste, et l'inertie d'iOS est conservée.
+     À la souris, un clic avance d'une photo. */
+  function construireCarrousel(p) {
+    var frame = el('div', 'mk-card__shots');
+    frame.setAttribute('role', 'group');
+
+    p.photos.forEach(function (src, i) {
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = p.photos.length > 1
+        ? p.title + ' — photo ' + (i + 1) + ' sur ' + p.photos.length
+        : p.title;
+      img.loading = i === 0 ? 'eager' : 'lazy';
+      img.draggable = false;
+
+      /* Quand aucun format n'est imposé, c'est la première photo qui donne le
+         sien au cadre ; les suivantes s'y conforment, faute de quoi la carte
+         changerait de hauteur à chaque balayage. */
+      if (i === 0) {
+        var caler = function () {
+          if (!img.naturalWidth) return;
+          var impose = getComputedStyle(frame).aspectRatio;
+          if (!impose || impose === 'auto') {
+            frame.style.aspectRatio = img.naturalWidth + ' / ' + img.naturalHeight;
+          }
+        };
+        if (img.complete) caler(); else img.addEventListener('load', caler);
+      }
+      frame.appendChild(img);
+    });
+
+    if (p.photos.length > 1) {
+      frame.addEventListener('click', function () {
+        var largeur = frame.clientWidth;
+        var dernier = frame.scrollWidth - largeur - 2;
+        frame.scrollTo({
+          left: frame.scrollLeft >= dernier ? 0 : frame.scrollLeft + largeur,
+          behavior: 'smooth'
+        });
+      });
+    }
+    return frame;
   }
 
   function renderGrid(shown) {
@@ -242,14 +327,8 @@
     shown.forEach(function (p) {
       var card = el('div');
 
-      if (p.photo) {
-        var frame = el('div', 'mk-card__photo');
-        var img = document.createElement('img');
-        img.src = p.photo;
-        img.alt = p.title;
-        img.loading = 'lazy';
-        frame.appendChild(img);
-        card.appendChild(frame);
+      if (p.photos.length) {
+        card.appendChild(construireCarrousel(p));
       } else {
         var figure = el('figure', 'mk-frame');
         var block = el('div', 'mk-frame__block');
@@ -263,8 +342,22 @@
       line.appendChild(el('span', 'mk-meta mk-card__year', p.year));
       card.appendChild(line);
 
-      var sub = p.programme ? p.place + ' · ' + p.programme : p.place;
-      card.appendChild(el('div', 'mk-meta mk-card__sub', sub));
+      var sub = el('div', 'mk-meta mk-card__sub');
+      sub.appendChild(el('span', null, p.programme ? p.place + ' · ' + p.programme : p.place));
+
+      /* Compteur : sans lui, rien n'indique qu'un projet a plusieurs vues. */
+      if (p.photos.length > 1) {
+        var compteur = el('span', 'mk-card__compteur', '1 / ' + p.photos.length);
+        sub.appendChild(compteur);
+
+        var shots = card.querySelector('.mk-card__shots');
+        shots.addEventListener('scroll', function () {
+          var rang = Math.round(shots.scrollLeft / shots.clientWidth) + 1;
+          rang = Math.min(Math.max(rang, 1), p.photos.length);
+          compteur.textContent = rang + ' / ' + p.photos.length;
+        }, { passive: true });
+      }
+      card.appendChild(sub);
 
       host.appendChild(card);
     });
