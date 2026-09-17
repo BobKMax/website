@@ -93,6 +93,7 @@ annee: 2024
 programme: Equipement
 surface: 
 photo:
+Statut: construit
 texte: 
 ---
 
