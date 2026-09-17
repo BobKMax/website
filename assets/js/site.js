@@ -58,7 +58,7 @@
   var state = {
     lang: 'FR',
     filter: 'Tous',
-    listView: true, /* la page s'ouvre sur la liste ; false pour la grille */
+    listView: true, /* fixé au chargement par vueParDefaut() */
     projects: [],
     loaded: false,
     fileProtocol: false
@@ -441,8 +441,21 @@
 
   /* --------------------------------------------------------------- init */
 
+  /* Vue d'ouverture : la liste sur grand écran, la grille en dessous. Même
+     seuil que les colonnes Surface et Statut dans la feuille de style — un
+     seul point de bascule pour toute la page. Un changement de taille de
+     fenêtre en cours de route ne rebascule rien : le visiteur a pu choisir
+     sa vue entre-temps, ce n'est pas à nous de la lui reprendre. */
+  var PETIT_ECRAN = '(max-width: 960px)';
+
+  function vueParDefaut() {
+    if (!window.matchMedia) return true;
+    return !window.matchMedia(PETIT_ECRAN).matches;
+  }
+
   function init() {
     state.lang = readStoredLang();
+    state.listView = vueParDefaut();
 
     var toggle = document.querySelector('[data-lang-toggle]');
     if (toggle) {
@@ -453,6 +466,9 @@
 
     var view = document.getElementById('mk-view');
     if (view) {
+      /* L'interrupteur doit refléter la vue retenue, sinon son curseur
+         annoncerait l'inverse de ce qui est affiché. */
+      view.checked = state.listView;
       view.addEventListener('change', function () {
         state.listView = view.checked;
         render();
