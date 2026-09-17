@@ -422,9 +422,13 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 
 /* ------------------------------------------------------------- vue liste */
 
+/* Six colonnes sur grand écran : Réf, Projet, Lieu, Surface, Statut, Année.
+   En dessous de 960 px, Surface et Statut sont retirées (voir plus bas) et
+   la grille repasse aux quatre colonnes d'origine. */
 .mk-list__head {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) minmax(0, .8fr) 64px;
+  grid-template-columns:
+    48px minmax(0, 1fr) minmax(0, .8fr) minmax(0, .55fr) minmax(0, .55fr) 64px;
   gap: var(--s-4);
   padding-bottom: var(--s-2);
 }
@@ -436,7 +440,8 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 
 .mk-row {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) minmax(0, .8fr) 64px;
+  grid-template-columns:
+    48px minmax(0, 1fr) minmax(0, .8fr) minmax(0, .55fr) minmax(0, .55fr) 64px;
   gap: var(--s-4);
   align-items: baseline;
   padding: var(--s-3) 0;
@@ -459,6 +464,31 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 .mk-row__meta {
   font-size: var(--text-sm);
   color: var(--text-secondary);
+}
+
+/* Surface et statut : de la donnée, donc le mono du design system, comme la
+   référence et l'année. Pas de passage en capitales ici : « m² » est une
+   unité normalisée, « M² » serait une faute. */
+.mk-row__data {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-secondary);
+}
+
+/* Le statut, lui, est un mot d'état : capitales mono, comme le veut le
+   design system pour tout ce qui est donnée sur le contenu. */
+.mk-row__statut { text-transform: uppercase; }
+
+/* Colonnes réservées aux écrans larges : sur téléphone et petite tablette,
+   la place manque et la liste retrouve ses quatre colonnes. */
+@media (max-width: 960px) {
+  .mk-col-large { display: none; }
+
+  .mk-list__head,
+  .mk-row {
+    grid-template-columns: 48px minmax(0, 1fr) minmax(0, .8fr) 64px;
+  }
 }
 
 .mk-row__year {

@@ -82,6 +82,7 @@ annee: 2024
 programme: Rénovation
 surface: 210 m² SDP
 photo: ZUB_Interior_GEM.jpg 
+Statut: en cours
 texte: 
 
 ---

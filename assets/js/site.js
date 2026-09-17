@@ -22,6 +22,8 @@
       projets: 'Projets',
       projet: 'Projet',
       lieu: 'Lieu',
+      surface: 'Surface',
+      statut: 'Statut',
       annee: 'Année',
       liste: 'Vue liste',
       grille: 'Vue grille',
@@ -40,6 +42,8 @@
       projets: 'Projects',
       projet: 'Project',
       lieu: 'Place',
+      surface: 'Area',
+      statut: 'Status',
       annee: 'Year',
       liste: 'List view',
       grille: 'Grid view',
@@ -88,6 +92,7 @@
       year: f.annee || DASH,
       programme: f.programme || '',
       surface: f.surface || DASH,
+      statut: f.statut || DASH,
       photo: f.photo ? 'photos/' + f.photo : '',
       text: f.texte || ''
     };
@@ -207,6 +212,8 @@
       row.appendChild(el('span', 'mk-row__number', p.number));
       row.appendChild(el('span', 'mk-row__title', p.title));
       row.appendChild(el('span', 'mk-row__meta', p.place));
+      row.appendChild(el('span', 'mk-row__data mk-col-large', p.surface));
+      row.appendChild(el('span', 'mk-row__data mk-row__statut mk-col-large', p.statut));
       row.appendChild(el('span', 'mk-row__year', p.year));
 
       if (p.photo) {
