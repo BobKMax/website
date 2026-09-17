@@ -107,7 +107,7 @@ texte:
 ---
 
 titre: Bureaux
-lieu:
+lieu: Digital image
 annee: 2026
 programme: Bureaux
 surface: 2000 m² SDP
