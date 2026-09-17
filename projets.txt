@@ -43,6 +43,17 @@
 #
 # =====================================================================
 
+
+---
+
+titre: Bureaux
+lieu: Digital image
+annee: 2026
+programme: Bureaux
+surface: 2000 m² SDP
+photo: INVENT_Exterior.jpg
+texte: 
+
 ---
 
 titre: Centre d'innovation
@@ -112,16 +123,6 @@ surface: 50 m² SDP
 photo: DOYENNE_RENDER_GEM-5b.jpg
 texte: 
 
-
----
-
-titre: Bureaux
-lieu: Digital image
-annee: 2026
-programme: Bureaux
-surface: 2000 m² SDP
-photo: INVENT_Exterior.jpg
-texte: 
 
 ---
 
