@@ -152,7 +152,7 @@ lieu: Prevessin, Fr
 annee: 2023
 programme: Bureaux
 surface: 
-photo:CERN_Exterior.jpg
+photo:CERN_Exterior-2.jpg
 texte:
 
 ---
