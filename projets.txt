@@ -163,5 +163,13 @@ programme: Equipement
 surface: 
 photo:GARAGES_Exterior.jpg
 texte:
+---
 
+titre: Maison B
+lieu: Ecully, Fr
+annee: 2019
+programme: Logement
+surface: 160 m² SDP
+photo:
+texte:
 
