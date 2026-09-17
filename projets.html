@@ -6,7 +6,7 @@
 <title>Projets — Maxime Kreiter, Architecte HMONP, Lyon</title>
 <meta name="description" content="Index des projets de Maxime Kreiter, architecte HMONP à Lyon : réhabilitation, logement et équipement public, du diagnostic à la livraison.">
 <link rel="stylesheet" href="assets/ds/styles.css">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=2026-09-12">
 </head>
 <body>
 
@@ -36,16 +36,16 @@
       <div class="mk-index__controls">
         <div class="mk-filters" id="mk-filters"></div>
         <label class="mk-switch">
-          <input type="checkbox" class="mk-switch__input" id="mk-view">
+          <input type="checkbox" class="mk-switch__input" id="mk-view" checked>
           <span class="mk-switch__track" aria-hidden="true"><span class="mk-switch__knob"></span></span>
           <!-- Libellé piloté par le JavaScript : il annonce la vue vers
                laquelle on bascule. Sans JS, on est en grille et le texte
                statique ci-dessous est le bon. -->
-          <span id="mk-view-label">Vue liste</span>
+          <span id="mk-view-label">Vue grille</span>
         </label>
       </div>
 
-      <div id="mk-list" hidden>
+      <div id="mk-list">
         <div class="mk-list__head">
           <span class="mk-meta">Réf.</span>
           <span class="mk-meta" data-i18n="projet">Projet</span>
@@ -55,7 +55,7 @@
         <div class="mk-list__rows" id="mk-rows"></div>
       </div>
 
-      <div class="mk-grid" id="mk-grid"></div>
+      <div class="mk-grid" id="mk-grid" hidden></div>
 
       <!-- Aperçu affiché au centre de l'écran au survol d'une ligne, en vue
            liste. Rempli par le JavaScript ; sans lui, il reste vide. -->
@@ -87,6 +87,6 @@
 
 </div>
 
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=2026-09-12"></script>
 </body>
 </html>

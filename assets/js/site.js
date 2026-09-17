@@ -19,7 +19,6 @@
       atelier: 'Atelier',
       suivre: 'Suivre',
       voir: 'Voir les projets',
-      garde: 'Garde',
       projets: 'Projets',
       projet: 'Projet',
       lieu: 'Lieu',
@@ -38,7 +37,6 @@
       atelier: 'Studio',
       suivre: 'Follow',
       voir: 'View projects',
-      garde: 'Cover',
       projets: 'Projects',
       projet: 'Project',
       lieu: 'Place',
@@ -56,7 +54,7 @@
   var state = {
     lang: 'FR',
     filter: 'Tous',
-    listView: false,
+    listView: true, /* la page s'ouvre sur la liste ; false pour la grille */
     projects: [],
     loaded: false,
     fileProtocol: false
