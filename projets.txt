@@ -157,7 +157,7 @@ texte:
 ---
 
 titre: Garages
-lieu: Troyes
+lieu: Troyes, Fr
 annee: 2022
 programme: Équipement
 surface: 
