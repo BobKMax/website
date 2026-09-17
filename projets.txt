@@ -156,10 +156,10 @@ texte:
 
 ---
 
-titre: Garages
+titre: Ateliers
 lieu: Troyes, Fr
 annee: 2022
-programme: Équipement
+programme: Equipement
 surface: 
 photo:GARAGES_Exterior.jpg
 texte:
