@@ -147,6 +147,15 @@ texte:
 
 ---
 
+titre: CERN
+lieu: Prevessin, Fr
+annee: 2023
+programme: Bureaux
+surface: 
+photo:CERN_Exterior.jpg
+texte:
+
+---
 titre: Etude de Salle
 lieu: Lyon 1, Fr
 annee: 2022
