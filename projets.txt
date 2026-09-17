@@ -103,6 +103,7 @@ annee: 2025
 programme: Commerce
 surface: 40 m² SDP
 photo: MERIBEL_Interior.png
+Statut: construit
 texte: 
 
 ---
@@ -113,6 +114,7 @@ annee: 2025
 programme: Équipement
 surface: 100 m² SDP
 photo: TULLISTES-Interior_6.jpg
+Statut: construit
 texte: 
 
 ---
@@ -124,6 +126,7 @@ annee: 2025
 programme: Logement
 surface: 50 m² SDP
 photo: DOYENNE_RENDER_GEM-5b.jpg
+Statut: construit
 texte: 
 
 
@@ -145,6 +148,7 @@ annee: 2023
 programme: Logement
 surface: 70 m² SDP
 photo:BOEUF_GEM.jpeg
+Statut: construit
 texte:
 
 ---
@@ -155,6 +159,7 @@ annee: 2023
 programme: Bureaux
 surface: 
 photo:CERN_Exterior-2.jpg
+Statut: compétition
 texte:
 
 ---
@@ -164,6 +169,7 @@ annee: 2022
 programme: Équipement
 surface: 
 photo:RAMEAU_Interior-GEM-2.jpg
+Statut: mission amo
 texte:
 
 ---
@@ -183,5 +189,6 @@ annee: 2019
 programme: Logement
 surface: 160 m² SDP
 photo:
+Statut: construit
 texte:
 
