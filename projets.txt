@@ -180,6 +180,7 @@ annee: 2022
 programme: Equipement
 surface: 
 photo:GARAGES_Exterior.jpg
+Statut: construit
 texte:
 ---
 
