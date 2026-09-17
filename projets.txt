@@ -77,7 +77,7 @@ texte:
 ---
 
 titre: Chalet du Parc
-lieu: Lyon 6
+lieu: Lyon 6, Fr
 annee: 2024
 programme: Equipement
 surface: 
@@ -86,7 +86,7 @@ texte:
 ---
 
 titre: Cave à vin
-lieu: Meribel
+lieu: Meribel, Fr
 annee: 2025
 programme: Commerce
 surface: 40 m² SDP
@@ -106,7 +106,7 @@ texte:
 ---
 
 titre: Maison Z
-lieu: St-Didier-au-Mont-d'Or
+lieu: St-Didier-au-Mont-d'Or, Fr
 annee: 2024
 programme: Rénovation
 surface: 210 m² SDP
@@ -116,7 +116,7 @@ texte:
 ---
 
 titre: Appartement D
-lieu: Lyon
+lieu: Lyon, Fr
 annee: 2025
 programme: Logement
 surface: 50 m² SDP
@@ -137,7 +137,7 @@ texte:
 ---
 
 titre: Appartement B
-lieu: Lyon 5
+lieu: Lyon 5, Fr
 annee: 2023
 programme: Logement
 surface: 70 m² SDP
@@ -147,7 +147,7 @@ texte:
 ---
 
 titre: Etude de Salle
-lieu: Lyon
+lieu: Lyon 1, Fr
 annee: 2022
 programme: Équipement
 surface: 
