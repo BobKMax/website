@@ -76,6 +76,16 @@ texte:
 
 ---
 
+titre: Maison Z
+lieu: St-Didier-au-Mont-d'Or, Fr
+annee: 2024
+programme: Rénovation
+surface: 210 m² SDP
+photo: ZUB_Interior_GEM.jpg 
+texte: 
+
+---
+
 titre: Chalet du Parc
 lieu: Lyon 6, Fr
 annee: 2024
@@ -105,15 +115,6 @@ texte:
 
 ---
 
-titre: Maison Z
-lieu: St-Didier-au-Mont-d'Or, Fr
-annee: 2024
-programme: Rénovation
-surface: 210 m² SDP
-photo: ZUB_Interior_GEM.jpg 
-texte: 
-
----
 
 titre: Appartement D
 lieu: Lyon, Fr
