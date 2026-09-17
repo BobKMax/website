@@ -168,7 +168,7 @@ lieu: Troyes, Fr
 annee: 2022
 programme: Equipement
 surface: 
-photo:GARAGES_Exterior.jpg, GARAGES_Exterior_RH.jpg
+photo:GARAGES_Exterior.jpg, GARAGES_Exterior_RH2.png
 Statut: construit
 texte:
 ---
