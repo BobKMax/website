@@ -279,7 +279,7 @@
       row.appendChild(el('span', 'mk-row__year', p.year));
 
       if (p.photos.length) {
-        row.style.cursor = 'pointer';
+        row.classList.add('mk-row--cliquable');
         if (survolFin) {
           row.addEventListener('mouseenter', function () { montrerApercu(p, 0); });
           row.addEventListener('mouseleave', masquerApercu);

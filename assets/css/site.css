@@ -25,6 +25,18 @@
   /* L'aplat affiché quand un projet n'a pas de photo est vide : il lui faut
      un format à lui, sans quoi il n'aurait aucune hauteur. */
   --vignette-ratio-repli: 9 / 10;
+
+  /* Curseur des zones cliquables : un disque d'encre à la place de la main.
+     Le dessin est un SVG écrit directement dans la feuille de style, donc
+     aucun fichier à héberger. Les deux nombres après l'adresse placent la
+     pointe active au centre du disque.
+     32 px est la taille sûre : au-delà, certains navigateurs abandonnent le
+     curseur sur mesure et reviennent à la main. Pour l'agrandir, changez
+     width, height, cx, cy, r et les deux nombres de fin, tous solidaires.
+     « pointer » en fin de ligne est le repli si l'image est refusée. */
+  --curseur-clic:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><circle cx="16" cy="16" r="15" fill="%23111110"/></svg>') 16 16,
+    pointer;
 }
 
 /* ------------------------------------------------------------------ shell */
@@ -120,7 +132,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
+  cursor: var(--curseur-clic);
   font-family: var(--font-mono);
   font-size: var(--text-2xs);
   letter-spacing: var(--tracking-caps);
@@ -141,7 +153,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 .mk-langbtn {
   background: none;
   border: var(--hairline) solid var(--border-mid);
-  cursor: pointer;
+  cursor: var(--curseur-clic);
   width: 30px;
   height: 20px;
   font-family: var(--font-mono);
@@ -352,7 +364,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   border: var(--hairline) solid var(--border-mid);
   background: transparent;
   color: var(--text-meta);
-  cursor: pointer;
+  cursor: var(--curseur-clic);
   transition: var(--transition-color);
 }
 
@@ -374,7 +386,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   display: inline-flex;
   align-items: center;
   gap: var(--s-3);
-  cursor: pointer;
+  cursor: var(--curseur-clic);
   font-size: var(--text-base);
   color: var(--text-primary);
 }
@@ -448,6 +460,9 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   border-bottom: var(--hairline) solid var(--border-hairline);
   color: var(--text-primary);
 }
+
+/* Ligne dont le projet a au moins une photo : elle ouvre l'aperçu. */
+.mk-row--cliquable { cursor: var(--curseur-clic); }
 
 .mk-row__number {
   font-family: var(--font-mono);
@@ -585,7 +600,7 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 }
 
 /* Une seule photo : rien à balayer, le curseur ne promet rien. */
-.mk-card__shots:has(img + img) { cursor: pointer; }
+.mk-card__shots:has(img + img) { cursor: var(--curseur-clic); }
 
 /* ImageFrame, repli sans photographie */
 .mk-frame { margin: 0; }
