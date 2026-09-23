@@ -77,6 +77,14 @@
 a { color: var(--ink-900); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--sage-700); }
 
+/* Tout ce qui se clique porte le disque, liens de texte compris. */
+a[href],
+button,
+label,
+[role="button"] {
+  cursor: var(--curseur-clic);
+}
+
 /* --------------------------------------------------------------- wordmark */
 
 .mk-wordmark {
@@ -461,7 +469,10 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   color: var(--text-primary);
 }
 
-/* Ligne dont le projet a au moins une photo : elle ouvre l'aperçu. */
+/* Le disque n'apparaît que sur les lignes où le clic sert à quelque chose,
+   c'est-à-dire celles dont le projet a plusieurs photos à faire défiler.
+   Ailleurs, la flèche : rien n'est promis. */
+.mk-row { cursor: default; }
 .mk-row--cliquable { cursor: var(--curseur-clic); }
 
 .mk-row__number {

@@ -279,7 +279,9 @@
       row.appendChild(el('span', 'mk-row__year', p.year));
 
       if (p.photos.length) {
-        row.classList.add('mk-row--cliquable');
+        /* Une seule photo : le survol l'affiche déjà, le clic n'apporte rien
+           et ne doit donc rien annoncer. */
+        if (p.photos.length > 1) row.classList.add('mk-row--cliquable');
         if (survolFin) {
           row.addEventListener('mouseenter', function () { montrerApercu(p, 0); });
           row.addEventListener('mouseleave', masquerApercu);
