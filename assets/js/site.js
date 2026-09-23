@@ -76,15 +76,39 @@
      l'en-tête du fichier, le modèle à copier — est écarté. */
   function parseBloc(text, position) {
     var f = {};
+    var dernierChamp = null;
+
     text.split(/\r?\n/).forEach(function (line) {
       if (/^\s*#/.test(line)) return;
+
+      /* Une ligne vide cl\u00f4t le champ en cours : ce qui suit ne peut plus s'y
+         rattacher par m\u00e9garde. */
+      if (!line.trim()) { dernierChamp = null; return; }
+
       var i = line.indexOf(':');
-      if (i < 1) return;
+
+      /* Pas de \u00ab cl\u00e9: \u00bb : c'est la suite du champ pr\u00e9c\u00e9dent. Une longue liste
+         de photos peut ainsi s'\u00e9crire sur autant de lignes qu'on veut, et un
+         texte se poursuivre \u00e0 la ligne. */
+      if (i < 1) {
+        /* on garde la marque du retour à la ligne : pour les photos, elle
+           sépare deux noms aussi sûrement qu'une virgule, ce qui évite qu'un
+           oubli de ponctuation ne colle deux fichiers en un seul */
+        if (dernierChamp) f[dernierChamp] += '\n' + line.trim();
+        return;
+      }
+
       var key = line.slice(0, i).trim().toLowerCase()
         .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
       f[key] = line.slice(i + 1).trim();
+      dernierChamp = key;
     });
     if (!f.titre) return null;
+
+    /* Hors photos, un champ écrit sur plusieurs lignes se relit d'un trait. */
+    Object.keys(f).forEach(function (k) {
+      if (k !== 'photo') f[k] = f[k].replace(/\s*\n\s*/g, ' ');
+    });
     return {
       number: String(position).padStart(2, '0'),
       title: f.titre,
@@ -96,7 +120,7 @@
       /* Une ou plusieurs photos, séparées par une virgule ou un point-virgule.
          Une seule valeur donne un tableau d'un élément : rien ne change pour
          les projets déjà saisis. */
-      photos: (f.photo || '').split(/[,;]/)
+      photos: (f.photo || '').split(/[,;\n]/)
         .map(function (n) { return n.trim(); })
         .filter(Boolean)
         .map(function (n) { return 'photos/' + n; }),
