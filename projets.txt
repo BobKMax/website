@@ -178,7 +178,7 @@ lieu: Ecully, Fr
 annee: 2019
 programme: Logement
 surface: 160 m² SDP
-photo:
+photo: BOUVY_Exterior-0.jpg
 Statut: construit
 texte:
 
