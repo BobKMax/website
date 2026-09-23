@@ -90,7 +90,7 @@ texte:
 titre: Chalet du Parc
 lieu: Lyon 6, Fr
 annee: 2024
-programme: Equipement
+programme: équipement
 surface: 
 photo:
 Statut: construit
@@ -166,7 +166,7 @@ texte:
 titre: Ateliers
 lieu: Troyes, Fr
 annee: 2022
-programme: Equipement
+programme: logement
 surface: 
 photo:GARAGES_Exterior.jpg, GARAGES_Exterior_RH2.png
 Statut: construit
