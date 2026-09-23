@@ -113,7 +113,7 @@ lieu: Ecully, Fr
 annee: 2025
 programme: Équipement
 surface: 100 m² SDP
-photo: TULLISTES-Interior_6.jpg
+photo: TULLISTES-Interior_7.jpg
 Statut: construit
 texte: 
 
