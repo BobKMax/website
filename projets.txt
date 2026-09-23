@@ -79,7 +79,7 @@ texte:
 titre: Maison Z
 lieu: St-Didier-au-Mont-d'Or, Fr
 annee: 2024
-programme: Rénovation
+programme: Logement
 surface: 210 m² SDP
 photo: ZUB_Interior_GEM.jpg 
 Statut: en cours
@@ -90,7 +90,7 @@ texte:
 titre: Chalet du Parc
 lieu: Lyon 6, Fr
 annee: 2024
-programme: équipement
+programme: Équipement
 surface: 
 photo:
 Statut: construit
@@ -166,7 +166,7 @@ texte:
 titre: Ateliers
 lieu: Troyes, Fr
 annee: 2022
-programme: logement
+programme: Équipement
 surface: 
 photo:GARAGES_Exterior.jpg, GARAGES_Exterior_RH2.png
 Statut: construit
