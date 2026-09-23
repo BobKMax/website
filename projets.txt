@@ -92,7 +92,7 @@ lieu: Lyon 6, Fr
 annee: 2024
 programme: Équipement
 surface: 
-photo:
+photo: CHALET_chantier.jpg
 Statut: construit
 texte: 
 ---
