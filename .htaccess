@@ -1,0 +1,48 @@
+# ===========================================================================
+# maximekreiter.fr — réglage du cache des navigateurs
+# Hébergement OVH mutualisé (serveur Apache)
+# ===========================================================================
+#
+# OÙ LE METTRE
+#   À la racine du dépôt GitHub, à côté de index.html — là où OVH va le
+#   chercher. Son nom doit être exactement :
+#
+#       .htaccess
+#
+#   avec le point devant et sans extension. Créez-le directement dans
+#   l'interface GitHub (Add file › Create new file) : un éditeur de texte
+#   local ajoute souvent un « .txt » invisible qui le rendrait inopérant.
+#
+# CE QU'IL FAIT
+#   Il distingue deux familles de fichiers.
+#
+#   Les pages, le style, le script et vos fiches projets changent souvent :
+#   le navigateur doit demander au serveur si sa copie est encore valable
+#   avant de s'en servir. Si rien n'a bougé, le serveur répond « inchangé »
+#   sans renvoyer le fichier — c'est presque aussi rapide qu'un cache, et
+#   jamais périmé. Fini les pages à moitié mises en forme.
+#
+#   Les photographies et les polices, elles, changent rarement et pèsent
+#   lourd : elles sont gardées une semaine, pour ne pas les retélécharger à
+#   chaque visite. Si vous remplacez une photo, changez son nom de fichier
+#   (halle-01.jpg devient halle-01b.jpg) et reportez-le dans projets.txt.
+#
+# COMMENT VÉRIFIER QUE C'EST ACTIF
+#   Sur le site, clic droit › Inspecter › onglet Réseau, rechargez, puis
+#   cliquez sur la ligne « site.css ». Dans les en-têtes de réponse, vous
+#   devez lire :  Cache-Control: no-cache, must-revalidate
+# ===========================================================================
+<IfModule mod_headers.c>
+  # --- Ce qui doit toujours être à jour -----------------------------------
+  <FilesMatch "\.(html|css|js|txt)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  # --- Ce qui peut être gardé une semaine ---------------------------------
+  <FilesMatch "\.(jpg|jpeg|png|webp|avif|gif|svg|ico)$">
+    Header set Cache-Control "max-age=604800"
+  </FilesMatch>
+  # --- Polices : un mois --------------------------------------------------
+  <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+    Header set Cache-Control "max-age=2592000"
+  </FilesMatch>
+</IfModule>
