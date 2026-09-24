@@ -58,6 +58,27 @@ Les filtres de l'index se construisent automatiquement à partir du champ
 Rien d'autre n'est à modifier : le site relit le fichier à chaque visite.
 
 
+LA MISE À JOUR ET LE CACHE DES NAVIGATEURS
+-----------------------------------------
+
+Il n'y a rien à faire : le fichier .htaccess, à la racine du site, dit au
+serveur comment traiter chaque type de fichier.
+
+Les pages, le style, le script et projets.txt sont revalidés à chaque
+visite : le navigateur demande au serveur si sa copie est encore bonne, et
+ne la retélécharge que si elle a changé. Vos modifications sont donc
+visibles immédiatement, sans que personne ait à vider son cache.
+
+Les photographies et les polices sont gardées une semaine, parce qu'elles
+pèsent lourd et changent rarement. Conséquence : si vous remplacez une
+photo, changez son nom de fichier (halle-01.jpg devient halle-01b.jpg) et
+reportez le nouveau nom dans projets.txt. Sinon les visiteurs qui ont déjà
+vu la page pourraient garder l'ancienne image quelques jours.
+
+Ne supprimez pas le fichier .htaccess : son nom commence par un point, ce
+qui le rend invisible dans certains explorateurs de fichiers.
+
+
 CE QUI RESTE À FAIRE
 --------------------
 
