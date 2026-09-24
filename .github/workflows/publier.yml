@@ -1,0 +1,96 @@
+# ============================================================================
+# PUBLIER LE SITE — sans jamais avoir à vider le cache
+# ============================================================================
+#
+# À quoi ça sert
+#   Les navigateurs gardent en mémoire la feuille de style et le script. Après
+#   une mise en ligne, ils peuvent continuer à servir les anciens pendant un
+#   moment, d'où les pages à moitié mises en forme.
+#   Ce fichier calcule, à chaque publication, une empreinte du contenu de
+#   site.css et site.js, et l'inscrit dans les pages. Tant qu'un fichier ne
+#   change pas, son empreinte est la même et les navigateurs gardent leur
+#   copie ; dès qu'il change, l'empreinte change et ils rechargent.
+#
+# Ce que vous avez à faire
+#   1. Déposer ce fichier dans votre dépôt, à l'emplacement exact :
+#        .github/workflows/publier.yml
+#      (les deux dossiers sont à créer s'ils n'existent pas, le point devant
+#      github compris)
+#   2. Dans le dépôt : Settings › Pages › Build and deployment › Source,
+#      choisir « GitHub Actions » à la place de « Deploy from a branch ».
+#      Votre domaine maximekreiter.fr reste configuré, rien à refaire.
+#
+#   Il n'y a rien à régler dans ce fichier : ni le nom de la branche, ni
+#   l'emplacement du site, il les trouve tout seul.
+#
+# Comment vérifier que ça marche
+#   Après un push, onglet « Actions » du dépôt : une exécution « Publier le
+#   site » doit apparaître. Ouvrez-la, l'étape « Estampiller » affiche les
+#   lignes obtenues — vous devez y lire site.css?v= suivi de huit caractères.
+# ============================================================================
+
+name: Publier le site
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publier:
+    # Seule la branche principale publie, qu'elle s'appelle main ou master.
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Trouver le dossier du site
+        id: dossier
+        run: |
+          CHEMIN=$(find . -name index.html -not -path './.git/*' -not -path './node_modules/*' \
+                   -printf '%d %p\n' | sort -n | head -1 | cut -d' ' -f2-)
+          if [ -z "$CHEMIN" ]; then
+            echo "Aucun index.html trouvé dans le dépôt." >&2
+            exit 1
+          fi
+          DOSSIER=$(dirname "$CHEMIN")
+          echo "Site trouvé dans : $DOSSIER"
+          echo "dossier=$DOSSIER" >> "$GITHUB_OUTPUT"
+
+      - name: Estampiller le style et le script
+        run: |
+          cd "${{ steps.dossier.outputs.dossier }}"
+          if [ ! -f assets/css/site.css ] || [ ! -f assets/js/site.js ]; then
+            echo "site.css ou site.js manquant : rien à estampiller, on publie tel quel."
+            exit 0
+          fi
+          CSS=$(sha1sum assets/css/site.css | cut -c1-8)
+          JS=$(sha1sum assets/js/site.js | cut -c1-8)
+          for f in *.html; do
+            sed -i "s|assets/css/site\.css[^\"]*|assets/css/site.css?v=$CSS|g" "$f"
+            sed -i "s|assets/js/site\.js[^\"]*|assets/js/site.js?v=$JS|g" "$f"
+          done
+          echo "Empreintes appliquées :"
+          grep -n 'site\.\(css\|js\)' *.html
+
+      - name: Préparer l'archive
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.dossier.outputs.dossier }}
+
+      - name: Mettre en ligne
+        id: deploiement
+        uses: actions/deploy-pages@v4
