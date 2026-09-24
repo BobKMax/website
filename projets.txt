@@ -81,7 +81,8 @@ lieu: St-Didier-au-Mont-d'Or, Fr
 annee: 2024
 programme: Logement
 surface: 210 m² SDP
-photo: ZUB_Interior_GEM.jpg 
+photo: ZUB_Interior_GEM.jpg,
+ZUB_Interior_GEM-2.jpg
 Statut: en cours
 texte: 
 
