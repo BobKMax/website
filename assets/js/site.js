@@ -14,7 +14,7 @@
 
   var COPY = {
     FR: {
-      gardeLede: 'Atelier d’architecture basé à Lyon.\nRéhabilitation, équipement public. Le travail porte sur ce qui existe déjà : structures conservées, matières locales, interventions mesurées.',
+      gardeLede: 'Une architecture sobre et réversible, pensée pour durer et changer d’usage.\nRetravailler l’existant, réemployer, privilégier les ressources du territoire.\nPour des maîtres d’ouvrage publics, privés ou associatifs.',
       indexLede: 'Opérations récentes, du diagnostic à la livraison.',
       atelier: 'Atelier',
       suivre: 'Suivre',
@@ -34,7 +34,7 @@
       videFichier: 'Les projets se lisent dans le fichier projets.txt, ce qui demande une adresse http://. Ouvrez le site depuis son hébergeur ou un serveur local plutôt qu’en double-cliquant le fichier.'
     },
     EN: {
-      gardeLede: 'Architecture practice based in Lyon.\nRehabilitation, public buildings. The work starts from what is already there: retained structures, local materials, measured interventions.',
+      gardeLede: 'Reversible architecture, made to last and to change use.\nReworking what already stands, reusing, favouring local resources.\nFor public, private and non-profit clients.',
       indexLede: 'Recent operations, from survey to completion.',
       atelier: 'Studio',
       suivre: 'Follow',
