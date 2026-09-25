@@ -274,6 +274,9 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   flex-direction: column;
   justify-content: center;
   padding: clamp(32px, 9vw, 96px) 0;
+  /* Sans cela, ce bloc s'élargirait pour contenir la plus longue phrase de
+     l'accroche au lieu de la laisser se replier sur un écran étroit. */
+  min-width: 0;
 }
 
 .mk-garde__name {
@@ -295,7 +298,11 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 .mk-garde__name-b { font-weight: var(--weight-regular); color: var(--text-secondary); }
 
 .mk-garde__lede {
-  max-width: 46ch;
+  /* Le bloc prend exactement la largeur de sa plus longue phrase : chaque
+     ligne du texte reste d'un seul tenant. Sur un écran trop étroit,
+     max-width reprend la main et les phrases se replient. */
+  width: max-content;
+  max-width: 100%;
   font-size: clamp(15px, 3.6vw, var(--type-lede-size));
   line-height: var(--leading-snug);
   color: var(--text-meta);

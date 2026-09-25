@@ -14,7 +14,7 @@
 
   var COPY = {
     FR: {
-      gardeLede: 'Une architecture sobre et réversible, pensée pour durer et changer d’usage.\nRetravailler l’existant, réemployer, privilégier les ressources du territoire.\nPour des maîtres d’ouvrage publics, privés ou associatifs.',
+      gardeLede: 'Une architecture sobre et réversible, pensée pour durer et changer d’usage.\nTransformer l’existant, réemployer, privilégier les ressources du territoire.\nPour des maîtres d’ouvrage publics, privés ou associatifs.',
       indexLede: 'Opérations récentes, du diagnostic à la livraison.',
       atelier: 'Atelier',
       suivre: 'Suivre',
@@ -34,7 +34,7 @@
       videFichier: 'Les projets se lisent dans le fichier projets.txt, ce qui demande une adresse http://. Ouvrez le site depuis son hébergeur ou un serveur local plutôt qu’en double-cliquant le fichier.'
     },
     EN: {
-      gardeLede: 'Reversible architecture, made to last and to change use.\nReworking what already stands, reusing, favouring local resources.\nFor public, private and non-profit clients.',
+      gardeLede: 'Reversible architecture, made to last and to change use.\nTransforming what already stands, reusing, favouring local resources.\nFor public, private and non-profit clients.',
       indexLede: 'Recent operations, from survey to completion.',
       atelier: 'Studio',
       suivre: 'Follow',
