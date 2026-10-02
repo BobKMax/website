@@ -39,7 +39,7 @@
      Chaque projet reçoit son décalage de son numéro de projet : il ne change
      donc ni d'une visite à l'autre, ni quand on redimensionne la fenêtre.
      Pour en imposer un précis, le champ « decalage: » dans projets.txt. */
-  --decalage: 0.12;
+  --decalage: 0.6;
 
   /* Cadrage des vignettes de l'index.
        auto    chaque photo garde son format — paysages et portraits
