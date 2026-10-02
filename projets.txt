@@ -53,6 +53,7 @@ programme: Bureaux
 surface: 2000 m² SDP
 photo: INVENT_Exterior.jpg
 texte: 
+taille: 2
 
 ---
 
