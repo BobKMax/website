@@ -25,21 +25,15 @@
      grande, moins il y en a. */
   --vignette-base: 280px;
 
-  /* Écart entre deux tailles consécutives. 0.25 signifie qu'une vignette
-     « taille: 2 » est 25 % plus large qu'une « taille: 1 », une « taille: 3 »
-     50 % plus large, et ainsi de suite. Mettez 0.15 pour un effet plus
-     discret, 0.4 pour un contraste plus franc. */
-  --taille-pas: 0.25;
-
-  /* Désalignement vertical des vignettes, pour qu'une rangée ne forme pas
-     une ligne droite. La valeur est l'amplitude maximale, en fraction de la
-     largeur d'une vignette : 0.12 veut dire qu'une vignette peut descendre
-     jusqu'à 12 % de sa propre largeur sous le haut de sa rangée.
-     0 remet tout le monde aligné, comme avant.
-     Chaque projet reçoit son décalage de son numéro de projet : il ne change
-     donc ni d'une visite à l'autre, ni quand on redimensionne la fenêtre.
-     Pour en imposer un précis, le champ « decalage: » dans projets.txt. */
-  --decalage: 0.6;
+  /* Finesse du champ « taille: ». Les largeurs se comptent en colonnes
+     fines et invisibles : une vignette de référence en occupe le nombre
+     indiqué ici, et chaque cran de « taille: » en ajoute une seule.
+       4   un cran élargit d'environ un quart   (le réglage livré)
+       2   un cran élargit de moitié            contraste franc
+       8   un cran élargit d'un huitième        nuances fines
+     Ces colonnes ne se voient pas : elles donnent aux vignettes des bords
+     communs, sans lesquels aucune ne pourrait remonter sous sa voisine. */
+  --vignette-colonnes: 4;
 
   /* Cadrage des vignettes de l'index.
        auto    chaque photo garde son format — paysages et portraits
@@ -614,23 +608,23 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 
 /* align-items: start — les vignettes n'ayant plus toutes la même hauteur,
    chaque carte se cale en haut de sa rangée plutôt que de s'étirer. */
-/* La grille n'est pas une grille CSS mais une rangée de blocs qui se replie.
-   C'est ce qui permet au champ « taille: » de régler les largeurs au pour
-   cent près : une grille CSS ne sait compter qu'en colonnes entières, donc
-   une vignette y serait fatalement une, deux ou trois fois plus large qu'une
-   autre, jamais 25 % plus large.
-   Chaque vignette reçoit du JavaScript un poids : la place libre de la
-   rangée se partage dans ce rapport, et la rangée se remplit toujours
-   exactement — il n'y a donc plus de blanc en fin de rangée, et l'ordre de
-   projets.txt est strictement respecté.
-   Sur téléphone il n'entre qu'une vignette par rangée : elle prend toute la
-   largeur et le champ « taille: » n'y change rien, comme voulu. */
+/* Les vignettes ne sont ni en grille CSS ni en rangées : chacune est posée
+   à sa place par le JavaScript, de façon à remonter jusqu'à buter sur celles
+   qui la précèdent. Aucune mise en page du navigateur ne sait faire cela —
+   une rangée aligne ses blocs sur le haut et laisse du vide sous les plus
+   courts, c'est précisément ce qu'on veut supprimer.
+   Conséquence : la hauteur du conteneur est posée elle aussi par le
+   JavaScript, sans quoi il serait plat.
+   La déclaration « gap » ne sert plus à espacer quoi que ce soit — un
+   conteneur d'éléments positionnés ne l'applique pas — mais c'est là que le
+   JavaScript lit les deux écarts, horizontal et vertical. Les changer ici
+   change bien l'espacement de la grille. */
 .mk-grid {
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
   gap: var(--s-6) var(--grid-gap);
-  align-items: flex-start;
 }
+
+.mk-grid > * { position: absolute; top: 0; left: 0; }
 
 /* Bande de photos d'une carte. Le défilement horizontal est celui du
    navigateur : au doigt, le balayage est natif, avec l'inertie du système ;
