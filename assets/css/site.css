@@ -12,6 +12,11 @@
    une teinte plus soutenue, à 4,41:1. */
 
 :root {
+  /* Marqueur de version : sert uniquement à vérifier, depuis la page
+     diagnostic.html, quelle feuille de style le navigateur utilise
+     réellement. N'a aucun effet sur l'affichage. */
+  --mk-version: "2026-10-02-b";
+
   --accent-contact: #EA580C;
   --accent-contact-hover: #C2410C;
 
@@ -274,8 +279,6 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   flex-direction: column;
   justify-content: center;
   padding: clamp(32px, 9vw, 96px) 0;
-  /* Sans cela, ce bloc s'élargirait pour contenir la plus longue phrase de
-     l'accroche au lieu de la laisser se replier sur un écran étroit. */
   min-width: 0;
 }
 
@@ -298,17 +301,24 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 .mk-garde__name-b { font-weight: var(--weight-regular); color: var(--text-secondary); }
 
 .mk-garde__lede {
-  /* Le bloc prend exactement la largeur de sa plus longue phrase : chaque
-     ligne du texte reste d'un seul tenant. Sur un écran trop étroit,
-     max-width reprend la main et les phrases se replient. */
-  width: max-content;
-  max-width: 100%;
+  /* Aucune largeur maximale : les retours à la ligne du texte suffisent à
+     découper les phrases, le bloc n'a donc pas à être bridé et chaque phrase
+     tient sur une ligne. Sur un écran étroit elles se replient d'elles-mêmes.
+
+     Le design system pose « text-wrap: pretty » sur body, donc tout le site
+     en hérite. Cette propriété autorise le navigateur à recouper une ligne
+     qui tiendrait, pour équilibrer le paragraphe : c'est ce que faisait
+     Safari sur la première phrase. On revient ici au découpage ordinaire.
+     Les deux écritures sont données : la seconde pour les navigateurs qui ne
+     comprennent que la propriété détaillée. */
+  text-wrap: wrap;
+  text-wrap-style: auto;
+
   font-size: clamp(15px, 3.6vw, var(--type-lede-size));
   line-height: var(--leading-snug);
   color: var(--text-meta);
   padding-top: clamp(20px, 6vw, var(--s-7));
   margin: 0;
-  text-wrap: pretty;
   white-space: pre-line;
 }
 
