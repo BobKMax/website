@@ -121,6 +121,13 @@
          illisible ou inférieur à 1, on retombe sur 1 : le comportement de
          tous les projets saisis jusqu'ici ne change pas. */
       taille: Math.max(parseInt(f.taille, 10) || 1, 1),
+      /* Décalage vertical imposé, en pour cent de la largeur de la vignette.
+         Absent, le projet en reçoit un automatiquement ; écrire 0 le remet
+         franchement en haut de sa rangée. D'où la distinction entre « vide »
+         et « zéro », que null porte ici. */
+      decalage: f.decalage === undefined || f.decalage === ''
+        ? null
+        : (parseFloat(f.decalage.replace(',', '.')) || 0),
       /* Une ou plusieurs photos, séparées par une virgule ou un point-virgule.
          Une seule valeur donne un tableau d'un élément : rien ne change pour
          les projets déjà saisis. */
@@ -363,9 +370,11 @@
     var cs = getComputedStyle(document.documentElement);
     var base = parseFloat(cs.getPropertyValue('--vignette-base'));
     var pas = parseFloat(cs.getPropertyValue('--taille-pas'));
+    var dec = parseFloat(cs.getPropertyValue('--decalage'));
     return {
       base: isFinite(base) && base > 0 ? base : 280,
-      pas: isFinite(pas) && pas >= 0 ? pas : 0.25
+      pas: isFinite(pas) && pas >= 0 ? pas : 0.25,
+      decalage: isFinite(dec) && dec >= 0 ? dec : 0
     };
   }
 
@@ -375,7 +384,50 @@
     return 1 + (taille - 1) * pas;
   }
 
-  function appliquerTailles() {
+  /* Décalage vertical d'une vignette, exprimé en fraction de sa propre
+     largeur — ainsi il grandit avec l'image et reste juste à toutes les
+     tailles d'écran.
+     Un projet qui porte un champ « decalage: » dans projets.txt impose le
+     sien. Sinon il en reçoit un, tiré de son numéro de projet : le calcul
+     est toujours le même pour un projet donné, donc la composition ne bouge
+     pas d'une visite à l'autre ni au redimensionnement — ce ne serait pas
+     une composition mais un clignotement. */
+  function decalageDe(card, amplitude) {
+    var ecrit = card.getAttribute('data-decalage');
+    if (ecrit !== null && ecrit !== '') {
+      var v = parseFloat(ecrit);
+      return isFinite(v) ? v / 100 : 0;
+    }
+    if (!amplitude) return 0;
+    var rang = parseInt(card.getAttribute('data-rang'), 10) || 0;
+    /* Suite du nombre d'or : en multipliant le rang par 0,618… et en ne
+       gardant que la partie décimale, on obtient des valeurs bien réparties
+       entre 0 et 1, et surtout jamais deux voisines pour deux projets qui se
+       suivent — ce qui arriverait avec un simple reste de division, et
+       donnerait une rangée presque alignée. */
+    return ((rang * 0.6180339887) % 1) * amplitude;
+  }
+
+  /* Rangées telles que le navigateur les a repliées : les vignettes d'une
+     même rangée partagent la même position haute, tant qu'aucun décalage
+     n'est posé. D'où l'ordre des opérations : largeurs, puis mesure, puis
+     décalages. */
+  function rangeesDe(cartes) {
+    var lignes = [];
+    var courante = null;
+    var hautCourant = null;
+    cartes.forEach(function (c) {
+      if (c.offsetTop !== hautCourant) {
+        courante = [];
+        lignes.push(courante);
+        hautCourant = c.offsetTop;
+      }
+      courante.push(c);
+    });
+    return lignes;
+  }
+
+  function composerGrille() {
     var grid = document.getElementById('mk-grid');
     if (!grid || grid.hidden) return;
 
@@ -384,6 +436,10 @@
     if (!cartes.length) return;
 
     var ecart = parseFloat(getComputedStyle(grid).columnGap) || 0;
+
+    /* Les décalages de la fois précédente fausseraient la lecture des
+       rangées : on repart d'une grille alignée. */
+    cartes.forEach(function (c) { c.style.marginTop = ''; });
 
     /* Plafond : une vignette ne doit jamais être assez large pour occuper
        seule une rangée — il faut qu'il reste de quoi en poser une petite à
@@ -404,19 +460,32 @@
        largeur de départ et la rangée reste calée à gauche.
        Mesurer suppose la mise en page faite : d'où la lecture des positions
        après avoir posé les largeurs. */
-    var bas = -1;
-    cartes.forEach(function (c) { if (c.offsetTop > bas) bas = c.offsetTop; });
-    var derniere = cartes.filter(function (c) { return c.offsetTop === bas; });
-    if (derniere.length === cartes.length) return; /* une seule rangée */
+    var lignes = rangeesDe(cartes);
+    var derniere = lignes[lignes.length - 1];
 
-    var occupe = ecart * (derniere.length - 1);
-    derniere.forEach(function (c) {
-      occupe += parseFloat(c.getAttribute('data-poids')) * r.base;
-    });
-
-    if (grid.clientWidth - occupe >= r.base + ecart) {
-      derniere.forEach(function (c) { c.style.flexGrow = '0'; });
+    if (lignes.length > 1) {
+      var occupe = ecart * (derniere.length - 1);
+      derniere.forEach(function (c) {
+        occupe += parseFloat(c.getAttribute('data-poids')) * r.base;
+      });
+      if (grid.clientWidth - occupe >= r.base + ecart) {
+        derniere.forEach(function (c) { c.style.flexGrow = '0'; });
+      }
     }
+
+    /* Décalages verticaux : chaque rangée est ramenée à zéro sur sa vignette
+       la plus haute, sinon la grille entière descendrait et laisserait une
+       bande vide sous les filtres. Une rangée d'une seule vignette — un
+       téléphone, ou la dernière rangée — n'a rien à désaligner. */
+    lignes.forEach(function (ligne) {
+      if (ligne.length < 2) return;
+      var parts = ligne.map(function (c) { return decalageDe(c, r.decalage); });
+      var mini = Math.min.apply(null, parts);
+      ligne.forEach(function (c, i) {
+        var px = (parts[i] - mini) * c.offsetWidth;
+        if (px > 0.5) c.style.marginTop = px.toFixed(1) + 'px';
+      });
+    });
   }
 
   function renderGrid(shown) {
@@ -427,6 +496,8 @@
     shown.forEach(function (p) {
       var card = el('div');
       card.setAttribute('data-taille', p.taille);
+      card.setAttribute('data-rang', p.number);
+      if (p.decalage !== null) card.setAttribute('data-decalage', p.decalage);
 
       if (p.photos.length) {
         card.appendChild(construireCarrousel(p));
@@ -496,7 +567,7 @@
 
     /* Après l'affichage seulement : une grille masquée ne donne pas ses
        colonnes. */
-    appliquerTailles();
+    composerGrille();
   }
 
   /* Le nombre de colonnes change avec la largeur de la fenêtre : les tailles
@@ -505,7 +576,7 @@
   var minuteurTailles = null;
   window.addEventListener('resize', function () {
     clearTimeout(minuteurTailles);
-    minuteurTailles = setTimeout(appliquerTailles, 120);
+    minuteurTailles = setTimeout(composerGrille, 120);
   });
 
   /* ------------------------------------------------------------- langue */

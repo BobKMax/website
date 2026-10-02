@@ -29,7 +29,17 @@
      « taille: 2 » est 25 % plus large qu'une « taille: 1 », une « taille: 3 »
      50 % plus large, et ainsi de suite. Mettez 0.15 pour un effet plus
      discret, 0.4 pour un contraste plus franc. */
-  --taille-pas: 0.6;
+  --taille-pas: 0.25;
+
+  /* Désalignement vertical des vignettes, pour qu'une rangée ne forme pas
+     une ligne droite. La valeur est l'amplitude maximale, en fraction de la
+     largeur d'une vignette : 0.12 veut dire qu'une vignette peut descendre
+     jusqu'à 12 % de sa propre largeur sous le haut de sa rangée.
+     0 remet tout le monde aligné, comme avant.
+     Chaque projet reçoit son décalage de son numéro de projet : il ne change
+     donc ni d'une visite à l'autre, ni quand on redimensionne la fenêtre.
+     Pour en imposer un précis, le champ « decalage: » dans projets.txt. */
+  --decalage: 0.12;
 
   /* Cadrage des vignettes de l'index.
        auto    chaque photo garde son format — paysages et portraits
