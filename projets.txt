@@ -98,7 +98,7 @@ surface:
 photo: CHALET_chantier.jpg
 Statut: construit
 texte: 
-taille: 3
+taille: 5
 ---
 
 titre: Cave à vin
