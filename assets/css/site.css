@@ -29,7 +29,7 @@
      « taille: 2 » est 25 % plus large qu'une « taille: 1 », une « taille: 3 »
      50 % plus large, et ainsi de suite. Mettez 0.15 pour un effet plus
      discret, 0.4 pour un contraste plus franc. */
-  --taille-pas: 0.25;
+  --taille-pas: 0.4;
 
   /* Cadrage des vignettes de l'index.
        auto    chaque photo garde son format — paysages et portraits
