@@ -27,7 +27,7 @@
        row dense  le navigateur comble les blancs en y remontant un projet
                   plus petit : plus compact, mais l'ordre affiché n'est
                   alors plus celui du fichier */
-  --grille-remplissage: row dense;
+  --grille-remplissage: row;
 
   /* Cadrage des vignettes de l'index.
        auto    chaque photo garde son format — paysages et portraits
