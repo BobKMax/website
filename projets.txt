@@ -73,6 +73,7 @@ programme: Logement
 surface: 
 photo:BLEUE.jpg
 texte: 
+taille: 2
 
 ---
 
@@ -96,6 +97,7 @@ surface:
 photo: CHALET_chantier.jpg
 Statut: construit
 texte: 
+taille: 3
 ---
 
 titre: Cave à vin

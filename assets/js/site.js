@@ -117,6 +117,10 @@
       programme: f.programme || '',
       surface: f.surface || DASH,
       statut: f.statut || DASH,
+      /* Largeur de la vignette sur la grille, comptée en colonnes. Absent,
+         illisible ou inférieur à 1, on retombe sur 1 : le comportement de
+         tous les projets saisis jusqu'ici ne change pas. */
+      taille: Math.max(parseInt(f.taille, 10) || 1, 1),
       /* Une ou plusieurs photos, séparées par une virgule ou un point-virgule.
          Une seule valeur donne un tableau d'un élément : rien ne change pour
          les projets déjà saisis. */
@@ -345,6 +349,29 @@
     return frame;
   }
 
+  /* Largeur des vignettes, en colonnes de la grille.
+     Le nombre de colonnes n'est écrit nulle part : la grille est en
+     « auto-fill », c'est le navigateur qui le décide selon la largeur
+     disponible. On le lui demande donc, en comptant les pistes qu'il a
+     calculées, et on rabat chaque taille à ce maximum — une vignette qui
+     réclamerait plus de colonnes qu'il n'en existe déborderait de la page.
+     La grille masquée ne renvoie aucune piste : on ne fait rien dans ce cas,
+     le calcul sera refait à l'affichage. */
+  function appliquerTailles() {
+    var grid = document.getElementById('mk-grid');
+    if (!grid || grid.hidden) return;
+
+    var pistes = getComputedStyle(grid).gridTemplateColumns;
+    if (!pistes || pistes === 'none') return;
+    var colonnes = pistes.split(' ').filter(Boolean).length;
+    if (!colonnes) return;
+
+    Array.prototype.forEach.call(grid.children, function (card) {
+      var voulue = parseInt(card.getAttribute('data-taille'), 10) || 1;
+      card.style.gridColumn = 'span ' + Math.min(voulue, colonnes);
+    });
+  }
+
   function renderGrid(shown) {
     var host = document.getElementById('mk-grid');
     if (!host) return;
@@ -352,6 +379,7 @@
 
     shown.forEach(function (p) {
       var card = el('div');
+      card.setAttribute('data-taille', p.taille);
 
       if (p.photos.length) {
         card.appendChild(construireCarrousel(p));
@@ -418,7 +446,20 @@
 
     empty.hidden = !nothing;
     if (nothing) empty.textContent = emptyMessage();
+
+    /* Après l'affichage seulement : une grille masquée ne donne pas ses
+       colonnes. */
+    appliquerTailles();
   }
+
+  /* Le nombre de colonnes change avec la largeur de la fenêtre : les tailles
+     se recalculent au redimensionnement, et au retour de l'orientation
+     paysage sur téléphone. */
+  var minuteurTailles = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(minuteurTailles);
+    minuteurTailles = setTimeout(appliquerTailles, 120);
+  });
 
   /* ------------------------------------------------------------- langue */
 

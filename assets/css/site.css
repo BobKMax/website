@@ -20,6 +20,15 @@
   --accent-contact: #EA580C;
   --accent-contact-hover: #C2410C;
 
+  /* Remplissage de la grille des projets, quand des vignettes ont des
+     largeurs différentes (champ « taille: » de projets.txt) :
+       row        l'ordre de projets.txt est strictement respecté, au prix
+                  de quelques blancs en fin de rangée
+       row dense  le navigateur comble les blancs en y remontant un projet
+                  plus petit : plus compact, mais l'ordre affiché n'est
+                  alors plus celui du fichier */
+  --grille-remplissage: row;
+
   /* Cadrage des vignettes de l'index.
        auto    chaque photo garde son format — paysages et portraits
                cohabitent, rien n'est rogné
@@ -598,7 +607,21 @@ a.mk-wordmark:hover { color: var(--text-primary); }
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--s-6) var(--grid-gap);
   align-items: start;
+
+  /* Une vignette large laisse un blanc quand la place manque en fin de
+     rangée. Deux partis, au choix, dans le bloc :root en haut de ce fichier :
+     « row » respecte strictement l'ordre de projets.txt, « row dense »
+     comble les blancs en remontant un projet plus petit. */
+  grid-auto-flow: var(--grille-remplissage, row);
 }
+
+/* Largeur des vignettes — champ « taille: » de projets.txt.
+   Elle se compte en colonnes : taille 2 occupe deux colonnes, taille 3 en
+   occupe trois. Le nombre de colonnes dépendant de la largeur de l'écran,
+   c'est le JavaScript qui le compte et qui rabat les valeurs trop grandes :
+   sans cela une vignette déborderait de la grille. Sur téléphone il n'y a
+   qu'une colonne, le champ n'y change donc rien — l'effet est réservé aux
+   écrans d'ordinateur, comme voulu. */
 
 /* Bande de photos d'une carte. Le défilement horizontal est celui du
    navigateur : au doigt, le balayage est natif, avec l'inertie du système ;
