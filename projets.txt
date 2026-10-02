@@ -178,6 +178,7 @@ surface:
 photo:GARAGES_Exterior.jpg, GARAGES_Exterior_RH2.png
 Statut: construit
 texte:
+taille: 3
 ---
 
 titre: Maison B
