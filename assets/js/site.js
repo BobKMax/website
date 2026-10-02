@@ -349,27 +349,74 @@
     return frame;
   }
 
-  /* Largeur des vignettes, en colonnes de la grille.
-     Le nombre de colonnes n'est écrit nulle part : la grille est en
-     « auto-fill », c'est le navigateur qui le décide selon la largeur
-     disponible. On le lui demande donc, en comptant les pistes qu'il a
-     calculées, et on rabat chaque taille à ce maximum — une vignette qui
-     réclamerait plus de colonnes qu'il n'en existe déborderait de la page.
-     La grille masquée ne renvoie aucune piste : on ne fait rien dans ce cas,
-     le calcul sera refait à l'affichage. */
+  /* Largeur des vignettes — champ « taille: » de projets.txt.
+     Chaque vignette reçoit un poids : 1 pour taille 1, puis un pas par
+     cran — 1,25 pour taille 2 si le pas vaut 0,25. Ce poids sert deux fois,
+     et c'est ce qui rend les largeurs exactement proportionnelles :
+       — en largeur de départ (poids × largeur de référence), qui décide du
+         moment où la rangée se replie ;
+       — en part du partage de la place restante.
+     Les deux réglages sont dans le bloc :root de site.css, pas ici : c'est
+     là que se règle l'apparence. */
+
+  function reglagesTailles() {
+    var cs = getComputedStyle(document.documentElement);
+    var base = parseFloat(cs.getPropertyValue('--vignette-base'));
+    var pas = parseFloat(cs.getPropertyValue('--taille-pas'));
+    return {
+      base: isFinite(base) && base > 0 ? base : 280,
+      pas: isFinite(pas) && pas >= 0 ? pas : 0.25
+    };
+  }
+
+  function poidsDe(card, pas) {
+    var taille = parseInt(card.getAttribute('data-taille'), 10);
+    if (!isFinite(taille) || taille < 1) taille = 1;
+    return 1 + (taille - 1) * pas;
+  }
+
   function appliquerTailles() {
     var grid = document.getElementById('mk-grid');
     if (!grid || grid.hidden) return;
 
-    var pistes = getComputedStyle(grid).gridTemplateColumns;
-    if (!pistes || pistes === 'none') return;
-    var colonnes = pistes.split(' ').filter(Boolean).length;
-    if (!colonnes) return;
+    var r = reglagesTailles();
+    var cartes = Array.prototype.slice.call(grid.children);
+    if (!cartes.length) return;
 
-    Array.prototype.forEach.call(grid.children, function (card) {
-      var voulue = parseInt(card.getAttribute('data-taille'), 10) || 1;
-      card.style.gridColumn = 'span ' + Math.min(voulue, colonnes);
+    var ecart = parseFloat(getComputedStyle(grid).columnGap) || 0;
+
+    /* Plafond : une vignette ne doit jamais être assez large pour occuper
+       seule une rangée — il faut qu'il reste de quoi en poser une petite à
+       côté. Sans ce garde-fou, un « taille: 40 » saisi par erreur pousserait
+       sa voisine sur la rangée précédente, qui s'étirerait pour rien. */
+    var plafond = Math.max(1, (grid.clientWidth - r.base - ecart) / r.base);
+
+    cartes.forEach(function (card) {
+      var poids = Math.min(poidsDe(card, r.pas), plafond);
+      card.style.flex = poids + ' 1 ' + (poids * r.base) + 'px';
+      card.setAttribute('data-poids', poids);
     });
+
+    /* La dernière rangée est rarement pleine : s'il y reste la place d'une
+       vignette entière, c'est qu'on a manqué de projets, pas de place. On
+       l'étirerait alors pour rien — un projet seul deviendrait une image
+       pleine largeur. Dans ce cas seulement, ses vignettes gardent leur
+       largeur de départ et la rangée reste calée à gauche.
+       Mesurer suppose la mise en page faite : d'où la lecture des positions
+       après avoir posé les largeurs. */
+    var bas = -1;
+    cartes.forEach(function (c) { if (c.offsetTop > bas) bas = c.offsetTop; });
+    var derniere = cartes.filter(function (c) { return c.offsetTop === bas; });
+    if (derniere.length === cartes.length) return; /* une seule rangée */
+
+    var occupe = ecart * (derniere.length - 1);
+    derniere.forEach(function (c) {
+      occupe += parseFloat(c.getAttribute('data-poids')) * r.base;
+    });
+
+    if (grid.clientWidth - occupe >= r.base + ecart) {
+      derniere.forEach(function (c) { c.style.flexGrow = '0'; });
+    }
   }
 
   function renderGrid(shown) {

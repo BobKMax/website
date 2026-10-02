@@ -20,14 +20,16 @@
   --accent-contact: #EA580C;
   --accent-contact-hover: #C2410C;
 
-  /* Remplissage de la grille des projets, quand des vignettes ont des
-     largeurs différentes (champ « taille: » de projets.txt) :
-       row        l'ordre de projets.txt est strictement respecté, au prix
-                  de quelques blancs en fin de rangée
-       row dense  le navigateur comble les blancs en y remontant un projet
-                  plus petit : plus compact, mais l'ordre affiché n'est
-                  alors plus celui du fichier */
-  --grille-remplissage: row;
+  /* Largeur de référence d'une vignette — celle d'un projet « taille: 1 ».
+     C'est elle qui décide du nombre de vignettes par rangée : plus elle est
+     grande, moins il y en a. */
+  --vignette-base: 280px;
+
+  /* Écart entre deux tailles consécutives. 0.25 signifie qu'une vignette
+     « taille: 2 » est 25 % plus large qu'une « taille: 1 », une « taille: 3 »
+     50 % plus large, et ainsi de suite. Mettez 0.15 pour un effet plus
+     discret, 0.4 pour un contraste plus franc. */
+  --taille-pas: 0.25;
 
   /* Cadrage des vignettes de l'index.
        auto    chaque photo garde son format — paysages et portraits
@@ -602,26 +604,23 @@ a.mk-wordmark:hover { color: var(--text-primary); }
 
 /* align-items: start — les vignettes n'ayant plus toutes la même hauteur,
    chaque carte se cale en haut de sa rangée plutôt que de s'étirer. */
+/* La grille n'est pas une grille CSS mais une rangée de blocs qui se replie.
+   C'est ce qui permet au champ « taille: » de régler les largeurs au pour
+   cent près : une grille CSS ne sait compter qu'en colonnes entières, donc
+   une vignette y serait fatalement une, deux ou trois fois plus large qu'une
+   autre, jamais 25 % plus large.
+   Chaque vignette reçoit du JavaScript un poids : la place libre de la
+   rangée se partage dans ce rapport, et la rangée se remplit toujours
+   exactement — il n'y a donc plus de blanc en fin de rangée, et l'ordre de
+   projets.txt est strictement respecté.
+   Sur téléphone il n'entre qu'une vignette par rangée : elle prend toute la
+   largeur et le champ « taille: » n'y change rien, comme voulu. */
 .mk-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--s-6) var(--grid-gap);
-  align-items: start;
-
-  /* Une vignette large laisse un blanc quand la place manque en fin de
-     rangée. Deux partis, au choix, dans le bloc :root en haut de ce fichier :
-     « row » respecte strictement l'ordre de projets.txt, « row dense »
-     comble les blancs en remontant un projet plus petit. */
-  grid-auto-flow: var(--grille-remplissage, row);
+  align-items: flex-start;
 }
-
-/* Largeur des vignettes — champ « taille: » de projets.txt.
-   Elle se compte en colonnes : taille 2 occupe deux colonnes, taille 3 en
-   occupe trois. Le nombre de colonnes dépendant de la largeur de l'écran,
-   c'est le JavaScript qui le compte et qui rabat les valeurs trop grandes :
-   sans cela une vignette déborderait de la grille. Sur téléphone il n'y a
-   qu'une colonne, le champ n'y change donc rien — l'effet est réservé aux
-   écrans d'ordinateur, comme voulu. */
 
 /* Bande de photos d'une carte. Le défilement horizontal est celui du
    navigateur : au doigt, le balayage est natif, avec l'inertie du système ;
