@@ -212,6 +212,6 @@ surface:
 photo:NANTES_Exterior.jpg,
 Statut: compétition
 texte:
-taille: 3
+taille: 4
 ---
 
