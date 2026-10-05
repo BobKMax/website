@@ -410,16 +410,30 @@
     var bas = [];
     for (var i = 0; i < colonnes; i++) bas.push(0);
 
+    /* Première rangée : avec peu de projets, le placement « le plus haut,
+       puis le plus à gauche » empile tout à gauche et laisse une bande
+       blanche à droite sur toute la hauteur. Tant qu'il reste des colonnes
+       jamais couvertes, la vignette se pose donc sur la première d'entre
+       elles — calée sur le bord droit si elle n'y tient pas. */
+    var couvertes = 0;
+
     cartes.forEach(function (card) {
       var taille = parseInt(card.getAttribute('data-taille'), 10);
       if (!isFinite(taille) || taille < 1) taille = 1;
       var span = Math.min(r.unite + (taille - 1), colonnes);
       var posX = 0, posY = Infinity;
-      for (var c = 0; c + span <= colonnes; c++) {
-        var y = 0;
-        for (var k = c; k < c + span; k++) if (bas[k] > y) y = bas[k];
-        if (y < posY - 0.5) { posY = y; posX = c; }
+      if (couvertes < colonnes) {
+        posX = Math.min(couvertes, colonnes - span);
+        posY = 0;
+        for (var k0 = posX; k0 < posX + span; k0++) if (bas[k0] > posY) posY = bas[k0];
+      } else {
+        for (var c = 0; c + span <= colonnes; c++) {
+          var y = 0;
+          for (var k = c; k < c + span; k++) if (bas[k] > y) y = bas[k];
+          if (y < posY - 0.5) { posY = y; posX = c; }
+        }
       }
+      couvertes = Math.max(couvertes, posX + span);
       card.style.left = (posX * pas).toFixed(2) + 'px';
       card.style.top = posY.toFixed(2) + 'px';
       card.style.width = (span * pas - ecartX).toFixed(2) + 'px';
@@ -581,7 +595,36 @@
     return !window.matchMedia(PETIT_ECRAN).matches;
   }
 
+  /* Curseur en négatif, à la souris seulement. La feuille de style reste
+     seule juge de ce qui est cliquable : une fois la classe posée, les zones
+     cliquables ont « cursor: none », et c'est là que le disque s'affiche. */
+  function installerCurseur() {
+    if (!survolFin || !window.matchMedia) return;
+
+    var disque = document.createElement('div');
+    disque.className = 'mk-curseur';
+    disque.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(disque);
+    document.documentElement.classList.add('mk-curseur-js');
+
+    var cible = null;
+    document.addEventListener('mousemove', function (e) {
+      disque.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+      if (e.target !== cible) {
+        cible = e.target;
+        var actif = cible.nodeType === 1 && getComputedStyle(cible).cursor === 'none';
+        disque.classList.toggle('mk-curseur--visible', actif);
+      }
+    }, { passive: true });
+
+    document.documentElement.addEventListener('mouseleave', function () {
+      cible = null;
+      disque.classList.remove('mk-curseur--visible');
+    });
+  }
+
   function init() {
+    installerCurseur();
     state.lang = readStoredLang();
     state.listView = vueParDefaut();
 

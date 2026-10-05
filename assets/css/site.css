@@ -15,7 +15,7 @@
   /* Marqueur de version : sert uniquement à vérifier, depuis la page
      diagnostic.html, quelle feuille de style le navigateur utilise
      réellement. N'a aucun effet sur l'affichage. */
-  --mk-version: "2026-10-02-b";
+  --mk-version: "2026-10-05-a";
 
   --accent-contact: #EA580C;
   --accent-contact-hover: #C2410C;
@@ -57,7 +57,37 @@
   --curseur-clic:
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><circle cx="16" cy="16" r="15" fill="%23111110"/></svg>') 16 16,
     pointer;
+
+  /* Le disque ci-dessus n'est qu'un repli. À la souris, le script le
+     remplace par un disque qui suit le pointeur et passe en négatif ce qu'il
+     survole : texte noir sur blanc devient blanc sur noir, photos comprises.
+     Son diamètre se règle ici, librement — cette version n'a pas la limite
+     des 32 px. */
+  --curseur-taille: 16px;
 }
+
+/* Disque en négatif : un rond blanc en mode « différence » inverse les
+   couleurs qu'il recouvre — il paraît noir sur le papier, et le texte noir
+   qu'il couvre devient blanc. Posé par le script, uniquement à la souris.
+   Le curseur du système est alors masqué sur les zones cliquables. */
+.mk-curseur-js { --curseur-clic: none; }
+
+.mk-curseur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--curseur-taille);
+  height: var(--curseur-taille);
+  margin: calc(var(--curseur-taille) / -2) 0 0 calc(var(--curseur-taille) / -2);
+  border-radius: 50%;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+.mk-curseur--visible { opacity: 1; }
 
 /* ------------------------------------------------------------------ shell */
 
