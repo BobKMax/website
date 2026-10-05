@@ -203,3 +203,15 @@ BOUVY_Exterior-13.jpg
 Statut: construit
 texte:
 
+
+titre: Usine Electrique
+lieu: Nantes, Fr
+annee: 2023
+programme: Équipement
+surface: 
+photo:NANTES_Exterior.jpg,
+Statut: compétition
+texte:
+taille: 3
+---
+
