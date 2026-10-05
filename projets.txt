@@ -57,7 +57,7 @@ taille: 4
 
 ---
 
-titre: Centre d'innovation
+titre: Centre d'innovation [avec LFA.]
 lieu: Digital image
 annee: 2023
 programme: Équipement
@@ -90,7 +90,7 @@ texte:
 
 ---
 
-titre: Chalet du Parc
+titre: Chalet du Parc [avec LFA.]
 lieu: Lyon 6, Fr
 annee: 2024
 programme: Équipement
@@ -136,7 +136,7 @@ taille: 2
 
 ---
 
-titre: CERN
+titre: CERN [avec LFA.]
 lieu: Prevessin, Fr
 annee: 2023
 programme: Bureaux
@@ -159,7 +159,7 @@ texte:
 taille: 2
 
 ---
-titre: Etude de Salle
+titre: Etude de Salle [avec LFA.]
 lieu: Lyon 1, Fr
 annee: 2022
 programme: Équipement
@@ -181,7 +181,7 @@ texte:
 taille: 3
 ---
 
-titre: Maison B
+titre: Maison B [avec LFA.]
 lieu: Ecully, Fr
 annee: 2019
 programme: Logement
@@ -204,7 +204,7 @@ Statut: construit
 texte:
 
 
-titre: Usine Electrique
+titre: Usine Electrique [avec LFA.]
 lieu: Nantes, Fr
 annee: 2023
 programme: Équipement
