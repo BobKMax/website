@@ -209,7 +209,7 @@ lieu: Nantes, Fr
 annee: 2023
 programme: Équipement
 surface: 
-photo:NANTES_Exterior-4.jpg,
+photo:NANTES_Exterior-1b.jpg, NANTES_Exterior-4.jpg,
 Statut: compétition
 texte:
 taille: 4
