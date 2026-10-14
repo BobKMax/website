@@ -90,6 +90,17 @@ texte:
 
 ---
 
+titre: Pavillon de la Sagne
+lieu: Deux-Sèvres, Fr
+annee: 2025
+programme: Équipement
+surface: 775 m² SDP
+photo:MARAIS_Angle.jpg, MARAIS_Frontale.jpg,
+Statut: étude
+texte:
+taille: 4
+---
+
 titre: Chalet du Parc  [LFA.architectes]
 lieu: Lyon 6, Fr
 annee: 2024
@@ -202,16 +213,5 @@ BOUVY_Exterior-11.jpg,
 BOUVY_Exterior-13.jpg
 Statut: construit
 texte:
-
-
-titre: Pavillon de la Sagne
-lieu: Deux-Sèvres, Fr
-annee: 2025
-programme: Équipement
-surface: 775 m² SDP
-photo:MARAIS_Angle.jpg, MARAIS_Frontale.jpg,
-Statut: étude
-texte:
-taille: 4
 ---
 
