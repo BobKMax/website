@@ -204,12 +204,12 @@ Statut: construit
 texte:
 
 
-titre: Usine Electrique  [LFA.architectes]
-lieu: Nantes, Fr
-annee: 2023
+titre: Pavillon de la Sagne
+lieu: Deux-Sèvres, Fr
+annee: 2025
 programme: Équipement
 surface: 
-photo:NANTES_Exterior-1b.jpg, NANTES_Exterior-4.jpg,
+photo:MARAIS_Anglejpg, MARAIS_Frontale.jpg,
 Statut: compétition
 texte:
 taille: 4
