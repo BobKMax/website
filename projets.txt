@@ -208,9 +208,9 @@ titre: Pavillon de la Sagne
 lieu: Deux-Sèvres, Fr
 annee: 2025
 programme: Équipement
-surface: 
-photo:MARAIS_Anglejpg, MARAIS_Frontale.jpg,
-Statut: compétition
+surface: 775 m² SDP
+photo:MARAIS_Angle.jpg, MARAIS_Frontale.jpg,
+Statut: étude
 texte:
 taille: 4
 ---
