@@ -95,7 +95,7 @@ lieu: Deux-Sèvres, Fr
 annee: 2025
 programme: Équipement
 surface: 775 m² SDP
-photo:MARAIS_Angle.jpg, MARAIS_Frontale.jpg,
+photo:MARAIS_Angle.jpg, MARAIS_Frontale.jpg, MARAIS_Axono.png
 Statut: étude
 texte:
 taille: 4
