@@ -63,6 +63,7 @@ annee: 2023
 programme: Équipement
 surface: 1 040 m² SDP
 photo:IGESA_Exterior_GEM-2.png, IGESA_Interior_GEM-5.jpg
+Statut: compétition
 texte: 
 
 ---
