@@ -77,6 +77,9 @@
   function parseBloc(text, position) {
     var f = {};
     var dernierChamp = null;
+    /* Les lignes « image: » se répètent, une par image : elles sont
+       gardées à part, dans l'ordre du fichier, au lieu de s'écraser. */
+    var images = [];
 
     text.split(/\r?\n/).forEach(function (line) {
       if (/^\s*#/.test(line)) return;
@@ -100,6 +103,17 @@
 
       var key = line.slice(0, i).trim().toLowerCase()
         .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+      /* \u00ab image: fichier | r\u00f4le | cr\u00e9dit \u00bb. Le site n'affiche que le
+         fichier ; le r\u00f4le sert \u00e0 trouver la couverture, le cr\u00e9dit est
+         lu par l'atelier. Une ligne image ne se poursuit pas \u00e0 la ligne. */
+      if (key === 'image') {
+        var parts = line.slice(i + 1).split('|').map(function (s) { return s.trim(); });
+        if (parts[0]) images.push({ fichier: parts[0], role: (parts[1] || '').toLowerCase() });
+        dernierChamp = null;
+        return;
+      }
+
       f[key] = line.slice(i + 1).trim();
       dernierChamp = key;
     });
@@ -110,6 +124,10 @@
       if (k !== 'photo') f[k] = f[k].replace(/\s*\n\s*/g, ' ');
     });
     return {
+      /* Identifiant permanent du projet. Le site ne s'en sert pas encore
+         pour l'affichage ; un id manquant ne bloque rien, c'est l'atelier
+         qui le signale. */
+      id: f.id || '',
       number: String(position).padStart(2, '0'),
       title: f.titre,
       place: f.lieu || DASH,
@@ -121,15 +139,37 @@
          illisible ou inférieur à 1, on retombe sur 1 : le comportement de
          tous les projets saisis jusqu'ici ne change pas. */
       taille: Math.max(parseInt(f.taille, 10) || 1, 1),
-      /* Une ou plusieurs photos, séparées par une virgule ou un point-virgule.
-         Une seule valeur donne un tableau d'un élément : rien ne change pour
-         les projets déjà saisis. */
-      photos: (f.photo || '').split(/[,;\n]/)
-        .map(function (n) { return n.trim(); })
-        .filter(Boolean)
-        .map(function (n) { return 'photos/' + n; }),
+      photos: listePhotos(images, f.photo),
       text: f.texte || ''
     };
+  }
+
+  /* Photos du projet, dans l'ordre d'affichage ; la première sert de
+     vignette.
+     — Lignes « image: » : ordre du fichier, sauf que la première image de
+       rôle « couverture » passe en tête. Sans couverture, la première
+       image fait office de vignette.
+     — Ancien champ « photo: » (noms séparés par des virgules, des
+       points-virgules ou des retours à la ligne) : encore accepté, pour
+       qu'une fiche pas encore convertie continue de s'afficher. Il n'est
+       lu que si le bloc n'a aucune ligne « image: ». */
+  function listePhotos(images, ancienChamp) {
+    var noms;
+    if (images.length) {
+      var rang = -1;
+      for (var n = 0; n < images.length; n++) {
+        if (images[n].role === 'couverture') { rang = n; break; }
+      }
+      var ordre = rang > 0
+        ? [images[rang]].concat(images.slice(0, rang), images.slice(rang + 1))
+        : images;
+      noms = ordre.map(function (im) { return im.fichier; });
+    } else {
+      noms = (ancienChamp || '').split(/[,;\n]/)
+        .map(function (s) { return s.trim(); })
+        .filter(Boolean);
+    }
+    return noms.map(function (s) { return 'photos/' + s; });
   }
 
   /* Un seul fichier, donc une seule requête. L'ordre des blocs est l'ordre
