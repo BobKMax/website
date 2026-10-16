@@ -58,7 +58,7 @@ taille: 4
 ---
 
 titre: Centre d'innovation  [LFA.architectes]
-lieu: Digital image
+lieu: Base aérienne 217
 annee: 2023
 programme: Équipement
 surface: 1 040 m² SDP
