@@ -37,9 +37,6 @@
 #   dans assets/css/site.css. Visez 1200 px de côté au minimum et centrez
 #   le sujet : les bords sont rognés.
 #
-# ATTENTION — les quatre projets ci-dessous sont du contenu inventé,
-# hérité de la maquette. Remplacez-les par les vrais projets avant
-# toute mise en ligne.
 #
 # =====================================================================
 
