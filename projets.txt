@@ -180,3 +180,15 @@ image: 2019-ecully-maison-b--bouvy-exterior-9-103b40e8.jpg | exterieur
 image: 2019-ecully-maison-b--bouvy-exterior-10-e672cffa.jpg | exterieur
 image: 2019-ecully-maison-b--bouvy-exterior-11-a6ef4ece.jpg | exterieur
 image: 2019-ecully-maison-b--bouvy-exterior-13-949d945c.jpg | exterieur
+
+---
+
+id: 2026-marseille-plongeoir
+titre: Le plongeoir
+lieu: Marseille
+annee: 2026
+programme: Équipement
+surface: 250 m² SDP
+statut: en cours
+taille: 3
+texte: test test test
