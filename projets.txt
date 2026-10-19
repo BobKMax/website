@@ -49,7 +49,8 @@ lieu: St-Didier-au-Mont-d'Or, Fr
 annee: 2024
 programme: Logement
 surface: 210 m² SDP
-statut: en cours
+statut: construit
+accroche: Rénovation complète d'une maison.
 image: 2024-st-didier-maison-z--zub-interior-gem-15caa4bc.jpg | rendu
 image: 2024-st-didier-maison-z--zub-interior-gem-2-25ede8ba.jpg | rendu
 
@@ -74,8 +75,10 @@ titre: Chalet du Parc [LFA.architectes]
 lieu: Lyon 6, Fr
 annee: 2024
 programme: Équipement
+surface: 1 730 m²
 statut: construit
 taille: 5
+texte: Reconversion du Chalet du parc de la Tête d'Or en tiers-lieu éco-culturel, démonstrateur de la transition écologique.
 image: 2024-lyon6-chalet-parc--chalet-chantier-5daf0bae.jpg | chantier
 
 ---
@@ -120,6 +123,7 @@ titre: CERN [LFA.architectes]
 lieu: Prevessin, Fr
 annee: 2023
 programme: Bureaux
+surface: 12 000 m²
 statut: compétition
 taille: 6
 image: 2023-prevessin-cern--cern-exterior-2-bd685709.jpg | rendu
@@ -143,8 +147,12 @@ titre: Etude de Salle [LFA.architectes]
 lieu: Lyon 1, Fr
 annee: 2022
 programme: Équipement
+surface: 3 000 m²
 statut: mission amo
+texte: Assistance à maîtrise d'ouvrage et maîtrise d'œuvre des aménagements preneurs de la salle Rameau.
 image: 2022-lyon1-salle-rameau--rameau-interior-gem-2-1f94a365.jpg | rendu
+image: 2022-lyon1-salle-rameau--img-2820-b119d317.jpg | interieur
+image: 2022-lyon1-salle-rameau--img-2956-c8aa30b8.jpg | interieur
 
 ---
 
@@ -180,15 +188,3 @@ image: 2019-ecully-maison-b--bouvy-exterior-9-103b40e8.jpg | exterieur
 image: 2019-ecully-maison-b--bouvy-exterior-10-e672cffa.jpg | exterieur
 image: 2019-ecully-maison-b--bouvy-exterior-11-a6ef4ece.jpg | exterieur
 image: 2019-ecully-maison-b--bouvy-exterior-13-949d945c.jpg | exterieur
-
----
-
-id: 2026-marseille-plongeoir
-titre: Le plongeoir
-lieu: Marseille
-annee: 2026
-programme: Équipement
-surface: 250 m² SDP
-statut: en cours
-taille: 3
-texte: test test test
