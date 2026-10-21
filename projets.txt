@@ -213,6 +213,4 @@ taille: 2
 image: 2025-mka-mobilier-banc--s2-face-1lypp5fr4r-160605c2.jpg | couverture
 image: 2025-mka-mobilier-banc--s2-axiale-eb6zn1quuo-cb777d2c.jpg
 image: 2025-mka-mobilier-banc--s2-detail-3zfb5m6rey-1f600f50.jpg
-image: 2025-mka-mobilier-banc--s3-face-cuir-cpklzkh0ep-46dcbd63.jpg
-image: 2025-mka-mobilier-banc--s5-face-lin-a-xmg47tqbfo-ff931769.jpg
 image: 2025-mka-mobilier-banc--s4-basse-lin-ju0bwwdld0-d0674e17.jpg
