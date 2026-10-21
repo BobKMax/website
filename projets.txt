@@ -10,53 +10,60 @@
 
 ---
 
-id: 2026-generique-bureaux
+id: 2026-mka-generique-bureaux
 titre: Bureaux
-lieu: Digital image
+lieu: Imaginaire digital
 annee: 2026
 programme: Bureaux
-surface: 2000 m² SDP
+surface: 1990 m² SP
+statut: Recherche
+moe: Maxime Kreiter (mandataire)
 taille: 4
-image: 2026-generique-bureaux--invent-exterior-76be8c01.jpg | rendu
+materiaux: Bois
+accroche: une façade de bois, de câbles et de toile
+texte: Trois niveaux de bureaux en ossature bois, posés sur une file de plots béton qui décollent le plancher bas du sol. Entre les poteaux d’épicéa lamellé-collé, la façade est entièrement vitrée, six travées par niveau. Les nez de dalle débordent largement devant le vitrage, sans garde-corps, et forment des casquettes filantes qui protègent les plateaux du soleil haut. La toiture est en zinc à joint debout, avec son débord. La protection solaire basse est confiée à un dispositif simple : devant chaque poteau, un câble d’acier tendu descend de la tête du vitrage jusqu’au nez de la casquette inférieure. Les stores de toile écrue coulissent le long de ces câbles. Déployé, un store n’est pas un écran plaqué contre le verre mais un plan de toile incliné, un auvent qui s’écarte de la façade et laisse passer l’air et la vue basse. La façade change avec les heures et avec les usages, sans aucun mécanisme apparent. Le bâtiment est posé dans une prairie non fauchée, qui vient jusque sous les fondations.
+image: 2026-mka-generique-bureaux--invent-exterior-76be8c01.jpg | rendu | MKA
 
 ---
 
-id: 2023-ba217-centre-innovation
+id: 2023-lfa-ba217-centre-innovation
 titre: Centre d'innovation [LFA.architectes]
 lieu: Base aérienne 217
 annee: 2023
 programme: Équipement
 surface: 1 040 m² SDP
 statut: compétition
-image: 2023-ba217-centre-innovation--igesa-exterior-gem-2-648d4f77.png | rendu
-image: 2023-ba217-centre-innovation--igesa-interior-gem-5-50f7d048.jpg | rendu
+image: 2023-lfa-ba217-centre-innovation--igesa-exterior-gem-2-648d4f77.png | couverture | MKA
+image: 2023-lfa-ba217-centre-innovation--igesa-interior-gem-5-50f7d048.jpg | rendu | MKA
 
 ---
 
-id: 2023-generique-maison-bleue
+id: 2023-mka-generique-maison-bleue
 titre: Maison Bleue
-lieu: Digital image
+lieu: Imaginaire digital
 annee: 2023
 programme: Logement
+statut: Recherche
 taille: 2
-image: 2023-generique-maison-bleue--bleue-85232fdc.jpg | rendu
+image: 2023-mka-generique-maison-bleue--bleue-85232fdc.jpg | rendu | Maxime Kreiter
 
 ---
 
-id: 2024-st-didier-maison-z
+id: 2024-mka-st-didier-maison-z
 titre: Maison Z
 lieu: St-Didier-au-Mont-d'Or, Fr
 annee: 2024
 programme: Logement
 surface: 210 m² SDP
 statut: construit
-accroche: Rénovation complète d'une maison.
-image: 2024-st-didier-maison-z--zub-interior-gem-15caa4bc.jpg | rendu
-image: 2024-st-didier-maison-z--zub-interior-gem-2-25ede8ba.jpg | rendu
+accroche: Rénovation complète d'une maison
+texte: Au cœur de St-Didier-au-Mont-d'Or, cet maison a fait l’objet d’une rénovation globale. L’enjeu principal était de relier deux constructions adjacentes pour former un grand espace à rez-de-chausée et accueillir la séquence séjour-cuisine-salon. Nous avons aussi clarifié le plan sur les deux niveaux pour retrouver des circulations fluides et intuitives.
+image: 2024-mka-st-didier-maison-z--zub-interior-gem-15caa4bc.jpg | couverture
+image: 2024-mka-st-didier-maison-z--zub-interior-gem-2-25ede8ba.jpg | rendu
 
 ---
 
-id: 2025-deux-sevres-pavillon-sagne
+id: 2025-mka-deux-sevres-pavillon-sagne
 titre: Pavillon de la Sagne
 lieu: Deux-Sèvres, Fr
 annee: 2025
@@ -64,49 +71,53 @@ programme: Équipement
 surface: 775 m² SDP
 statut: étude
 taille: 4
-image: 2025-deux-sevres-pavillon-sagne--marais-angle-75f1a6b7.jpg | rendu
-image: 2025-deux-sevres-pavillon-sagne--marais-frontale-66dd2df3.jpg | rendu
-image: 2025-deux-sevres-pavillon-sagne--marais-axono-6899d3ee.jpg | rendu
+accroche: La tradition des granges du marais
+texte: Pavillon de 775 m² SDP implanté au cœur d'une zone humide des Deux-Sèvres, sur une butte entourée d'eau et de roselières, accessible par un ponton en bois. Le projet s'inscrit dans la tradition des granges du marais — un volume simple sous une large toiture à deux pans en bac acier ondulé, aux débords généreux. Le rez-de-chaussée, entièrement vitré et ouvrable, accueille le public de plain-pied et s'ouvre sur le paysage. L'étage, fermé par un bardage bois à claire-voie, est percé d'un oculus en pignon, de panneaux perforés et d'une bande vitrée sous la toiture. Structure bois apparente, poteaux et auvents métalliques galvanisés, bardage bois naturel non traité. Une architecture sobre et démontable, posée sur le site avec un minimum d’emprise. Conception visant la certification PassivHaus.
+image: 2025-mka-deux-sevres-pavillon-sagne--marais-angle-75f1a6b7.jpg | rendu | Maxime Kreiter
+image: 2025-mka-deux-sevres-pavillon-sagne--marais-frontale-66dd2df3.jpg | couverture | Maxime Kreiter
+image: 2025-mka-deux-sevres-pavillon-sagne--marais-axono-6899d3ee.jpg | rendu | Maxime Kreiter
 
 ---
 
-id: 2024-lyon6-chalet-parc
+id: 2024-lfa-lyon6-chalet-parc
 titre: Chalet du Parc [LFA.architectes]
 lieu: Lyon 6, Fr
 annee: 2024
 programme: Équipement
 surface: 1 730 m²
 statut: construit
+moe: LFA (architecte mandataire), Atelier CH-V (architecte du patrimoine), Denizou (économie), Jardin Patrimoine (paysage), eEgénie (HQE), OTEIS (fluides), Inovaya (traitement de l'eau), Mineka (réemploi), DPI (structure), Auris Aura (OPC), Studis (BET Cuisine)
 taille: 5
-texte: Reconversion du Chalet du parc de la Tête d'Or en tiers-lieu éco-culturel, démonstrateur de la transition écologique.
-image: 2024-lyon6-chalet-parc--chalet-chantier-5daf0bae.jpg | chantier
+accroche: Une renaissance éco-culturelle.
+texte: Fermé depuis dix ans, le Chalet du parc de la Tête d'Or rouvre en 2026, réhabilité en tiers-lieu éco-culturel de 1 730 m², bâtiment ressource et démonstrateur des solutions durables. Le projet œuvre avec le déjà-là : usages contemporains, matériaux biosourcés et de réemploi, dans le respect du caractère patrimonial. Certification EnerPHit Passivhaus, label BBCA visé, bois FSC/PEFC, terre crue, laine de bois, liège, récupération des eaux pluviales et grises, panneaux solaires et thermiques, ventilation naturelle. Programme : restaurant anti-gaspi, espaces d'exposition et de sensibilisation, ateliers et salles de conférence privatisables, grande terrasse sur le lac, jardins pédagogiques, toiture en partie accessible.
+image: 2024-lfa-lyon6-chalet-parc--chalet-chantier-5daf0bae.jpg | chantier | Maxime Kreiter
 
 ---
 
-id: 2025-meribel-cave-vin
+id: 2025-mka-meribel-cave-vin
 titre: Cave à vin
 lieu: Meribel, Fr
 annee: 2025
 programme: Commerce
 surface: 40 m² SDP
 statut: construit
-image: 2025-meribel-cave-vin--meribel-interior-4716aebb.png | rendu
+image: 2025-mka-meribel-cave-vin--meribel-interior-4716aebb.png | rendu
 
 ---
 
-id: 2025-ecully-cabinet-dentaire
+id: 2025-mka-ecully-cabinet-dentaire
 titre: Cabinet Dentaire
 lieu: Ecully, Fr
 annee: 2025
 programme: Équipement
-surface: 100 m² SDP
+surface: 100 m² SP
 statut: construit
 taille: 2
-image: 2025-ecully-cabinet-dentaire--tullistes-interior-7-4de48ac4.jpg | interieur
+image: 2025-mka-ecully-cabinet-dentaire--tullistes-interior-7-4de48ac4.jpg | couverture
 
 ---
 
-id: 2023-lyon5-appartement-b
+id: 2023-mka-lyon5-appartement-b
 titre: Appartement B
 lieu: Lyon 5, Fr
 annee: 2023
@@ -114,11 +125,11 @@ programme: Logement
 surface: 70 m² SDP
 statut: construit
 taille: 2
-image: 2023-lyon5-appartement-b--boeuf-gem-b1543a04.jpg | rendu
+image: 2023-mka-lyon5-appartement-b--boeuf-gem-b1543a04.jpg | rendu
 
 ---
 
-id: 2023-prevessin-cern
+id: 2023-lfa-prevessin-cern
 titre: CERN [LFA.architectes]
 lieu: Prevessin, Fr
 annee: 2023
@@ -126,11 +137,11 @@ programme: Bureaux
 surface: 12 000 m²
 statut: compétition
 taille: 6
-image: 2023-prevessin-cern--cern-exterior-2-bd685709.jpg | rendu
+image: 2023-lfa-prevessin-cern--cern-exterior-2-bd685709.jpg | rendu
 
 ---
 
-id: 2025-lyon-appartement-d
+id: 2025-mka-lyon-appartement-d
 titre: Appartement D
 lieu: Lyon, Fr
 annee: 2025
@@ -138,53 +149,70 @@ programme: Logement
 surface: 50 m² SDP
 statut: construit
 taille: 2
-image: 2025-lyon-appartement-d--doyenne-render-gem-5b-10896d4b.jpg | rendu
+image: 2025-mka-lyon-appartement-d--doyenne-render-gem-5b-10896d4b.jpg | rendu
 
 ---
 
-id: 2022-lyon1-salle-rameau
-titre: Etude de Salle [LFA.architectes]
+id: 2022-lfa-lyon1-salle-rameau
+titre: Salle Rameau
 lieu: Lyon 1, Fr
 annee: 2022
 programme: Équipement
 surface: 3 000 m²
 statut: mission amo
-texte: Assistance à maîtrise d'ouvrage et maîtrise d'œuvre des aménagements preneurs de la salle Rameau.
-image: 2022-lyon1-salle-rameau--rameau-interior-gem-2-1f94a365.jpg | rendu
-image: 2022-lyon1-salle-rameau--img-2820-b119d317.jpg | interieur
-image: 2022-lyon1-salle-rameau--img-2956-c8aa30b8.jpg | interieur
+moe: LFA (AMO et maîtrise d'œuvre des aménagements preneurs)
+texte: Boîte à bijoux, boîte à outils. La salle Rameau, construite en 1908 dans le 1er arrondissement de Lyon, est un marqueur de l'Art nouveau lyonnais au style éclectique (Renaissance, classicisme, baroque, rococo). La rénovation combine plusieurs programmes complémentaires selon les moments de la journée et de la semaine : au rez-de-chaussée un tiers-lieu, espace de vie de quartier et laboratoire d'expérimentation artistique ; aux étages intermédiaires la salle de concert jusqu'à 914 places (parterre et deux balcons) ; au couronnement un espace privatisable. Choix de rénovation actés avec un architecte du patrimoine.
+image: 2022-lfa-lyon1-salle-rameau--img-2820-b119d317.jpg | interieur
+image: 2022-lfa-lyon1-salle-rameau--rameau-interior-gem-2-1f94a365.jpg | couverture
 
 ---
 
-id: 2022-troyes-ateliers
+id: 2022-mka-troyes-ateliers
 titre: Ateliers
 lieu: Troyes, Fr
 annee: 2022
 programme: Équipement
 statut: construit
 taille: 3
-image: 2022-troyes-ateliers--garages-exterior-dfb78e9d.jpg | exterieur
-image: 2022-troyes-ateliers--garages-exterior-rh2-4d09950b.png | rendu
+image: 2022-mka-troyes-ateliers--garages-exterior-dfb78e9d.jpg | exterieur
+image: 2022-mka-troyes-ateliers--garages-exterior-rh2-4d09950b.png | rendu
 
 ---
 
-id: 2019-ecully-maison-b
-titre: Maison B [LFA.architectes]
+id: 2019-lfa-ecully-maison-b
+titre: Maison B
 lieu: Ecully, Fr
 annee: 2019
 programme: Logement
 surface: 160 m² SDP
 statut: construit
-image: 2019-ecully-maison-b--bouvy-exterior-12-40a4df59.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-0-4afe1320.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-1-1bf68826.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-2-522d6d66.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-3-ecc9b7a7.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-4-de4a5140.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-5-9665944a.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-6-bdd069ba.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-8-1e640a62.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-9-103b40e8.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-10-e672cffa.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-11-a6ef4ece.jpg | exterieur
-image: 2019-ecully-maison-b--bouvy-exterior-13-949d945c.jpg | exterieur
+accroche: Réhabilitation d’une ancienne grange en habitation
+texte: Emergeant d'une ruine en mâchefer nichée au cœur d’une zone boisée et classée, la Maison B a été conçue en imaginant un volume habitable contemporain imbriqué au bâti vernaculaire. Les murs conservés de l’ancienne grange, laissés bruts à l’extérieur et peints blanc en intérieur, contrastent avec la structure contemporaine et les détails en bois. La nouvelle typologie de la maison offre une répartition optimum des espaces et minimise les circulations : les pièces d’eau se superposent au premier et deuxième étage, autour desquelles sont réparties le séjour ainsi que les cinq chambres. Le salon en double hauteur permet de lire le volume total de l’intervention. L’emprise rectangulaire de la maison est orientée du Nord au Sud dans sa longueur. Les ouvertures organisées Est-Ouest permettent de contraster la relation au paysage tout en générant une ventilation naturelle traversante optimale.
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-12-40a4df59.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-0-4afe1320.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-1-1bf68826.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-2-522d6d66.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-3-ecc9b7a7.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-4-de4a5140.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-5-9665944a.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-6-bdd069ba.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-8-1e640a62.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-9-103b40e8.jpg | exterieur | Maxime Kreiter
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-10-e672cffa.jpg | couverture | Maxime Valcarce
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-11-a6ef4ece.jpg | exterieur | Maxime Valcarce
+image: 2019-lfa-ecully-maison-b--bouvy-exterior-13-949d945c.jpg | exterieur | Maxime Valcarce
+
+---
+
+id: 2025-mka-mobilier-banc
+titre: Banc
+annee: 2025
+programme: Mobilier
+statut: construit
+taille: 2
+image: 2025-mka-mobilier-banc--s2-face-1lypp5fr4r-160605c2.jpg | couverture
+image: 2025-mka-mobilier-banc--s2-axiale-eb6zn1quuo-cb777d2c.jpg
+image: 2025-mka-mobilier-banc--s2-detail-3zfb5m6rey-1f600f50.jpg
+image: 2025-mka-mobilier-banc--s3-face-cuir-cpklzkh0ep-46dcbd63.jpg
+image: 2025-mka-mobilier-banc--s5-face-lin-a-xmg47tqbfo-ff931769.jpg
+image: 2025-mka-mobilier-banc--s4-basse-lin-ju0bwwdld0-d0674e17.jpg
