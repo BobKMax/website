@@ -113,7 +113,21 @@ programme: Équipement
 surface: 100 m² SP
 statut: construit
 taille: 2
-image: 2025-mka-ecully-cabinet-dentaire--tullistes-interior-7-4de48ac4.jpg | couverture
+image: 2025-mka-ecully-cabinet-dentaire--tullistes-interior-7-f6971b32.jpg | couverture
+image: 2025-mka-ecully-cabinet-dentaire--img-4227-b5f64683.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4256-1fd7d63a.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4244-143c1251.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4262-f27f6b07.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4282-99c8232e.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4289-af2b97e0.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4324-9de2f04d.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4340-e921d7b9.jpg | interieur
+image: 2025-mka-ecully-cabinet-dentaire--img-4359-5b653732.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4393-f6f57bab.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4398-abfd9653.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4408-8d6f488d.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4422-f75308c0.jpg
+image: 2025-mka-ecully-cabinet-dentaire--img-4426-5e106cb3.jpg
 
 ---
 
@@ -161,7 +175,8 @@ programme: Équipement
 surface: 3 000 m²
 statut: mission amo
 moe: LFA (AMO et maîtrise d'œuvre des aménagements preneurs)
-texte: Boîte à bijoux, boîte à outils. La salle Rameau, construite en 1908 dans le 1er arrondissement de Lyon, est un marqueur de l'Art nouveau lyonnais au style éclectique (Renaissance, classicisme, baroque, rococo). La rénovation combine plusieurs programmes complémentaires selon les moments de la journée et de la semaine : au rez-de-chaussée un tiers-lieu, espace de vie de quartier et laboratoire d'expérimentation artistique ; aux étages intermédiaires la salle de concert jusqu'à 914 places (parterre et deux balcons) ; au couronnement un espace privatisable. Choix de rénovation actés avec un architecte du patrimoine.
+accroche: Boîte à bijoux, boîte à outils
+texte: La salle Rameau, construite en 1908 dans le 1er arrondissement de Lyon, est un marqueur de l'Art nouveau lyonnais au style éclectique (Renaissance, classicisme, baroque, rococo). La rénovation combine plusieurs programmes complémentaires selon les moments de la journée et de la semaine : au rez-de-chaussée un tiers-lieu, espace de vie de quartier et laboratoire d'expérimentation artistique ; aux étages intermédiaires la salle de concert jusqu'à 914 places (parterre et deux balcons) ; au couronnement un espace privatisable. Choix de rénovation actés avec un architecte du patrimoine.
 image: 2022-lfa-lyon1-salle-rameau--img-2820-b119d317.jpg | interieur
 image: 2022-lfa-lyon1-salle-rameau--rameau-interior-gem-2-1f94a365.jpg | couverture
 
@@ -187,7 +202,7 @@ programme: Logement
 surface: 160 m² SDP
 statut: construit
 accroche: Réhabilitation d’une ancienne grange en habitation
-texte: Emergeant d'une ruine en mâchefer nichée au cœur d’une zone boisée et classée, la Maison B a été conçue en imaginant un volume habitable contemporain imbriqué au bâti vernaculaire. Les murs conservés de l’ancienne grange, laissés bruts à l’extérieur et peints blanc en intérieur, contrastent avec la structure contemporaine et les détails en bois. La nouvelle typologie de la maison offre une répartition optimum des espaces et minimise les circulations : les pièces d’eau se superposent au premier et deuxième étage, autour desquelles sont réparties le séjour ainsi que les cinq chambres. Le salon en double hauteur permet de lire le volume total de l’intervention. L’emprise rectangulaire de la maison est orientée du Nord au Sud dans sa longueur. Les ouvertures organisées Est-Ouest permettent de contraster la relation au paysage tout en générant une ventilation naturelle traversante optimale.
+texte: Emergeant d'une ruine en mâchefer nichée au cœur d’une zone boisée et classée, la Maison B a été conçue en imaginant un volume habitable contemporain imbriqué au bâti vernaculaire. Les murs conservés de l’ancienne grange, laissés bruts à l’extérieur et peints blanc en intérieur, contrastent avec la structure contemporaine et les détails en bois. La nouvelle typologie de la maison offre une répartition optimum des espaces et minimise les circulations : les pièces d’eau se superposent au premier et deuxième étage, autour desquelles sont réparties le séjour ainsi que les cinq chambres. Le salon en double hauteur permet de lire le volume total de l’intervention. L’emprise rectangulaire de la maison est orientée du Nord au Sud dans sa longueur. Les ouvertures organisées Est-Ouest permettent de contraster la relation au paysage tout en générant une ventilation naturelle traversante optimale.
 image: 2019-lfa-ecully-maison-b--bouvy-exterior-12-40a4df59.jpg | exterieur | Maxime Kreiter
 image: 2019-lfa-ecully-maison-b--bouvy-exterior-0-4afe1320.jpg | exterieur | Maxime Kreiter
 image: 2019-lfa-ecully-maison-b--bouvy-exterior-1-1bf68826.jpg | exterieur | Maxime Kreiter
