@@ -22,7 +22,7 @@ taille: 4
 materiaux: Bois
 accroche: une façade de bois, de câbles et de toile
 texte: Trois niveaux de bureaux en ossature bois, posés sur une file de plots béton qui décollent le plancher bas du sol. Entre les poteaux d’épicéa lamellé-collé, la façade est entièrement vitrée, six travées par niveau. Les nez de dalle débordent largement devant le vitrage, sans garde-corps, et forment des casquettes filantes qui protègent les plateaux du soleil haut. La toiture est en zinc à joint debout, avec son débord. La protection solaire basse est confiée à un dispositif simple : devant chaque poteau, un câble d’acier tendu descend de la tête du vitrage jusqu’au nez de la casquette inférieure. Les stores de toile écrue coulissent le long de ces câbles. Déployé, un store n’est pas un écran plaqué contre le verre mais un plan de toile incliné, un auvent qui s’écarte de la façade et laisse passer l’air et la vue basse. La façade change avec les heures et avec les usages, sans aucun mécanisme apparent. Le bâtiment est posé dans une prairie non fauchée, qui vient jusque sous les fondations.
-image: 2026-mka-generique-bureaux--invent-exterior-76be8c01.jpg | rendu | MKA
+image: 2026-mka-generique-bureaux--invent-exterior-76be8c02.jpg | rendu | MKA
 
 ---
 
