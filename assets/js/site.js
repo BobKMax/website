@@ -58,7 +58,7 @@
   var state = {
     lang: 'FR',
     filter: 'Tous',
-    listView: true, /* fixé au chargement par vueParDefaut() */
+    listView: false, /* fixé au chargement par vueParDefaut() */
     projects: [],
     loaded: false,
     fileProtocol: false
@@ -199,10 +199,16 @@
     return node;
   }
 
+  /* Un projet peut avoir plusieurs programmes, séparés par des virgules
+     (« Bureaux, Équipement », 2026-11-03) : il apparaît sous chacun. */
+  function programmesDe(p) {
+    return String(p.programme || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+  }
+
   function programmes() {
     var list = [];
     state.projects.forEach(function (p) {
-      if (p.programme && list.indexOf(p.programme) < 0) list.push(p.programme);
+      programmesDe(p).forEach(function (x) { if (list.indexOf(x) < 0) list.push(x); });
     });
     return list;
   }
@@ -218,7 +224,7 @@
     var active = activeFilter();
     return active === 'Tous'
       ? state.projects
-      : state.projects.filter(function (p) { return p.programme === active; });
+      : state.projects.filter(function (p) { return programmesDe(p).indexOf(active) >= 0; });
   }
 
   function renderFilters() {
@@ -623,16 +629,12 @@
 
   /* --------------------------------------------------------------- init */
 
-  /* Vue d'ouverture : la liste sur grand écran, la grille en dessous. Même
-     seuil que les colonnes Surface et Statut dans la feuille de style — un
-     seul point de bascule pour toute la page. Un changement de taille de
-     fenêtre en cours de route ne rebascule rien : le visiteur a pu choisir
-     sa vue entre-temps, ce n'est pas à nous de la lui reprendre. */
-  var PETIT_ECRAN = '(max-width: 960px)';
-
+  /* Vue d'ouverture : la grille, sur tous les écrans (2026-11-09, Max ;
+     avant, la liste s'ouvrait sur les écrans de plus de 960 px). La liste
+     reste à un clic, par l'interrupteur. Rendre « true » ici rouvrirait
+     la liste partout. */
   function vueParDefaut() {
-    if (!window.matchMedia) return true;
-    return !window.matchMedia(PETIT_ECRAN).matches;
+    return false;
   }
 
   /* Curseur en négatif, à la souris seulement. La feuille de style reste

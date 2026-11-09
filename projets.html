@@ -36,16 +36,16 @@
       <div class="mk-index__controls">
         <div class="mk-filters" id="mk-filters"></div>
         <label class="mk-switch">
-          <input type="checkbox" class="mk-switch__input" id="mk-view" checked>
+          <input type="checkbox" class="mk-switch__input" id="mk-view">
           <span class="mk-switch__track" aria-hidden="true"><span class="mk-switch__knob"></span></span>
           <!-- Libellé piloté par le JavaScript : il annonce la vue vers
-               laquelle on bascule. Sans JS, on est en grille et le texte
-               statique ci-dessous est le bon. -->
-          <span id="mk-view-label">Vue grille</span>
+               laquelle on bascule. La page s'ouvre en grille (2026-11-09),
+               le texte statique ci-dessous est donc le bon. -->
+          <span id="mk-view-label">Vue liste</span>
         </label>
       </div>
 
-      <div id="mk-list">
+      <div id="mk-list" hidden>
         <div class="mk-list__head">
           <span class="mk-meta">Réf.</span>
           <span class="mk-meta" data-i18n="projet">Projet</span>
@@ -57,7 +57,7 @@
         <div class="mk-list__rows" id="mk-rows"></div>
       </div>
 
-      <div class="mk-grid" id="mk-grid" hidden></div>
+      <div class="mk-grid" id="mk-grid"></div>
 
       <!-- Aperçu affiché au centre de l'écran au survol d'une ligne, en vue
            liste. Rempli par le JavaScript ; sans lui, il reste vide. -->

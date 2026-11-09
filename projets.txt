@@ -22,19 +22,22 @@ taille: 4
 materiaux: Bois
 accroche: une façade de bois, de câbles et de toile
 texte: Trois niveaux de bureaux en ossature bois, posés sur une file de plots béton qui décollent le plancher bas du sol. Entre les poteaux d’épicéa lamellé-collé, la façade est entièrement vitrée, six travées par niveau. Les nez de dalle débordent largement devant le vitrage, sans garde-corps, et forment des casquettes filantes qui protègent les plateaux du soleil haut. La toiture est en zinc à joint debout, avec son débord. La protection solaire basse est confiée à un dispositif simple : devant chaque poteau, un câble d’acier tendu descend de la tête du vitrage jusqu’au nez de la casquette inférieure. Les stores de toile écrue coulissent le long de ces câbles. Déployé, un store n’est pas un écran plaqué contre le verre mais un plan de toile incliné, un auvent qui s’écarte de la façade et laisse passer l’air et la vue basse. La façade change avec les heures et avec les usages, sans aucun mécanisme apparent. Le bâtiment est posé dans une prairie non fauchée, qui vient jusque sous les fondations.
-image: 2026-mka-generique-bureaux--invent-exterior-76be8c02.jpg | rendu | MKA
+image: 2026-mka-generique-bureaux--invent-exterior-v2-576c6c21.jpg | rendu | Maxime Kreiter
 
 ---
 
-id: 2023-lfa-ba217-centre-innovation
-titre: Centre d'innovation [LFA.architectes]
-lieu: Base aérienne 217
-annee: 2023
+id: 2020-lfa-base217-igesa
+titre: Confidentiel-Défense
+lieu: Le Plessis-Pâté, Fr
+annee: 2020
 programme: Équipement
-surface: 1 040 m² SDP
+surface: 1 250 m² SDP
 statut: compétition
-image: 2023-lfa-ba217-centre-innovation--igesa-exterior-gem-2-648d4f77.png | couverture | MKA
-image: 2023-lfa-ba217-centre-innovation--igesa-interior-gem-5-50f7d048.jpg | rendu | MKA
+moe: LFA (architecte mandataire, économie, OPC), IPC (structure), Axess Ingénierie (fluides), EEgenie (QEB), Link Acoustique (acoustique)
+accroche: Un silo d'inox poli miroir, figure de la discrétion
+texte: Sur l'ancienne base aérienne 217, le centre médical de l'IGESA, bâtiment militaire des années 1950-1960 au registre sobre et rigoureux, devait devenir un immobilier d'entreprises classé « confidentiel défense », cœur du futur pôle Sécurité Défense. Le projet s'appuie sur l'enveloppe et la composition existantes et les « augmente » d'éléments techniques traités comme de l'architecture. Au centre, un silo en inox poli miroir regroupe l'escalier principal, les réseaux et la ventilation, et fait descendre la lumière zénithale du sous-sol à la toiture : ses reflets effacent sa présence et disent la discrétion qu'exige le programme. Autour, les ailes accueillent bureaux sécurisés, salle modulable, salle des secrets et fab lab ; menuiseries aluminium et volets motorisés en inox renouvellent le visage du bâtiment.
+image: 2020-lfa-base217-igesa--igesa-exterior-gem-2-050ca55c.jpg | couverture | MKA
+image: 2020-lfa-base217-igesa--igesa-interior-gem-5-50f7d048.jpg | rendu | MKA
 
 ---
 
@@ -45,6 +48,8 @@ annee: 2023
 programme: Logement
 statut: Recherche
 taille: 2
+accroche: Un archétype de maison, troublé par deux formes simples
+texte: Projet de recherche, sans site ni commanditaire : une maison imaginée et représentée par des images générées par ordinateur. Le point de départ est l’archétype, un pignon sous un toit à deux pans, que deux figures géométriques viennent déranger : un cylindre engagé dans la façade et un grand disque plein posé devant elle. Tout est revêtu du même bardage vertical en bois, teinté d’un bleu pâle, jusqu’aux sous-faces des débords de toit, et l’ensemble repose sur un socle de béton. Une manière d’interroger, par l’image, ce qu’il reste d’une maison quand on n’en garde que la silhouette.
 image: 2023-mka-generique-maison-bleue--bleue-85232fdc.jpg | rendu | Maxime Kreiter
 
 ---
@@ -58,8 +63,8 @@ surface: 210 m² SDP
 statut: construit
 accroche: Rénovation complète d'une maison
 texte: Au cœur de St-Didier-au-Mont-d'Or, cet maison a fait l’objet d’une rénovation globale. L’enjeu principal était de relier deux constructions adjacentes pour former un grand espace à rez-de-chausée et accueillir la séquence séjour-cuisine-salon. Nous avons aussi clarifié le plan sur les deux niveaux pour retrouver des circulations fluides et intuitives.
-image: 2024-mka-st-didier-maison-z--zub-interior-gem-15caa4bc.jpg | couverture
-image: 2024-mka-st-didier-maison-z--zub-interior-gem-2-25ede8ba.jpg | rendu
+image: 2024-mka-st-didier-maison-z--zub-interior-gem-15caa4bc.jpg | couverture | Maxime Kreiter
+image: 2024-mka-st-didier-maison-z--zub-interior-gem-2-25ede8ba.jpg | rendu | Maxime Kreiter
 
 ---
 
@@ -72,7 +77,7 @@ surface: 775 m² SDP
 statut: étude
 taille: 4
 accroche: La tradition des granges du marais
-texte: Pavillon de 775 m² SDP implanté au cœur d'une zone humide des Deux-Sèvres, sur une butte entourée d'eau et de roselières, accessible par un ponton en bois. Le projet s'inscrit dans la tradition des granges du marais — un volume simple sous une large toiture à deux pans en bac acier ondulé, aux débords généreux. Le rez-de-chaussée, entièrement vitré et ouvrable, accueille le public de plain-pied et s'ouvre sur le paysage. L'étage, fermé par un bardage bois à claire-voie, est percé d'un oculus en pignon, de panneaux perforés et d'une bande vitrée sous la toiture. Structure bois apparente, poteaux et auvents métalliques galvanisés, bardage bois naturel non traité. Une architecture sobre et démontable, posée sur le site avec un minimum d’emprise. Conception visant la certification PassivHaus.
+texte: Pavillon de 775 m² SDP implanté au cœur d'une zone humide des Deux-Sèvres, sur une butte entourée d'eau et de roselières, accessible par un ponton en bois. Le projet s'inscrit dans la tradition des granges du marais — un volume simple sous une large toiture à deux pans en bac acier ondulé, aux débords généreux. Le rez-de-chaussée, entièrement vitré et ouvrable, accueille le public de plain-pied et s'ouvre sur le paysage. L'étage, fermé par un bardage bois à claire-voie, est percé d'un oculus en pignon, de panneaux perforés et d'une bande vitrée sous la toiture. Structure bois apparente, poteaux et auvents métalliques galvanisés, bardage bois naturel non traité. Une architecture sobre et démontable, posée sur le site avec un minimum d’emprise.
 image: 2025-mka-deux-sevres-pavillon-sagne--marais-angle-75f1a6b7.jpg | rendu | Maxime Kreiter
 image: 2025-mka-deux-sevres-pavillon-sagne--marais-frontale-66dd2df3.jpg | couverture | Maxime Kreiter
 image: 2025-mka-deux-sevres-pavillon-sagne--marais-axono-6899d3ee.jpg | rendu | Maxime Kreiter
@@ -95,39 +100,42 @@ image: 2024-lfa-lyon6-chalet-parc--chalet-chantier-5daf0bae.jpg | chantier | Max
 ---
 
 id: 2025-mka-meribel-cave-vin
-titre: Cave à vin
+titre: Vins Dieux
 lieu: Meribel, Fr
 annee: 2025
 programme: Commerce
 surface: 40 m² SDP
 statut: construit
-image: 2025-mka-meribel-cave-vin--meribel-interior-4716aebb.png | rendu
+accroche: Un mur de bouteilles, un local contraint
+texte: À Méribel, Vins Dieux réunit dans un local de 40 m² une cave et un bar à vins de vingt-quatre places. Le plan, long et étroit, s'organise en deux temps : côté vitrine, la salle et ses banquettes ; au fond, le comptoir et l'office, dont les équipements (chiller, froid, lave-verres, four) s'alignent dans un linéaire menuisé. Le projet tient en quelques meubles en chêne dessinés sur mesure. Un meuble à bouteilles de 3,30 m, casiers ouverts au-dessus de caissons fermés, fait de la cave le décor de la salle. Des banquettes-coffres courent le long de la vitrine et du mur, garnies de coussins en tissu technique, et le comptoir en chêne est coiffé d'un ciel de bar en acier galvanisé.
+image: 2025-mka-meribel-cave-vin--meribel-interior-4716aebb.png | couverture | Maxime Kreiter
 
 ---
 
-id: 2025-mka-ecully-cabinet-dentaire
+id: 2022-mka-ecully-cabinet-dentaire
 titre: Cabinet Dentaire
 lieu: Ecully, Fr
-annee: 2025
+annee: 2022
 programme: Équipement
 surface: 100 m² SP
 statut: construit
 taille: 2
-image: 2025-mka-ecully-cabinet-dentaire--tullistes-interior-7-f6971b32.jpg | couverture
-image: 2025-mka-ecully-cabinet-dentaire--img-4227-b5f64683.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4256-1fd7d63a.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4244-143c1251.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4262-f27f6b07.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4282-99c8232e.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4289-af2b97e0.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4324-9de2f04d.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4340-e921d7b9.jpg | interieur
-image: 2025-mka-ecully-cabinet-dentaire--img-4359-5b653732.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4393-f6f57bab.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4398-abfd9653.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4408-8d6f488d.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4422-f75308c0.jpg
-image: 2025-mka-ecully-cabinet-dentaire--img-4426-5e106cb3.jpg
+accroche: Une courbe, du béton et du bois
+texte: À Écully, le cabinet d'orthodontie s'installe dans un local existant de 100 m², dont la structure en béton est laissée brute : poteaux et voiles donnent au lieu sa matière et sa franchise. Face à eux, une paroi courbe habillée de fines lattes de bois peint rose poudré enveloppe la salle de soins à deux fauteuils et accompagne le patient depuis l'accueil. Autour s'organisent une seconde salle de consultation, la radio panoramique, la stérilisation, le laboratoire, un bureau, une salle de pause pour l'équipe et la salle d'attente ; l'ensemble est remis aux normes d'accessibilité. Bois clair des menuiseries, lumière linéaire, sol clair, verres dépolis et plafond acoustique en fibre de bois composent une palette réduite, calme et lumineuse, qui tient à distance l'image clinique. Études et travaux en 2022, avec un chantier mené en un mois.
+image: 2022-mka-ecully-cabinet-dentaire--tullistes-interior-7-f6971b32.jpg | couverture | Maxime Kreiter
+image: 2022-mka-ecully-cabinet-dentaire--img-4227-b5f64683.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4256-1fd7d63a.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4262-f27f6b07.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4244-143c1251.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4340-e921d7b9.jpg | interieur
+image: 2022-mka-ecully-cabinet-dentaire--img-4359-5b653732.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4289-af2b97e0.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4398-abfd9653.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4393-f6f57bab.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4426-5e106cb3.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4282-99c8232e.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4422-f75308c0.jpg
+image: 2022-mka-ecully-cabinet-dentaire--img-4408-8d6f488d.jpg
 
 ---
 
@@ -139,7 +147,7 @@ programme: Logement
 surface: 70 m² SDP
 statut: construit
 taille: 2
-image: 2023-mka-lyon5-appartement-b--boeuf-gem-b1543a04.jpg | rendu
+image: 2023-mka-lyon5-appartement-b--boeuf-gem-b1543a04.jpg | rendu | Maxime Kreiter
 
 ---
 
@@ -150,20 +158,23 @@ annee: 2023
 programme: Bureaux
 surface: 12 000 m²
 statut: compétition
+moe: Unanime et Waugh Thistleton Architects (architectes), WSP France (structure), Transsolar (ingénierie climatique)
 taille: 6
-image: 2023-lfa-prevessin-cern--cern-exterior-2-bd685709.jpg | rendu
+accroche: Bois, terre et paille pour le CERN
+texte: Sur le site du CERN à Prévessin, le bâtiment B-777 marque une entrée du campus. Conçu avec Waugh Thistleton Architects (Londres), le projet se compose de trois volumes : le restaurant et les laboratoires, bas, encadrent un parvis d'entrée ; au centre, un volume de cinq niveaux réunit les bureaux autour d'un patio planté, cœur du bâtiment, qui apporte la lumière, tempère l'air et ventile naturellement les espaces de travail. La structure en bois (poteaux et poutres en lamellé-collé sur une trame de 6 × 6 m, planchers en CLT, noyaux en béton) est pensée comme un jeu de pièces préfabriquées, assemblées à sec pour pouvoir être démontées et réemployées. Murs à ossature bois isolés en paille, murs en terre crue issue du site, double façade au nord : le bâtiment vise un bilan carbone exemplaire et une ventilation naturelle près des deux tiers de l'année.
+image: 2023-lfa-prevessin-cern--cern-exterior-2-bd685709.jpg | couverture | Maxime Kreiter
 
 ---
 
 id: 2025-mka-lyon-appartement-d
 titre: Appartement D
-lieu: Lyon, Fr
+lieu: Lyon 5, Fr
 annee: 2025
 programme: Logement
 surface: 50 m² SDP
 statut: construit
 taille: 2
-image: 2025-mka-lyon-appartement-d--doyenne-render-gem-5b-10896d4b.jpg | rendu
+image: 2025-mka-lyon-appartement-d--doyenne-render-gem-5b-10896d4b.jpg | rendu | Maxime Kreiter
 
 ---
 
@@ -176,7 +187,7 @@ surface: 3 000 m²
 statut: mission amo
 moe: LFA (AMO et maîtrise d'œuvre des aménagements preneurs)
 accroche: Boîte à bijoux, boîte à outils
-texte: La salle Rameau, construite en 1908 dans le 1er arrondissement de Lyon, est un marqueur de l'Art nouveau lyonnais au style éclectique (Renaissance, classicisme, baroque, rococo). La rénovation combine plusieurs programmes complémentaires selon les moments de la journée et de la semaine : au rez-de-chaussée un tiers-lieu, espace de vie de quartier et laboratoire d'expérimentation artistique ; aux étages intermédiaires la salle de concert jusqu'à 914 places (parterre et deux balcons) ; au couronnement un espace privatisable. Choix de rénovation actés avec un architecte du patrimoine.
+texte: La salle Rameau, construite en 1908 dans le 1er arrondissement de Lyon, est un marqueur de l'Art nouveau lyonnais au style éclectique (Renaissance, classicisme, baroque, rococo). La rénovation combine plusieurs programmes complémentaires selon les moments de la journée et de la semaine : au rez-de-chaussée un tiers-lieu, espace de vie de quartier et laboratoire d'expérimentation artistique ; aux étages intermédiaires la salle de concert jusqu'à 914 places (parterre et deux balcons) ; au couronnement un espace privatisable. Choix de rénovation actés avec un architecte du patrimoine. La mission AMO consiste à accompagner le preneur Groupe SOS dans la synthèse des demandes, la correction des livrables fournis par la MOA de la coque (Compagnie de Phalsbourg), et la mise en image de la salle de spectacle.
 image: 2022-lfa-lyon1-salle-rameau--img-2820-b119d317.jpg | interieur
 image: 2022-lfa-lyon1-salle-rameau--rameau-interior-gem-2-1f94a365.jpg | couverture
 
@@ -219,13 +230,13 @@ image: 2019-lfa-ecully-maison-b--bouvy-exterior-13-949d945c.jpg | exterieur | Ma
 
 ---
 
-id: 2025-mka-mobilier-banc
+id: 2022-mka-mobilier-banc
 titre: Banc
-annee: 2025
+annee: 2022
 programme: Mobilier
 statut: construit
 taille: 2
-image: 2025-mka-mobilier-banc--s2-face-1lypp5fr4r-160605c2.jpg | couverture
-image: 2025-mka-mobilier-banc--s2-axiale-eb6zn1quuo-cb777d2c.jpg
-image: 2025-mka-mobilier-banc--s2-detail-3zfb5m6rey-1f600f50.jpg
-image: 2025-mka-mobilier-banc--s4-basse-lin-ju0bwwdld0-d0674e17.jpg
+image: 2022-mka-mobilier-banc--s2-face-1lypp5fr4r-84fe3859.jpg | couverture
+image: 2022-mka-mobilier-banc--s2-axiale-eb6zn1quuo-cb777d2c.jpg
+image: 2022-mka-mobilier-banc--s2-detail-3zfb5m6rey-1f600f50.jpg
+image: 2022-mka-mobilier-banc--s4-basse-lin-ju0bwwdld0-d0674e17.jpg
