@@ -1,2 +1,4 @@
-/* No brand font binaries were supplied. Google Fonts substitutions — see readme.md > Type. */
-@import url("https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+/* Polices du site (règle typographique du 10.11.2026), servies par Google Fonts.
+   IBM Plex Sans = la voix, graisses 200 et 400 seulement.
+   JetBrains Mono = le registre, graisses 400 et 700. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400&family=JetBrains+Mono:wght@400;700&display=swap");

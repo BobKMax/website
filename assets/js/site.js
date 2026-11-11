@@ -582,6 +582,13 @@
      recompose au redimensionnement, et au passage en paysage sur téléphone. */
   window.addEventListener('resize', recomposer);
 
+  /* La hauteur des cartes dépend du texte sous la photo : si les polices
+     (IBM Plex Sans, JetBrains Mono) arrivent après la première composition,
+     un titre peut changer de nombre de lignes. On recompose une fois prêtes. */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(recomposer);
+  }
+
   /* ------------------------------------------------------------- langue */
 
   function readStoredLang() {

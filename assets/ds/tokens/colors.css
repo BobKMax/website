@@ -7,14 +7,15 @@
 --rule-100:#D5D4CE;--rule-200:#BFBEB7;
 /* blueprint tint (project covers, technical sheets) */
 --tint-050:#EDF2F4;--tint-100:#D9E4E9;--tint-200:#B9CBD3;
-/* accent — sage */
---sage-100:#E3E7DE;--sage-500:#7A8B6F;--sage-600:#6A7A5F;--sage-700:#56634D;
+/* (sauge retirée le 2026-11-11 : la seule couleur d'accent du site est l'orange des liens de contact, --accent-contact dans site.css) */
 /* status, earthy and muted */
 --positive-600:#4F6B4A;--warning-600:#9A7B32;--critical-600:#8C3A24;
 /* semantic aliases */
---text-primary:var(--ink-900);--text-secondary:var(--ink-500);--text-muted:var(--ink-400);--text-meta:var(--ink-700);--text-inverse:var(--paper-100);--text-accent:var(--sage-700);
---surface-page:var(--paper-100);--surface-card:var(--paper-050);--surface-raised:var(--paper-000);--surface-tint:var(--tint-100);--surface-tint-soft:var(--tint-050);--surface-inverse:var(--ink-900);--surface-accent:var(--sage-500);
+/* Règle du 10.11.2026 : deux couleurs de texte seulement, #111110 (ink-900) et #6E6E68 (ink-500).
+   --text-meta (ancien ink-700) passe à l'encre, --text-muted (ancien ink-400) au gris. */
+--text-primary:var(--ink-900);--text-secondary:var(--ink-500);--text-muted:var(--ink-500);--text-meta:var(--ink-900);--text-inverse:var(--paper-100);
+--surface-page:var(--paper-100);--surface-card:var(--paper-050);--surface-raised:var(--paper-000);--surface-tint:var(--tint-100);--surface-tint-soft:var(--tint-050);--surface-inverse:var(--ink-900);
 --border-hairline:var(--rule-100);--border-strong:var(--ink-900);--border-mid:var(--rule-200);
 --focus-ring:var(--ink-900);
---link:var(--ink-900);--link-hover:var(--sage-700);
+--link:var(--ink-900);--link-hover:var(--ink-500);
 }

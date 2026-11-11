@@ -89,7 +89,10 @@ CE QUI RESTE À FAIRE
 - « Instagram », dans le pied de page, est un mot sans lien : donnez
   l'adresse du compte pour en faire un lien.
 - Aucune icône d'onglet (favicon) n'est définie.
-- Les polices Fustat et Space Mono viennent de Google Fonts, ce sont des
-  substitutions choisies par le design system. Si l'atelier acquiert des
-  fontes sous licence, elles se remplacent dans
-  assets/ds/tokens/fonts.css.
+- Les polices IBM Plex Sans (200, 400) et JetBrains Mono (400, 700)
+  viennent de Google Fonts (règle typographique du 10.11.2026, qui
+  remplace Fustat et Space Mono). Si l'atelier acquiert des fontes sous
+  licence, elles se remplacent dans assets/ds/tokens/fonts.css.
+
+
+Règle d'identité commune à tous les supports (polices, signature, couleurs, coordonnées, dates) : COMMUNICATION MKA/IDENTITE-MKA.txt
