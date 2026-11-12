@@ -240,3 +240,19 @@ image: 2022-mka-mobilier-banc--s2-face-1lypp5fr4r-84fe3859.jpg | couverture
 image: 2022-mka-mobilier-banc--s2-axiale-eb6zn1quuo-cb777d2c.jpg
 image: 2022-mka-mobilier-banc--s2-detail-3zfb5m6rey-1f600f50.jpg
 image: 2022-mka-mobilier-banc--s4-basse-lin-ju0bwwdld0-d0674e17.jpg
+
+---
+
+id: 2022-lfa-dijon-oiv
+titre: OIV, hôtel Bouchu d'Esterno
+lieu: Dijon, Fr
+annee: 2022
+programme: Bureaux
+surface: 2 365 m²
+statut: compétition
+moe: ALEP (mandataire, patrimoine), LFA (architecte associé), Mayot-Toussaint (paysage), CM (économie), UBC (structure), Amstein + Walthert (fluides), LEA (éclairage), Acousphère (acoustique), Trafik (signalétique)
+taille: 2
+accroche: Les Nations unies de la vigne et du vin
+texte: L’Organisation internationale de la vigne et du vin installe son siège à Dijon, dans l’hôtel Bouchu d’Esterno, un hôtel particulier inscrit monument historique. Le projet mêle restauration, réhabilitation et requalification. Il commence par une étude attentive de l’existant : les qualités des espaces, la structure, les transformations successives, mais aussi les interventions qui ont dénaturé l’édifice. Cette lecture fonde une reconversion éclairée, qui repart de ce qui fait l’essence d’un hôtel particulier : l’équilibre entre l’apparat et l’intimité. Les salons d’apparat retrouvent leur rôle de représentation. Le grand salon, sous son plafond peint, devient la salle de réunion des délégations. Les pièces plus intimes accueillent les bureaux et gardent leurs boiseries et leurs cheminées. Dans les combles, la charpente est dégagée et devient un lieu de rencontre. Les interventions contemporaines, en bois et en acier inoxydable, restent sobres. Elles s’adaptent aux nombreux usages d’une institution internationale et mettent en valeur l’architecture de l’hôtel sans jamais la concurrencer.
+image: 2022-lfa-dijon-oiv--oiv-combles-mgnfc-2b-f01b46ce.jpg
+image: 2022-lfa-dijon-oiv--alep-exterieure-mgnfc-2-99baa258.jpg | couverture
